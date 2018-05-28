@@ -8620,7 +8620,7 @@ function save(){  //saves game (from http://dhmholley.co.uk/incrementals-part-2.
 
 	}
 	localStorage.setItem("SaveCanada",JSON.stringify(save));
-	document.getElementById("DidISave").innerHTML = "Game Saved";
+	document.getElementById("DidISave").innerHTML = "游戏已保存";
 	gameSaved = 3;
 }
 
