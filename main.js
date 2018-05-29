@@ -7807,27 +7807,27 @@ function PrestigeButton(){
 	ReadytoUpgrade = CheckPrestigeReq();
 	
 	if (Prestige == 4){
-	document.getElementById("PrestigeButton").innerHTML = "You are the most prestigious!";
-	document.getElementById("PrestigeButtonDescription").innerHTML = "Way to go bud!  You are flannelicios!<br> +40% XP<br>200% worker speed";
+	document.getElementById("PrestigeButton").innerHTML = "你是最负盛名的。!";
+	document.getElementById("PrestigeButtonDescription").innerHTML = "还有路要走呀!你是flannelicios!<br> +40% 经验<br>200% 工人的速度";
 	}else{
 		if (ReadytoUpgrade){
-			document.getElementById("PrestigeButton").innerHTML = "<button onClick=UpgradePrestige()>Upgrade prestige to "+PrestigeNames[Prestige+1]+"!</button>";
+			document.getElementById("PrestigeButton").innerHTML = "<button onClick=UpgradePrestige()>升级声望等级到 "+PrestigeNames[Prestige+1]+"!</button>";
 		}else{
-			document.getElementById("PrestigeButton").innerHTML = "<button onClick=UpgradePrestige() disabled>Upgrade prestige to "+PrestigeNames[Prestige+1]+"!</button>";
+			document.getElementById("PrestigeButton").innerHTML = "<button onClick=UpgradePrestige() disabled>升级声望等级到 "+PrestigeNames[Prestige+1]+"!</button>";
 		}
 	}
 	
 	if (Prestige == 0){
-		document.getElementById("PrestigeButtonDescription").innerHTML = "You need some prestige!  Complete the requirements and upgrade to Bronze.<br>When you upgrade prestige, the game resets and you start with a lovely bonus!";
+		document.getElementById("PrestigeButtonDescription").innerHTML = "你需要一些声望!完成要求并升级至青铜。<br>当你升级了声望，游戏重新开始，你就会有个不错的奖励!";
 	}
 	if (Prestige == 1){
-		document.getElementById("PrestigeButtonDescription").innerHTML = "Way to go bud!  You are bronze!<br> +10% XP<br>+50% worker speed";
+		document.getElementById("PrestigeButtonDescription").innerHTML = "还有路要走呀!你是青铜!<br> +10% 经验<br>+50% 工人的速度";
 	}
 	if (Prestige == 2){
-		document.getElementById("PrestigeButtonDescription").innerHTML = "Way to go bud!  You are silver!<br> +20% XP<br>+100% worker speed";
+		document.getElementById("PrestigeButtonDescription").innerHTML = "还有路要走呀!你是白银!<br> +20% 经验<br>+100% 工人的速度";
 	}
 	if (Prestige == 3){
-		document.getElementById("PrestigeButtonDescription").innerHTML = "Way to go bud!  You are golden!<br> +30% XP<br>+150% worker speed";
+		document.getElementById("PrestigeButtonDescription").innerHTML = "还有路要走呀!你是黄金!<br> +30% 经验<br>+150% 工人的速度";
 	}
 	
 	
