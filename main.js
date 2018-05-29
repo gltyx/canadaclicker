@@ -6028,7 +6028,7 @@ function checkLevels(){//called in the game interval.  checks to see if you've l
 		window[skillz[i-1]+"Lvl1"] = getLevel(window[skillz[i-1]+"XP"]);
 		skillLevels[i-1] = getLevel(window[skillz[i-1]+"XP"]);
 		if (window[skillz[i-1]+"Lvl1"] > window[skillz[i-1]+"Lvl2"]){
-			$.notify(skillz[i-1]+" Level Up!", {style:'level', className:'achievement', position: 'bottom center', autoHide: true});
+			$.notify(skillz[i-1]+" 升级!", {style:'level', className:'achievement', position: 'bottom center', autoHide: true});
 		}
 		window[skillz[i-1]+"Lvl2"] = eval(window[skillz[i-1]+"Lvl1"]);
 	}
@@ -7699,14 +7699,14 @@ function IcefishingProgress(){
 }
 function BeardProgress(){
 	lvl = getLevel(BeardXP);
-	document.getElementById("beardLvl").innerHTML = "Beard Level "+lvl;
-	document.getElementById("beardLvlStats").innerHTML = "Beard Level "+lvl;
+	document.getElementById("beardLvl").innerHTML = "胡子等级 "+lvl;
+	document.getElementById("beardLvlStats").innerHTML = "胡子等级 "+lvl;
 	
 	if (lvl == 20){
 		$('#beardProgress').attr('style', 'width:100%');
 		$('#beardProgressStats').attr('style', 'width:100%');
-		document.getElementById("beardProgressXP").innerHTML = "Beast Mode!";
-		document.getElementById("beardProgressXPStats").innerHTML = "Beast Mode!";
+		document.getElementById("beardProgressXP").innerHTML = "野兽模式!";
+		document.getElementById("beardProgressXPStats").innerHTML = "野兽模式!";
 	
 	}else{
 	XPtoNextLevel = BeardXP-eval(window["L"+lvl]);
@@ -7722,8 +7722,8 @@ function BeardProgress(){
 }
 function KindnessProgress(){
 	lvl = getLevel(KindnessXP);
-	document.getElementById("kindnessLvl").innerHTML = "Kindness Level "+lvl;
-	document.getElementById("kindnessLvlStats").innerHTML = "Kindness Level "+lvl;
+	document.getElementById("kindnessLvl").innerHTML = "善良等级 "+lvl;
+	document.getElementById("kindnessLvlStats").innerHTML = "善良等级 "+lvl;
 	
 	if (lvl == 20){
 		$('#kindnessProgress').attr('style', 'width:100%');
@@ -7745,14 +7745,14 @@ function KindnessProgress(){
 }
 function HockeyProgress(){
 	lvl = getLevel(HockeyXP);
-	document.getElementById("hockeyLvl").innerHTML = "Hockey Level "+lvl;
-	document.getElementById("hockeyLvlStats").innerHTML = "Hockey Level "+lvl;
+	document.getElementById("hockeyLvl").innerHTML = "冰球水平 "+lvl;
+	document.getElementById("hockeyLvlStats").innerHTML = "冰球水平 "+lvl;
 	
 	if (lvl == 20){
 		$('#hockeyProgress').attr('style', 'width:100%');
 		$('#hockeyProgressStats').attr('style', 'width:100%');
-		document.getElementById("hockeyProgressXP").innerHTML = "Beast Mode!";
-		document.getElementById("hockeyProgressXPStats").innerHTML = "Beast Mode!";
+		document.getElementById("hockeyProgressXP").innerHTML = "野兽模式!";
+		document.getElementById("hockeyProgressXPStats").innerHTML = "野兽模式!";
 	
 	}else{
 	XPtoNextLevel = HockeyXP-eval(window["L"+lvl]);
