@@ -5241,8 +5241,8 @@ function BeardClick(item){
 				totalSyrup += window[item+"Reward"+rand]+bonusSyrup;
 				DisplayStuff('totalSyrup');
 				achievementProgress("somuchsyrup");
-				document.getElementById("BeardBoxReward").innerHTML = "You just got "+(window[item+"Reward"+rand]+bonusSyrup)+" syrup";
-				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " Beard XP";
+				document.getElementById("BeardBoxReward").innerHTML = "你获得了 "+(window[item+"Reward"+rand]+bonusSyrup)+" 糖浆";
+				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " 胡子经验";
 				BeardRewardCountdown = 10;//displays message for number of seconds
 				break;
 			default:
