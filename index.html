@@ -221,10 +221,10 @@ checkAchievements();
 	<td><button id="tab3" class="tab" onmousedown="openTab(2, this)">统计</button></td>
 	<td><button id="tab4" class="tab" onmousedown="openTab(3, this)">成就</button></td>
 	<td><button id="tab5" class="tab" onmousedown="openTab(4, this)">伐木工人</button></td>
-	<td><button id="tab6" class="tab" onmousedown="openTab(5, this)">Ice Fishing</button></td>
-	<td><button id="tab7" class="tab" onmousedown="openTab(6, this)">Beard</button></td>
-	<td><button id="tab8" class="tab" onmousedown="openTab(7, this)">Kindness</button></td>
-	<td><button id="tab9" class="tab" onmousedown="openTab(8, this)">Hockey</button></td>
+	<td><button id="tab6" class="tab" onmousedown="openTab(5, this)">冰钓</button></td>
+	<td><button id="tab7" class="tab" onmousedown="openTab(6, this)">胡子</button></td>
+	<td><button id="tab8" class="tab" onmousedown="openTab(7, this)">仁慈</button></td>
+	<td><button id="tab9" class="tab" onmousedown="openTab(8, this)">曲棍球</button></td>
 	</tr>
 	</table><br><br>
 	<table align="left"><!--GameView table(nested)-->
@@ -244,139 +244,139 @@ checkAchievements();
 <table border=1 class="generalTable"><!-- table for inventory -->
 <tr><!-- table headings -->
 <td></td>
-<td><b>Item</td>
-<td><b>Quantity</td>
-<td><b>Value</td>
-<td><b>Sell</td>
+<td><b>物品</td>
+<td><b>数量</td>
+<td><b>价格</td>
+<td><b>出售</td>
 <td><b><button type="button" onclick="sellSelected(this.form)">Sell Selected</button></td>
 </tr>
 <tr>
-<td rowspan="6"><div class="vertical-text"><div class="vertical-text__inner"><center><b>TREES</b></div></div></td>
+<td rowspan="6"><div class="vertical-text"><div class="vertical-text__inner"><center><b>树</b></div></div></td>
 <td>Pine</td>
 <td><span id='Pine'><script type="text/javascript">DisplayStuff('Pine');</script></span></td>
 <td>$<span id='PineValue'><script type="text/javascript">DisplayStuff('PineValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Pine')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Pine')">全部出售</button></td>
 <td><center><span id="PineCheckbox"><script type="text/javascript">loadInventoryCheckbox('Pine');</script></span></td>
 </tr>
 <tr>
 <td>Spruce</td>
 <td><span id='Spruce'><script type="text/javascript">DisplayStuff('Spruce');</script></span></td>
 <td>$<span id='SpruceValue'><script type="text/javascript">DisplayStuff('SpruceValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Spruce')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Spruce')">全部出售</button></td>
 <td><center><span id="SpruceCheckbox"><script type="text/javascript">loadInventoryCheckbox('Spruce');</script></span></td>
 </tr>
 <tr>
 <td>Maple</td>
 <td><span id='Maple'><script type="text/javascript">DisplayStuff('Maple');</script></span></td>
 <td>$<span id='MapleValue'><script type="text/javascript">DisplayStuff('MapleValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Maple')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Maple')">全部出售</button></td>
 <td><center><span id="MapleCheckbox"><script type="text/javascript">loadInventoryCheckbox('Maple');</script></span></td>
 </tr>
 <tr>
 <td>Oak</td>
 <td><span id='Oak'><script type="text/javascript">DisplayStuff('Oak');</script></span></td>
 <td>$<span id='OakValue'><script type="text/javascript">DisplayStuff('OakValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Oak')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Oak')">全部出售</button></td>
 <td><center><span id="OakCheckbox"><script type="text/javascript">loadInventoryCheckbox('Oak');</script></span></td>
 </tr>
 <tr>
 <td>Birch</td>
 <td><span id='Birch'><script type="text/javascript">DisplayStuff('Birch');</script></span></td>
 <td>$<span id='BirchValue'><script type="text/javascript">DisplayStuff('BirchValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Birch')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Birch')">全部出售</button></td>
 <td><center><span id="BirchCheckbox"><script type="text/javascript">loadInventoryCheckbox('Birch');</script></span></td>
 </tr>
 <tr>
 <td>Ash</td>
 <td><span id='Ash'><script type="text/javascript">DisplayStuff('Ash');</script></span></td>
 <td>$<span id='AshValue'><script type="text/javascript">DisplayStuff('AshValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Ash')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Ash')">全部出售</button></td>
 <td><center><span id="AshCheckbox"><script type="text/javascript">loadInventoryCheckbox('Ash');</script></span></td>
 </tr>
 <tr>
-<td rowspan=6><div class="vertical-text"><div class="vertical-text__inner"><center><b>FISH</b></div></div></td>
+<td rowspan=6><div class="vertical-text"><div class="vertical-text__inner"><center><b>鱼</b></div></div></td>
 <td>Trout</td>
 <td><span id='Trout'><script type="text/javascript">DisplayStuff('Trout');</script></span></td>
 <td>$<span id='TroutValue'><script type="text/javascript">DisplayStuff('TroutValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Trout')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Trout')">全部出售</button></td>
 <td><center><span id="TroutCheckbox"><script type="text/javascript">loadInventoryCheckbox('Trout');</script></span></td>
 </tr>
 <tr>
 <td>Salmon</td>
 <td><span id='Salmon'><script type="text/javascript">DisplayStuff('Salmon');</script></span></td>
 <td>$<span id='SalmonValue'><script type="text/javascript">DisplayStuff('SalmonValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Salmon')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Salmon')">全部出售</button></td>
 <td><center><span id="SalmonCheckbox"><script type="text/javascript">loadInventoryCheckbox('Salmon');</script></span></td>
 </tr>
 <tr>
 <td>Cod</td>
 <td><span id='Cod'><script type="text/javascript">DisplayStuff('Cod');</script></span></td>
 <td>$<span id='CodValue'><script type="text/javascript">DisplayStuff('CodValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Cod')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Cod')">全部出售</button></td>
 <td><center><span id="CodCheckbox"><script type="text/javascript">loadInventoryCheckbox('Cod');</script></span></td>
 </tr>
 <tr>
 <td>Crab</td>
 <td><span id='Crab'><script type="text/javascript">DisplayStuff('Crab');</script></span></td>
 <td>$<span id='CrabValue'><script type="text/javascript">DisplayStuff('CrabValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Crab')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Crab')">全部出售</button></td>
 <td><center><span id="CrabCheckbox"><script type="text/javascript">loadInventoryCheckbox('Crab');</script></span></td>
 </tr>
 <tr>
 <td>Halibut</td>
 <td><span id='Halibut'><script type="text/javascript">DisplayStuff('Halibut');</script></span></td>
 <td>$<span id='HalibutValue'><script type="text/javascript">DisplayStuff('HalibutValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Halibut')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Halibut')">全部出售</button></td>
 <td><center><span id="HalibutCheckbox"><script type="text/javascript">loadInventoryCheckbox('Halibut');</script></span></td>
 </tr>
 <tr>
 <td>Whale</td>
 <td><span id='Whale'><script type="text/javascript">DisplayStuff('Whale');</script></span></td>
 <td>$<span id='WhaleValue'><script type="text/javascript">DisplayStuff('WhaleValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Whale')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Whale')">全部出售</button></td>
 <td><center><span id="WhaleCheckbox"><script type="text/javascript">loadInventoryCheckbox('Whale');</script></span></td>
 </tr>
 <tr>
-<td rowspan=6><div class="vertical-text"><div class="vertical-text__inner"><center><b>HOCKEY</b></div></div></td>
+<td rowspan=6><div class="vertical-text"><div class="vertical-text__inner"><center><b>曲棍球</b></div></div></td>
 <td>Pucks</td>
 <td><span id='Pucks'><script type="text/javascript">DisplayStuff('Pucks');</script></span></td>
 <td>$<span id='PucksValue'><script type="text/javascript">DisplayStuff('PucksValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Pucks')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Pucks')">全部出售</button></td>
 <td><center><span id="PucksCheckbox"><script type="text/javascript">loadInventoryCheckbox('Pucks');</script></span></td>
 </tr>
 <tr>
 <td>Sticks</td>
 <td><span id='Sticks'><script type="text/javascript">DisplayStuff('Sticks');</script></span></td>
 <td>$<span id='SticksValue'><script type="text/javascript">DisplayStuff('SticksValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Sticks')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Sticks')">全部出售</button></td>
 <td><center><span id="SticksCheckbox"><script type="text/javascript">loadInventoryCheckbox('Sticks');</script></span></td>
 </tr>
 <tr>
 <td>Gloves</td>
 <td><span id='Gloves'><script type="text/javascript">DisplayStuff('Gloves');</script></span></td>
 <td>$<span id='GlovesValue'><script type="text/javascript">DisplayStuff('GlovesValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Gloves')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Gloves')">全部出售</button></td>
 <td><center><span id="GlovesCheckbox"><script type="text/javascript">loadInventoryCheckbox('Gloves');</script></span></td>
 </tr>
 <tr>
 <td>Skates</td>
 <td><span id='Skates'><script type="text/javascript">DisplayStuff('Skates');</script></span></td>
 <td>$<span id='SkatesValue'><script type="text/javascript">DisplayStuff('SkatesValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Skates')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Skates')">全部出售</button></td>
 <td><center><span id="SkatesCheckbox"><script type="text/javascript">loadInventoryCheckbox('Skates');</script></span></td>
 </tr>
 <tr>
 <td>Goals</td>
 <td><span id='Goals'><script type="text/javascript">DisplayStuff('Goals');</script></span></td>
 <td>$<span id='GoalsValue'><script type="text/javascript">DisplayStuff('GoalsValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Goals')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Goals')">全部出售</button></td>
 <td><center><span id="GoalsCheckbox"><script type="text/javascript">loadInventoryCheckbox('Goals');</script></span></td>
 </tr>
 <tr>
 <td>Zambonis</td>
 <td><span id='Zambonies'><script type="text/javascript">DisplayStuff('Zambonies');</script></span></td>
 <td>$<span id='ZamboniesValue'><script type="text/javascript">DisplayStuff('ZamboniesValue');</script></span></td>
-<td><button type="button" onClick="sellAll('Zambonies')">Sell All</button></td>
+<td><button type="button" onClick="sellAll('Zambonies')">全部出售</button></td>
 <td><center><span id="ZamboniesCheckbox"><script type="text/javascript">loadInventoryCheckbox('Zambonies');</script></span></td>
 </tr>
 </table>

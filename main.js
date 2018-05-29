@@ -236,12 +236,12 @@ var Lu14cost = 60000000; //cost in money
 var Lu14req = 9;//Lumberjack level required to purchase
 var Lu14num = 2; //WoodPerSecond multiplier for this crew member
 var Lu15 = 0;
-var Lu15text = "樵夫等级2:  效率提高50%";
+var Lu15text = "伐木工人等级2:  效率提高50%";
 var Lu15cost = 9000000; //cost in money
 var Lu15req = 6;//Lumberjack level required to purchase
 var Lu15num = 1.5; //WoodPerSecond multiplier for this crew member
 var Lu16 = 0;
-var Lu16text = "樵夫等级3:  效率提高100%";
+var Lu16text = "伐木工人等级3:  效率提高100%";
 var Lu16cost = 350000000; //cost in money
 var Lu16req = 10;//Lumberjack level required to purchase
 var Lu16num = 2; //WoodPerSecond multiplier for this crew member
@@ -276,7 +276,7 @@ var Lu22cost = 10000000000; //cost in money
 var Lu22req = 14;//Lumberjack level required to purchase
 var Lu22num = 40; //xp multiplier
 var Lu23 = 0;
-var Lu23text = "樵夫等级4:  效率提高200%";
+var Lu23text = "伐木工人等级4:  效率提高200%";
 var Lu23cost = 15000000000; //cost in money
 var Lu23req = 14;//Lumberjack level required to purchase
 var Lu23num = 3; //WoodPerSecond multiplier for this crew member
@@ -292,52 +292,52 @@ var Lu24num = 3; //WoodPerSecond multiplier for this crew member
 //Beard Upgrades (saved) - binary - 0 locked, 1 unlocked;  additional upgrade variables not saved
 //for each series of upgrades, each successive upgrade will be available once the previous is bought
 var Be1 = 0;
-var Be1text = "Increase frequency of beard sightings";
+var Be1text = "胡子目击事件的频率增加";
 var Be1cost = 500; //cost in money
 var Be1req = 1;//Beard level required to purchase
 var Be1num = 2; //percent chance for beard
 var Be2 = 0;
-var Be2text = "Increase frequency of beard sightings";
+var Be2text = "胡子目击事件的频率增加";
 var Be2cost = 40000; //cost in money
 var Be2req = 2;//Beard level required to purchase
 var Be2num = 3; //percent chance for beard
 var Be3 = 0;
-var Be3text = "Increase frequency of beard sightings";
+var Be3text = "胡子目击事件的频率增加";
 var Be3cost = 600000; //cost in money
 var Be3req = 5;//Beard level required to purchase
 var Be3num = 4; //percent chance for beard
 var Be4 = 0;
-var Be4text = "Increase frequency of beard sightings";
+var Be4text = "胡子目击事件的频率增加";
 var Be4cost = 2500000; //cost in money
 var Be4req = 7;//Beard level required to purchase
 var Be4num = 5; //percent chance for beard
 var Be5 = 0;
-var Be5text = "Increase frequency of beard sightings";
+var Be5text = "胡子目击事件的频率增加";
 var Be5cost = 50000000; //cost in money
 var Be5req = 9;//Beard level required to purchase
 var Be5num = 6; //percent chance for beard
 var Be6 = 0;
-var Be6text = "Increase duration of beard sightings";
+var Be6text = "增加胡子目击事件的持续时间";
 var Be6cost = 750; //cost in money
 var Be6req = 1;//Beard level required to purchase
 var Be6num = 1; //seconds beard sightings are lengthened for
 var Be7 = 0;
-var Be7text = "Increase duration of beard sightings";
+var Be7text = "增加胡子目击事件的持续时间";
 var Be7cost = 60000; //cost in money
 var Be7req = 3;//Beard level required to purchase
 var Be7num = 2; //seconds beard sightings are lengthened for
 var Be8 = 0;
-var Be8text = "Increase duration of beard sightings";
+var Be8text = "增加胡子目击事件的持续时间";
 var Be8cost = 150000; //cost in money
 var Be8req = 4;//Beard level required to purchase
 var Be8num = 3; //seconds beard sightings are lengthened for
 var Be9 = 0;
-var Be9text = "Increase duration of beard sightings";
+var Be9text = "增加胡子目击事件的持续时间";
 var Be9cost = 1000000; //cost in money
 var Be9req = 6;//Beard level required to purchase
 var Be9num = 4; //seconds beard sightings are lengthened for
 var Be10 = 0;
-var Be10text = "Increase duration of beard sightings";
+var Be10text = "增加胡子目击事件的持续时间";
 var Be10cost = 30000000; //cost in money
 var Be10req = 8;//Beard level required to purchase
 var Be10num = 5; //seconds beard sightings are lengthened for
@@ -367,22 +367,22 @@ var Be15cost = 20000000; //cost in money
 var Be15req = 8;//Beard level required to purchase
 var Be15num = 5; //additional syrup per syrup beard
 var Be16 = 0;
-var Be16text = "Increase frequency of beard sightings";
+var Be16text = "胡子目击事件的频率增加";
 var Be16cost = 500000000; //cost in money
 var Be16req = 11;//Beard level required to purchase
 var Be16num = 7; //percent chance for beard
 var Be17 = 0;
-var Be17text = "Increase frequency of beard sightings";
+var Be17text = "胡子目击事件的频率增加";
 var Be17cost = 8000000000; //cost in money
 var Be17req = 14;//Beard level required to purchase
 var Be17num = 8; //percent chance for beard
 var Be18 = 0;
-var Be18text = "Increase duration of beard sightings";
+var Be18text = "增加胡子目击事件的持续时间";
 var Be18cost = 700000000; //cost in money
 var Be18req = 12;//Beard level required to purchase
 var Be18num = 6; //seconds beard sightings are lengthened for
 var Be19 = 0;
-var Be19text = "Increase duration of beard sightings";
+var Be19text = "增加胡子目击事件的持续时间";
 var Be19cost = 20000000000; //cost in money
 var Be19req = 15;//Beard level required to purchase
 var Be19num = 7; //seconds beard sightings are lengthened for
@@ -1713,13 +1713,13 @@ var su16num = 8;//percent bonus XP
 
 //flannel upgrades: enhance game experience
 var fu1 = 0;
-var fu1text = "Import/Export Game Feature";
+var fu1text = "导入/导出存档功能";
 var fu1cost = 5;//flannel cost
 var fu2 = 0;
-var fu2text = "Winter Time"; //skin for landscape and tree
+var fu2text = "冬天来了"; //skin for landscape and tree
 var fu2cost = 10;//flannel cost
 var fu3 = 0;
-var fu3text = "Beer";//skin for landscape and tree
+var fu3text = "熊";//skin for landscape and tree
 var fu3cost = 10;//flannel cost
 var fu4 = 0;
 var fu4text = "Hockey";//skin for landscape and tree
@@ -3124,7 +3124,7 @@ function updateWPS(){ //updates the WPS values of each worker.  also updates woo
 	LumberjackXPperClick = 0.5*Math.max(1, Lu1*Lu1num, Lu2*Lu2num, Lu3*Lu3num, Lu4*Lu4num, Lu5*Lu5num, Lu22*Lu22num)*LumberjackXPMultiplier*(1+Math.max(0, su7*su7num, su8*su8num, su9*su9num, su10*su10num, su11*su11num, su12*su12num, su15*su15num, su16*su16num)/100)*PrestigeXP[Prestige];
 	LumberjackXPperClick = parseFloat((LumberjackXPperClick).toFixed(2));
 	number = Math.max(1, Lu6*Lu6num, Lu7*Lu7num, Lu8*Lu8num, Lu9*Lu9num, Lu10*Lu10num, Lu20*Lu20num)*TreeMultiplier;
-	document.getElementById("LumberjackXPperClick").innerHTML = "+" + number + " 木头 每次点击<br>+" + LumberjackXPperClick + " Lumberjack XP 每次点击";
+	document.getElementById("LumberjackXPperClick").innerHTML = "+" + number + " 木头 每次点击<br>+" + LumberjackXPperClick + " 伐木工人 XP 每次点击";
 }
 
 
@@ -5225,10 +5225,10 @@ function BeardClick(item){
 				BeardXP += BeardXPearned;
 				BeardXPearned = parseFloat((BeardXPearned).toFixed(2));
 				Bait1 += window[item+"Reward"+rand];
-				document.getElementById("BeardBoxReward").innerHTML = "You just got "+window[item+"Reward"+rand]+" fishing bait!";
+				document.getElementById("BeardBoxReward").innerHTML = "你得到了 "+window[item+"Reward"+rand]+" 钓鱼诱饵!";
 				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " Beard XP";
 				//DisplayStuff('Bait1');
-				document.getElementById("baitupdate").innerHTML = "Bait: "+Bait1;
+				document.getElementById("baitupdate").innerHTML = "鱼饵: "+Bait1;
 				BeardRewardCountdown = 10;//displays message for number of seconds
 				break;
 			case (rand==5)://add syrup
@@ -8686,11 +8686,11 @@ if (isFishing > 0){
 		isFishing--;
 		}
 		NextFish = FishingTime - FishingIncrement % FishingTime;
-		document.getElementById("FishingDisplay").innerHTML = "Fishing: Next fish in " + NextFish + " seconds; " + isFishing + " bait remaining";
+		document.getElementById("FishingDisplay").innerHTML = "钓鱼中: 下一条鱼 " + NextFish + " 秒; " + isFishing + " 剩余的鱼饵";
 	}
 }
 if (!isFishing){
-	document.getElementById("FishingDisplay").innerHTML = "You are not currently fishing";
+	document.getElementById("FishingDisplay").innerHTML = "您目前还没有在钓鱼";
 	FishingIncrement = 0;
 }
 
@@ -8725,10 +8725,10 @@ if (((RightNow.getTime()-LastBeard) >= (BeardCooldown*1000)) && (BeardOff==1)){
 
 if (BeardRewardCountdown){
 	if (TreeMultiplier > 1){
-	document.getElementById("BeardBoxReward").innerHTML = "Times "+TreeMultiplier+" trees 每次点击 for "+(BeardRewardCountdown-1)+" seconds";
+	document.getElementById("BeardBoxReward").innerHTML = "Times "+TreeMultiplier+" trees 每次点击 每 "+(BeardRewardCountdown-1)+" 秒";
 	}
 	if (LumberjackXPMultiplier > 1){
-	document.getElementById("BeardBoxReward").innerHTML = "Times "+LumberjackXPMultiplier+" lumberjack XP 每次点击 for "+(BeardRewardCountdown-1)+" seconds";
+	document.getElementById("BeardBoxReward").innerHTML = "Times "+LumberjackXPMultiplier+" 伐木工人 XP 每次点击 每 "+(BeardRewardCountdown-1)+" 秒";
 	}
 	BeardRewardCountdown--;	
 	if (!BeardRewardCountdown){
