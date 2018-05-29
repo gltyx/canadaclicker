@@ -342,27 +342,27 @@ var Be10cost = 30000000; //cost in money
 var Be10req = 8;//Beard level required to purchase
 var Be10num = 5; //seconds beard sightings are lengthened for
 var Be11 = 0;
-var Be11text = "Syrupy beard yields +1 syrup";
+var Be11text = "糖浆胡子产量+1糖浆";
 var Be11cost = 2000; //cost in money
 var Be11req = 1;//Beard level required to purchase
 var Be11num = 1; //additional syrup per syrup beard
 var Be12 = 0;
-var Be12text = "Syrupy beard yields +2 syrup";
+var Be12text = "糖浆胡子产量+2糖浆";
 var Be12cost = 20000; //cost in money
 var Be12req = 2;//Beard level required to purchase
 var Be12num = 2; //additional syrup per syrup beard
 var Be13 = 0;
-var Be13text = "Syrupy beard yields +3 syrup";
+var Be13text = "糖浆胡子产量+3糖浆";
 var Be13cost = 500000; //cost in money
 var Be13req = 4;//Beard level required to purchase
 var Be13num = 3; //additional syrup per syrup beard
 var Be14 = 0;
-var Be14text = "Syrupy beard yields +4 syrup";
+var Be14text = "糖浆胡子产量+4糖浆";
 var Be14cost = 2000000; //cost in money
 var Be14req = 6;//Beard level required to purchase
 var Be14num = 4; //additional syrup per syrup beard
 var Be15 = 0;
-var Be15text = "Syrupy beard yields +5 syrup";
+var Be15text = "糖浆胡子产量+5糖浆";
 var Be15cost = 20000000; //cost in money
 var Be15req = 8;//Beard level required to purchase
 var Be15num = 5; //additional syrup per syrup beard
@@ -387,42 +387,42 @@ var Be19cost = 20000000000; //cost in money
 var Be19req = 15;//Beard level required to purchase
 var Be19num = 7; //seconds beard sightings are lengthened for
 var Be20 = 0;
-var Be20text = "Syrupy beard yields +6 syrup";
+var Be20text = "糖浆胡子产量+6糖浆";
 var Be20cost = 200000000; //cost in money
 var Be20req = 11;//Beard level required to purchase
 var Be20num = 6; //additional syrup per syrup beard
 var Be21 = 0;
-var Be21text = "Syrupy beard yields +7 syrup";
+var Be21text = "糖浆胡子产量+7糖浆";
 var Be21cost = 2000000000; //cost in money
 var Be21req = 13;//Beard level required to purchase
 var Be21num = 7; //additional syrup per syrup beard
 var Be22 = 0;
-var Be22text = "10% more beard XP";
+var Be22text = "增加 10% 胡子经验";
 var Be22cost = 90000; //cost in money
 var Be22req = 3;//Beard level required to purchase
 var Be22num = 1.1; //xp multiplier
 var Be23 = 0;
-var Be23text = "20% more beard XP";
+var Be23text = "增加 20% 胡子经验";
 var Be23cost = 800000; //cost in money
 var Be23req = 5;//Beard level required to purchase
 var Be23num = 1.2; //xp multiplier
 var Be24 = 0;
-var Be24text = "30% more beard XP";
+var Be24text = "增加 30% 胡子经验";
 var Be24cost = 20000000; //cost in money
 var Be24req = 7;//Beard level required to purchase
 var Be24num = 1.3; //xp multiplier
 var Be25 = 0;
-var Be25text = "50% more beard XP";
+var Be25text = "增加 50% 胡子经验";
 var Be25cost = 70000000; //cost in money
 var Be25req = 9;//Beard level required to purchase
 var Be25num = 1.5; //xp multiplier
 var Be26 = 0;
-var Be26text = "70% more beard XP";
+var Be26text = "增加 70% 胡子经验";
 var Be26cost = 1000000000; //cost in money
 var Be26req = 12;//Beard level required to purchase
 var Be26num = 1.7; //xp multiplier
 var Be27 = 0;
-var Be27text = "90% more beard XP";
+var Be27text = "增加 90% 胡子经验";
 var Be27cost = 12000000000; //cost in money
 var Be27req = 14;//Beard level required to purchase
 var Be27num = 1.9; //xp multiplier
@@ -520,32 +520,32 @@ var ZamboniesUnlockCost = 0;
 
 //Ice Fishing upgrades
 var Ic1 = 0;
-var Ic1text = "Bait up to 10 hooks at once";
+var Ic1text = "一次放出的诱饵高达10个钩子";
 var Ic1cost = 1000; //cost in money
 var Ic1req = 1;//Ice fishing level required to purchase
 var Ic1num = 10; //max baits
 var Ic2 = 0;
-var Ic2text = "Bait up to 25 hooks at once";
+var Ic2text = "一次放出的诱饵高达25个钩子";
 var Ic2cost = 10000; //cost in money
 var Ic2req = 3;//Ice fishing level required to purchase
 var Ic2num = 25; //max baits
 var Ic3 = 0;
-var Ic3text = "Bait up to 50 hooks at once";
+var Ic3text = "一次放出的诱饵高达50个钩子";
 var Ic3cost = 100000; //cost in money
 var Ic3req = 5;//Ice fishing level required to purchase
 var Ic3num = 50; //max baits
 var Ic4 = 0;
-var Ic4text = "Bait up to 75 hooks at once";
+var Ic4text = "一次放出的诱饵高达75个钩子";
 var Ic4cost = 1000000; //cost in money
 var Ic4req = 7;//Ice fishing level required to purchase
 var Ic4num = 75; //max baits
 var Ic5 = 0;
-var Ic5text = "Bait up to 100 hooks at once";
+var Ic5text = "一次放出的诱饵高达100个钩子";
 var Ic5cost = 10000000; //cost in money
 var Ic5req = 9;//Ice fishing level required to purchase
 var Ic5num = 100; //max baits
 var Ic5 = 0;
-var Ic5text = "Bait up to 100 hooks at once";
+var Ic5text = "一次放出的诱饵高达100个钩子";
 var Ic5cost = 10000000; //cost in money
 var Ic5req = 9;//Ice fishing level required to purchase
 var Ic5num = 100; //max baits
@@ -620,17 +620,17 @@ var Ic19cost = 15000000000; //cost in money
 var Ic19req = 14;//Ice fishing level required to purchase
 var Ic19num = 0.7; //increased chance to catch fish
 var Ic20 = 0;
-var Ic20text = "Bait up to 200 hooks at once";
+var Ic20text = "一次放出的诱饵高达200个钩子";
 var Ic20cost = 100000000; //cost in money
 var Ic20req = 10;//Ice fishing level required to purchase
 var Ic20num = 200; //max baits
 var Ic21 = 0;
-var Ic21text = "Bait up to 400 hooks at once";
+var Ic21text = "一次放出的诱饵高达400个钩子";
 var Ic21cost = 700000000; //cost in money
 var Ic21req = 12;//Ice fishing level required to purchase
 var Ic21num = 400; //max baits
 var Ic22 = 0;
-var Ic22text = "Bait up to 750 hooks at once";
+var Ic22text = "一次放出的诱饵高达750个钩子";
 var Ic22cost = 18000000000; //cost in money
 var Ic22req = 14;//Ice fishing level required to purchase
 var Ic22num = 750; //max baits
@@ -4994,7 +4994,7 @@ function fishMax(){
 
 function BaitText(){
 	BaitLimit = Math.max(5, Ic1*Ic1num, Ic2*Ic2num, Ic3*Ic3num, Ic4*Ic4num, Ic5*Ic5num, Ic20*Ic20num, Ic21*Ic21num, Ic22*Ic22num);
-	document.getElementById('BaitTextBox').innerHTML = "<input type='text' id='BaitHooks' placeholder='Bait up to " + BaitLimit + " hooks'>";
+	document.getElementById('BaitTextBox').innerHTML = "<input type='text' id='BaitHooks' placeholder='诱饵到 " + BaitLimit + " 钩子'>";
 }
 
 function getFish(){//returns the fish caught
@@ -5019,7 +5019,7 @@ function getFish(){//returns the fish caught
 				IceFishingXP += IceFishingXPearned;
 				IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 				if (IceFishingNotifyToggle){
-				$.notify("You just caught a salmon!\n+" + IceFishingXPearned + " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+				$.notify("你刚抓到一条 大马哈鱼!\n+" + IceFishingXPearned + " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 				}
 				_gaq.push(['_trackEvent', 'Canada Clicker', 'Salmon']);
 			}else{
@@ -5029,7 +5029,7 @@ function getFish(){//returns the fish caught
 			IceFishingXP += IceFishingXPearned;
 			IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 			if (IceFishingNotifyToggle){
-			$.notify("You just caught a trout!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+			$.notify("你刚抓到一条 鳟鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 			}
 			_gaq.push(['_trackEvent', 'Canada Clicker', 'Trout']);
 			}
@@ -5042,7 +5042,7 @@ function getFish(){//returns the fish caught
 				IceFishingXP += IceFishingXPearned;
 				IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 				if (IceFishingNotifyToggle){
-				$.notify("You just caught a cod!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+				$.notify("你刚抓到一条 鳕鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 				}
 				_gaq.push(['_trackEvent', 'Canada Clicker', 'Cod']);
 			}else{
@@ -5052,7 +5052,7 @@ function getFish(){//returns the fish caught
 			IceFishingXP += IceFishingXPearned;
 			IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 			if (IceFishingNotifyToggle){
-			$.notify("You just caught a trout!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+			$.notify("你刚抓到一条 鳟鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 			}
 			_gaq.push(['_trackEvent', 'Canada Clicker', 'Trout']);
 			}
@@ -5065,7 +5065,7 @@ function getFish(){//returns the fish caught
 				IceFishingXP += IceFishingXPearned;
 				IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 				if (IceFishingNotifyToggle){
-				$.notify("You just caught a crab!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+				$.notify("你刚抓到一只 螃蟹!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 				}
 				_gaq.push(['_trackEvent', 'Canada Clicker', 'Crab']);
 			}else{
@@ -5075,7 +5075,7 @@ function getFish(){//returns the fish caught
 			IceFishingXP += IceFishingXPearned;
 			IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 			if (IceFishingNotifyToggle){
-			$.notify("You just caught a trout!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+			$.notify("你刚抓到一条 鳟鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 			}
 			_gaq.push(['_trackEvent', 'Canada Clicker', 'Trout']);
 			}
@@ -5088,7 +5088,7 @@ function getFish(){//returns the fish caught
 				IceFishingXP += IceFishingXPearned;
 				IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 				if (IceFishingNotifyToggle){
-				$.notify("You just caught a halibut!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+				$.notify("你刚抓到一条 大比目鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 				}
 				_gaq.push(['_trackEvent', 'Canada Clicker', 'Halibut']);
 			}else{
@@ -5098,7 +5098,7 @@ function getFish(){//returns the fish caught
 			IceFishingXP += IceFishingXPearned;
 			IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 			if (IceFishingNotifyToggle){
-			$.notify("You just caught a trout!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+			$.notify("你刚抓到一条 鳟鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 			}
 			_gaq.push(['_trackEvent', 'Canada Clicker', 'Trout']);
 			}
@@ -5112,7 +5112,7 @@ function getFish(){//returns the fish caught
 				IceFishingXP += IceFishingXPearned;
 				IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 				if (IceFishingNotifyToggle){
-				$.notify("You just caught a whale!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+				$.notify("你刚抓到一条 鲸鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 				}
 				_gaq.push(['_trackEvent', 'Canada Clicker', 'Whale']);
 			}else{
@@ -5122,7 +5122,7 @@ function getFish(){//returns the fish caught
 			IceFishingXP += IceFishingXPearned;
 			IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 			if (IceFishingNotifyToggle){
-			$.notify("You just caught a trout!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+			$.notify("你刚抓到一条 鳟鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 			}
 			_gaq.push(['_trackEvent', 'Canada Clicker', 'Trout']);
 			}
@@ -5134,7 +5134,7 @@ function getFish(){//returns the fish caught
 			IceFishingXP += IceFishingXPearned;
 			IceFishingXPearned = parseFloat((IceFishingXPearned).toFixed(2));
 			if (IceFishingNotifyToggle){
-			$.notify("You just caught a trout!\n+"+IceFishingXPearned+ " XP", {style:'fish', className:'fish', position: 'top right', autoHide: true});
+			$.notify("你刚抓到一条 鳟鱼!\n+"+IceFishingXPearned+ " 经验", {style:'fish', className:'fish', position: 'top right', autoHide: true});
 			}
 			_gaq.push(['_trackEvent', 'Canada Clicker', 'Trout']);
 			break;
@@ -5156,7 +5156,7 @@ function getFish(){//returns the fish caught
 	DisplayIceFishingXP();
 	Bait1--;
 	//DisplayStuff('Bait1');
-	document.getElementById("baitupdate").innerHTML = "Bait: "+Bait1;
+	document.getElementById("baitupdate").innerHTML = "诱饵: "+Bait1;
 	
 	IceFishingClicks++;
 	DisplayStuff('IceFishingClicks');
@@ -5196,8 +5196,8 @@ function BeardClick(item){
 				BeardXPearned = window[item+"XP"]*BuffXP*PrestigeXP[Prestige]*window[item+"Reward"+rand]*(1+Math.max(0, su7*su7num, su8*su8num, su9*su9num, su10*su10num, su11*su11num, su12*su12num, su15*su15num, su16*su16num)/100)*(Math.max(1, Be22*Be22num, Be23*Be23num, Be24*Be24num, Be25*Be25num, Be26*Be26num, Be27*Be27num));
 				BeardXP += BeardXPearned;
 				BeardXPearned = parseFloat((BeardXPearned).toFixed(2));
-				document.getElementById("BeardBoxReward").innerHTML = "That beard was worth double XP!";
-				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " Beard XP";
+				document.getElementById("BeardBoxReward").innerHTML = "胡子双倍经验!";
+				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " 胡子经验";
 				BeardRewardCountdown = 10;//displays message for number of seconds
 				break;
 			case (rand==2):
