@@ -7653,8 +7653,8 @@ function allProgress(){//called onload of webpage.  updates all progress bars
 
 function LumberjackProgress(){
 	lvl = getLevel(LumberjackXP);
-	document.getElementById("lumberjackLvl").innerHTML = "伐木工人的水平 "+lvl;
-	document.getElementById("lumberjackLvlStats").innerHTML = "伐木工人的水平 "+lvl;
+	document.getElementById("lumberjackLvl").innerHTML = "伐木工人的等级 "+lvl;
+	document.getElementById("lumberjackLvlStats").innerHTML = "伐木工人的等级 "+lvl;
 	
 	if (lvl == 20){
 		$('#lumberjackProgress').attr('style', 'width:100%');
@@ -7675,8 +7675,8 @@ function LumberjackProgress(){
 }
 function IcefishingProgress(){
 	lvl = getLevel(IceFishingXP);
-	document.getElementById("icefishingLvl").innerHTML = "Icefishing Level "+lvl;
-	document.getElementById("icefishingLvlStats").innerHTML = "Icefishing Level "+lvl;
+	document.getElementById("icefishingLvl").innerHTML = "冰钓等级 "+lvl;
+	document.getElementById("icefishingLvlStats").innerHTML = "冰钓等级 "+lvl;
 	
 	if (lvl == 20){
 		$('#icefishingProgress').attr('style', 'width:100%');
