@@ -1749,25 +1749,25 @@ var whatskin = 1;
 
 //tutorial variables
 var mainTutorial = 1;
-var mainTutorialText = "<b>How to Play Canada Clicker</b><br><ul align='left'><li>Click the tree to start building your inventory</li><li>Sell items to get money</li><li>Click the beard if you see it</li><li>Explore the other tabs to train your Canadian skills!</li>";
+var mainTutorialText = "<b>怎么玩加拿大点击?</b><br><ul align='left'><li>单击树开始砍树，开始填满您的库存。</li><li>卖东西赚钱。</li><li>看到了胡子就点一下它</li><li>探索其他选项卡来训练你的加拿大技能!</li>";
 var inventoryTutorial = 1;
-var inventoryTutorialText = "Here you can see all of your items.  Sell items to get money.";
+var inventoryTutorialText = "在这里您可以看到所有的项目。卖东西赚钱。";
 var storeTutorial = 1;
-var storeTutorialText = "<ul align='left'><li>Spend your syrup and flannel here!</li><li>Get more money and XP with syrup</li><li>Unlock game features and graphics with flannel</li><li>Upgrade your prestige</li>";
+var storeTutorialText = "<ul align='left'><li>把你的糖浆和法兰绒泡在这里!</li><li>获得更多的钱和经验和糖浆。</li><li>解锁游戏特征和图形与法兰绒。</li><li>升级你的声望</li>";
 var statsTutorial = 1;
-var statsTutorialText = "Your XP and levels are visible here along with some extra game stats.  Level up your skill for bonuses!";
+var statsTutorialText = "您的XP和级别在这里是可见的，还有一些额外的游戏属性。升级你的技能奖金!";
 var achievementsTutorial = 1;
-var achievementsTutorialText = "See the achievements you've earned.  Flannel awarded upon earning achievements";
+var achievementsTutorialText = "看看你所取得的成就。根据取得的成果，授予法兰绒";
 var lumberjackTutorial = 1;
-var lumberjackTutorialText = "<ul align='left'><li>Level up your lumberjack skill by clicking the tree</li><li>Purchase workers to help you gather wood</li><li>Unlock and upgrade lumberjacking abilities</li><li>Lumberjack level required for some things</li>";
+var lumberjackTutorialText = "<ul align='left'><li>通过点击树来提高你的伐木技能。</li><li>购买工人帮助你收集木材</li><li>解锁和升级伐木能力。</li><li>有些东西需要伐木工人等级。</li>";
 var icefishingTutorial = 1;
-var icefishingTutorialText = "<ul align='left'><li>Purchase bait and start fishing to get fish and XP</li><li>Unlock and upgrade ice fishing abilities</li><li>Ice fishing level required for some things</li>";
+var icefishingTutorialText = "<ul align='left'><li>购买鱼饵，开始钓鱼，获取鱼和经验。</li><li>解锁和升级冰上钓鱼技能。</li><li>有些东西需要通过冰上钓鱼获得。</li>";
 var beardTutorial = 1;
-var beardTutorialText = "<ul align='left'><li>Click the beard on the left when it appears for beard XP</li><li>You can get syrup from clicking beards to spend in the store</li><li>Unlock and upgrade beard abilities</li><li>Beard level required for some things</li>";
+var beardTutorialText = "<ul align='left'><li>当它出现在胡子经验的时候，点击左边的胡子</li><li>你可以从小胡子上弄到糖浆来在店里消费</li><li>解锁和提升胡须能力。</li><li>一些东西需要胡须等级。</li>";
 var kindnessTutorial = 1;
-var kindnessTutorialText = "<ul align='left'><li>Use your inventory to do nice things and get kindness XP</li><li>You can activate more than one kindness activity at a time</li><li>Unlock and upgrade kindness abilities</li><li>Kindness level required for some things</li>";
+var kindnessTutorialText = "<ul align='left'><li>使用你的库存来做一些好事，并得到仁慈的经验。</li><li>你一次可以激活不止一个的仁慈活动。</li><li>解锁和升级仁慈能力</li><li>一些事情需要的仁慈等级。</li>";
 var hockeyTutorial = 1;
-var hockeyTutorialText = "<ul align='left'><li>Get hockey XP and items by training your hockey skills</li><li>You can only activate one hockey activity at a time</li><li>Unlock and upgrade hockey abilities</li><li>Hockey level required for some things</li>";
+var hockeyTutorialText = "<ul align='left'><li>通过训练你的曲棍球技巧来获得曲棍球和项目。</li><li>你一次只能激活一个冰球活动。</li><li>解锁和升级曲棍球能力。</li><li>有些东西需要曲棍球等级。</li>";
 
 //notification toggles
 var IceFishingNotifyToggle = 1;
