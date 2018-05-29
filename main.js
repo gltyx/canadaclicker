@@ -648,32 +648,32 @@ var BeardTime = 8;//default number of seconds that beard will be available to cl
 
 //Beards to unlock. Brown is the default beard color
 var BrownBeard = 1;
-var BrownBeardText = "Brown Beard";
-var BrownBeardCost = "Free";
-var BrownBeardLevel = "None";//Beard Level required to purchase
+var BrownBeardText = "棕色胡子";
+var BrownBeardCost = "免费";
+var BrownBeardLevel = "无";//Beard Level required to purchase
 var BrownBeardXP = 25;
 var BlackBeard = 0;
-var BlackBeardText = "Black Beard";
+var BlackBeardText = "黑色胡子";
 var BlackBeardCost = 15000;
 var BlackBeardLevel = 2;//Beard Level required to purchase
 var BlackBeardXP = 100;
 var SilverBeard = 0;
-var SilverBeardText = "Silver Beard";
+var SilverBeardText = "银色胡子";
 var SilverBeardCost = 200000;
 var SilverBeardLevel = 4;//Beard Level required to purchase
 var SilverBeardXP = 500;
 var GoldBeard = 0;
-var GoldBeardText = "Gold Beard";
+var GoldBeardText = "金色胡子";
 var GoldBeardCost = 1000000;
 var GoldBeardLevel = 6;//Beard Level required to purchase
 var GoldBeardXP = 2500;
 var RedBeard = 0;
-var RedBeardText = "Red Beard";
+var RedBeardText = "红色胡子";
 var RedBeardCost = 50000000;
 var RedBeardLevel = 8;//Beard Level required to purchase
 var RedBeardXP = 7500;
 var GrizzlyBeard = 0;
-var GrizzlyBeardText = "Grizzly Beard";
+var GrizzlyBeardText = "灰胡子";
 var GrizzlyBeardCost = 500000000;
 var GrizzlyBeardLevel = 10;
 var GrizzlyBeardXP = 25000;
@@ -716,7 +716,7 @@ var TreeMultiplier = 1;
 
 
 //kindness variables
-var kind1text = "Build homeless shelter";
+var kind1text = "建立收容所";
 var kind1req = 1;//kindness level required
 var kind1cost = 25;//Pine
 var kind1costtext = "25 Pine";
@@ -724,7 +724,7 @@ var kind1cooldown = 10;//seconds until available again
 var kind1xp = 5; //xp gained from activity
 var kind1time = 0;//saved variable.  placeholder for the time that item is clicked.
 var kind1inprogress = 0;//saved variable.  binary to see if item is active.  this way i can award xp if the item is completed with the browser closed.
-var kind2text = "Donate fish";
+var kind2text = "捐赠的鱼";
 var kind2req = 2;//kindness level required
 var kind2cost = 5;//Trout
 var kind2costtext = "5 Trout";
@@ -1647,67 +1647,67 @@ var a97reward = 1;//flannel reward
 //Upgrades
 //syrup upgrades: help you advance in the game
 var su1 = 0;
-var su1text = "+ $1/second";
+var su1text = "+ $1/秒";
 var su1cost = 1;//syrup cost
 var su1num = 1;//money/second
 var su2 = 0;
-var su2text = "+ $5/second";
+var su2text = "+ $5/秒";
 var su2cost = 5;//syrup cost
 var su2num = 5;//money/second
 var su3 = 0;
-var su3text = "+ $25/second";
+var su3text = "+ $25/秒";
 var su3cost = 25;//syrup cost
 var su3num = 25;//money/second
 var su4 = 0;
-var su4text = "+ $100/second";
+var su4text = "+ $100/秒";
 var su4cost = 50;//syrup cost
 var su4num = 100;//money/second
 var su5 = 0;
-var su5text = "+ $500/second";
+var su5text = "+ $500/秒";
 var su5cost = 100;//syrup cost
 var su5num = 500;//money/second
 var su6 = 0;
-var su6text = "+ $2,000/second";
+var su6text = "+ $2,000/秒";
 var su6cost = 250;//syrup cost
 var su6num = 2000;//money/second
 var su7 = 0;
-var su7text = "+ 1% bonus XP";
+var su7text = "+ 1% 经验奖励";
 var su7cost = 1;//syrup cost
 var su7num = 1;//percent bonus XP
 var su8 = 0;
-var su8text = "+ 1% bonus XP";
+var su8text = "+ 1% 经验奖励";
 var su8cost = 5;//syrup cost
 var su8num = 2;//percent bonus XP
 var su9 = 0;
-var su9text = "+ 1% bonus XP";
+var su9text = "+ 1% 经验奖励";
 var su9cost = 25;//syrup cost
 var su9num = 3;//percent bonus XP
 var su10 = 0;
-var su10text = "+ 1% bonus XP";
+var su10text = "+ 1% 经验奖励";
 var su10cost = 50;//syrup cost
 var su10num = 4;//percent bonus XP
 var su11 = 0;
-var su11text = "+ 1% bonus XP";
+var su11text = "+ 1% 经验奖励";
 var su11cost = 100;//syrup cost
 var su11num = 5;//percent bonus XP
 var su12 = 0;
-var su12text = "+ 1% bonus XP";
+var su12text = "+ 1% 经验奖励";
 var su12cost = 250;//syrup cost
 var su12num = 6;//percent bonus XP
 var su13 = 0;
-var su13text = "+ $8,000/second";
+var su13text = "+ $8,000/秒";
 var su13cost = 350;//syrup cost
 var su13num = 8000;//money/second
 var su14 = 0;
-var su14text = "+ $25,000/second";
+var su14text = "+ $25,000/秒";
 var su14cost = 500;//syrup cost
 var su14num = 25000;//money/second
 var su15 = 0;
-var su15text = "+ 1% bonus XP";
+var su15text = "+ 1% 经验奖励";
 var su15cost = 350;//syrup cost
 var su15num = 7;//percent bonus XP
 var su16 = 0;
-var su16text = "+ 1% bonus XP";
+var su16text = "+ 1% 经验奖励";
 var su16cost = 500;//syrup cost
 var su16num = 8;//percent bonus XP
 
@@ -2345,15 +2345,15 @@ $('#redditLink').click(function(){
 });
 
 $('#moneyimage').click(function(){
-    $('#moneyimage').notify("This buys happiness", { position: 'top center', className: 'elemdemo'});
+    $('#moneyimage').notify("这个可以买到幸福", { position: 'top center', className: 'elemdemo'});
 });
 
 $('#syrupimage').click(function(){
-    $('#syrupimage').notify("Elixir of the gods", { position: 'top center', className: 'elemdemo'});
+    $('#syrupimage').notify("诸神的灵丹妙药", { position: 'top center', className: 'elemdemo'});
 });
 
 $('#flannelimage').click(function(){
-    $('#flannelimage').notify("Beauty.  True beauty.", { position: 'top center', className: 'elemdemo'});
+    $('#flannelimage').notify("美。真正的美。", { position: 'top center', className: 'elemdemo'});
 });
 
 
