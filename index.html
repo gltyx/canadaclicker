@@ -206,7 +206,7 @@ checkAchievements();
 	<td><button id="tab5" class="tab" onmousedown="openTab(4, this)">伐木工人</button></td>
 	<td><button id="tab6" class="tab" onmousedown="openTab(5, this)">冰钓</button></td>
 	<td><button id="tab7" class="tab" onmousedown="openTab(6, this)">胡子</button></td>
-	<td><button id="tab8" class="tab" onmousedown="openTab(7, this)">仁慈</button></td>
+	<td><button id="tab8" class="tab" onmousedown="openTab(7, this)">善良</button></td>
 	<td><button id="tab9" class="tab" onmousedown="openTab(8, this)">曲棍球</button></td>
 	</tr>
 	</table><br><br>
@@ -655,7 +655,7 @@ checkAchievements();
 <button onClick=toggleTutorial('statsTutorial')><span id="statsTutorialButton"><script type="text/javascript">isTutorial('statsTutorial');</script></span></button></div>
  -->
  
- All skills at Level <span id="LowestLevel"></span>
+ 所有技能等级 <span id="LowestLevel"></span>
  <br><br>
  
  <b><span id="lumberjackLvlStats"></span></b>
@@ -697,91 +697,91 @@ checkAchievements();
 <span id='HockeyXP'><script type="text/javascript">DisplayHockeyXP();</script></span>
 
 <br>
-<b>General</b>
+<b>综合</b>
 <table border=0 frame="box">
 <tr>
-<td align="right">Money Earned:&nbsp</td>
+<td align="right">赚到的钱数:&nbsp</td>
 <td>$<span id='totalMoney'><script type="text/javascript">DisplayStuff('totalMoney');</script></span></td>
 </tr>
 <tr>
-<td align="right">Syrup Earned:&nbsp</td>
+<td align="right">得到的糖浆数:&nbsp</td>
 <td><span id='totalSyrup'><script type="text/javascript">DisplayStuff('totalSyrup');</script></span></td>
 </tr>
 <tr>
-<td align="right">Flannel Earned:&nbsp</td>
+<td align="right">得到的法兰绒数:&nbsp</td>
 <td><span id='totalFlannel'><script type="text/javascript">DisplayStuff('totalFlannel');</script></span></td>
 </tr>
 <tr>
-<td align="right">Minutes Played:&nbsp</td>
+<td align="right">玩了多少分钟:&nbsp</td>
 <td><span id='totalMinutes'><script type="text/javascript">DisplayStuff('totalMinutes');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Days Played:&nbsp</td>
+<td align="right">玩了多少天:&nbsp</td>
 <td><span id='totalDaysPlayed'><script type="text/javascript">DisplayStuff('totalDaysPlayed');</script></td>
 </tr>
 <tr>
-<td align="right">Consecutive Days Streak:&nbsp</td>
+<td align="right">连续几天连胜:&nbsp</td>
 <td><span id='daysStreak'><script type="text/javascript">DisplayStuff('daysStreak');</script></span></td>
 </tr>
 <tr>
-<td align="right">Longest Consecutive Days Streak:&nbsp</td>
+<td align="right">最长的连续天数连胜:&nbsp</td>
 <td><span id='bestdaysStreak'><script type="text/javascript">DisplayStuff('bestdaysStreak');</script></span></td>
 </tr>
 </table>
 <br>
 
-<b>LumberJack</b>
+<b>伐木工人</b>
 <table border=0 frame="box">
 <tr>
-<td align="right">Tree Clicks:&nbsp</td>
+<td align="right">点击树的次数:&nbsp</td>
 <td><span id='TreeClicks'><script type="text/javascript">DisplayStuff('TreeClicks');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Pine:&nbsp</td>
+<td align="right">松树总量:&nbsp</td>
 <td><span id='totalPine'><script type="text/javascript">DisplayStuff('totalPine');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Spruces:&nbsp</td>
+<td align="right">云杉总量:&nbsp</td>
 <td><span id='totalSpruce'><script type="text/javascript">DisplayStuff('totalSpruce');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Maple:&nbsp</td>
+<td align="right">枫树总量:&nbsp</td>
 <td><span id='totalMaple'><script type="text/javascript">DisplayStuff('totalMaple');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Oak:&nbsp</td>
+<td align="right">橡树总量:&nbsp</td>
 <td><span id='totalOak'><script type="text/javascript">DisplayStuff('totalOak');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Birch:&nbsp</td>
+<td align="right">桦树总量:&nbsp</td>
 <td><span id='totalBirch'><script type="text/javascript">DisplayStuff('totalBirch');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Ash:&nbsp</td>
+<td align="right">岑树总量:&nbsp</td>
 <td><span id='totalAsh'><script type="text/javascript">DisplayStuff('totalAsh');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Trees:&nbsp</td>
+<td align="right">树的总数量:&nbsp</td>
 <td><span id='totalTrees'><script type="text/javascript">DisplayStuff('totalTrees');</script></span></td>
 </tr>
 </table>
 <br>
-<b>Ice Fishing</b>
+<b>冰上钓鱼</b>
 <table border=0 frame="box">
 <tr>
-<td align="right">Bait Fished:&nbsp</td>
+<td align="right">诱饵钓鱼:&nbsp</td>
 <td><span id='BaitFished'><script type="text/javascript">DisplayStuff('BaitFished');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Trout:&nbsp</td>
+<td align="right">鳟鱼总数:&nbsp</td>
 <td><span id='totalTrout'><script type="text/javascript">DisplayStuff('totalTrout');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Salmon:&nbsp</td>
+<td align="right">鲑鱼总数:&nbsp</td>
 <td><span id='totalSalmon'><script type="text/javascript">DisplayStuff('totalSalmon');</script></span></td>
 </tr>
 <tr>
-<td align="right">Total Cod:&nbsp</td>
+<td align="right">鳕鱼总数:&nbsp</td>
 <td><span id='totalCod'><script type="text/javascript">DisplayStuff('totalCod');</script></span></td>
 </tr>
 <tr>
@@ -1056,7 +1056,7 @@ checkAchievements();
 
 <table frame="box" width=300><!--individual achievement table -->
 <tr><center><td><center><b>Tree Choppin' Champ</b></td></tr><!--achievement series name-->
-<tr><center><td><center><font size=2>Click that tree!</font></td></tr><!--achievement series description-->
+<tr><center><td><center><font size=2>点击那棵树!</font></td></tr><!--achievement series description-->
 <tr><td><center>
 <div class="achievementprogress">
      <div id="clickingProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
@@ -1080,8 +1080,8 @@ checkAchievements();
 </td>
 <td style='padding:5px 5px 5px 5px'>
 <table frame="box" width=300><!--individual achievement table -->
-<tr><center><td><center><b>Angler Extraordinaire</b></td></tr><!--achievement series name-->
-<tr><center><td><center><font size=2>Keep Fishin'!</font></td></tr><!--achievement series description-->
+<tr><center><td><center><b>非凡的钓鱼者</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>保持钓鱼!</font></td></tr><!--achievement series description-->
 <tr><td><center>
 <div class="achievementprogress">
      <div id="baitFishingProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
@@ -1106,8 +1106,8 @@ checkAchievements();
 <tr><td style='padding:5px 5px 5px 5px'>
 
 <table frame="box" width=300><!--individual achievement table -->
-<tr><center><td><center><b>Manly Man</b></td></tr><!--achievement series name-->
-<tr><center><td><center><font size=2>grow a forest on your face!</font></td></tr><!--achievement series description-->
+<tr><center><td><center><b>男子气概</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>在你的脸上种植一片森林!</font></td></tr><!--achievement series description-->
 <tr><td><center>
 <div class="achievementprogress">
      <div id="manlyProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
@@ -1131,8 +1131,8 @@ checkAchievements();
 </td>
 <td style='padding:5px 5px 5px 5px'>
 <table frame="box" width=300><!--individual achievement table -->
-<tr><center><td><center><b>Sharing is Caring</b></td></tr><!--achievement series name-->
-<tr><center><td><center><font size=2>Kindess can be rewarding!</font></td></tr><!--achievement series description-->
+<tr><center><td><center><b>分享就是关怀</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>善良可以是有益的!</font></td></tr><!--achievement series description-->
 <tr><td><center>
 <div class="achievementprogress">
      <div id="caringProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">

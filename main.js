@@ -1765,7 +1765,7 @@ var icefishingTutorialText = "<ul align='left'><li>购买鱼饵，开始钓鱼�
 var beardTutorial = 1;
 var beardTutorialText = "<ul align='left'><li>当它出现在胡子经验的时候，点击左边的胡子</li><li>你可以从小胡子上弄到糖浆来在店里消费</li><li>解锁和提升胡须能力。</li><li>一些东西需要胡须等级。</li>";
 var kindnessTutorial = 1;
-var kindnessTutorialText = "<ul align='left'><li>使用你的库存来做一些好事，并得到仁慈的经验。</li><li>你一次可以激活不止一个的仁慈活动。</li><li>解锁和升级仁慈能力</li><li>一些事情需要的仁慈等级。</li>";
+var kindnessTutorialText = "<ul align='left'><li>使用你的库存来做一些好事，并得到善良的经验。</li><li>你一次可以激活不止一个的善良活动。</li><li>解锁和升级善良能力</li><li>一些事情需要的善良等级。</li>";
 var hockeyTutorial = 1;
 var hockeyTutorialText = "<ul align='left'><li>通过训练你的曲棍球技巧来获得曲棍球和项目。</li><li>你一次只能激活一个冰球活动。</li><li>解锁和升级曲棍球能力。</li><li>有些东西需要曲棍球等级。</li>";
 
@@ -6036,7 +6036,7 @@ function checkLevels(){//called in the game interval.  checks to see if you've l
 	LowestLevel = Math.min.apply(Math, skillLevels);
 	
 	if (LowestLevel == 1){
-		document.getElementById("LowestLevel").innerHTML = LowestLevel + ".  Level up all skills to get a bonus!";
+		document.getElementById("LowestLevel").innerHTML = LowestLevel + ".  升级所有技能以获得奖金。!";
 	}else{
 	document.getElementById("LowestLevel").innerHTML = LowestLevel + ".  <b>Bonus of " + Math.round(Math.pow((LowestLevel-1),2)) + " WPS!</b>";
 	document.getElementById("BonusWPS").innerHTML = "+" + Math.round(Math.pow((LowestLevel-1),2)) + " WPS Bonus";
@@ -6588,7 +6588,7 @@ function checkAchievements(){//checks all achievements
 		}
 		achievementTotal++;
 	}
-	document.getElementById("achievementCount").innerHTML = "Achievements "+achievementCount+"/"+achievementTotal;
+	document.getElementById("achievementCount").innerHTML = "成就 "+achievementCount+"/"+achievementTotal;
 } 
 
 function awardAchievement(i){//called when achievement is earned.  awards flannel
