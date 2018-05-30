@@ -5340,9 +5340,9 @@ function KindnessButton(item){//function to show kindness button
 	if (!window[item+"inprogress"]){
 				//Kindness activities
 			if (getLevel(KindnessXP)>=window[item+"req"]){
-				document.getElementById(item).innerHTML = "<button onClick=beKind('"+item+"')>仁慈一点!</button>";
+				document.getElementById(item).innerHTML = "<button onClick=beKind('"+item+"')>做慈善!</button>";
 			}else{
-				document.getElementById(item).innerHTML = "<button onClick=beKind('"+item+"') disabled>仁慈一点!</button>";
+				document.getElementById(item).innerHTML = "<button onClick=beKind('"+item+"') disabled>做慈善!</button>";
 			}
 	
 	}
