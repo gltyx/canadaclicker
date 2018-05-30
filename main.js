@@ -3326,7 +3326,7 @@ function DisplayHockeyXP(){
 	//DisplayMasterXP();
 }
 function DisplayBait1(){
-	document.getElementById("baitupdate").innerHTML = "Bait: "+Bait1;
+	document.getElementById("baitupdate").innerHTML = "鱼饵: "+Bait1;
 }
 
 //Unlock functions
@@ -4994,7 +4994,7 @@ function fishMax(){
 
 function BaitText(){
 	BaitLimit = Math.max(5, Ic1*Ic1num, Ic2*Ic2num, Ic3*Ic3num, Ic4*Ic4num, Ic5*Ic5num, Ic20*Ic20num, Ic21*Ic21num, Ic22*Ic22num);
-	document.getElementById('BaitTextBox').innerHTML = "<input type='text' id='BaitHooks' placeholder='诱饵到 " + BaitLimit + " 钩子'>";
+	document.getElementById('BaitTextBox').innerHTML = "<input type='text' id='BaitHooks' placeholder='挂诱饵到 " + BaitLimit + " 钩子上'>";
 }
 
 function getFish(){//returns the fish caught

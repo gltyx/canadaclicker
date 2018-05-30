@@ -19,6 +19,7 @@
 <script type="text/javascript" src="notify.js"></script>
 <script type="text/javascript" src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/my.css">
 
 <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
@@ -121,10 +122,10 @@ checkAchievements();
 
 <table width=85%><!--currency table-->
 <tr>
-<td style='padding:0px 30px 0px 30px'><img id="moneyimage" src="images/money.png" height=60 title="Money"> $<span id='Money'><script type="text/javascript">DisplayStuff('Money');</script></span>
+<td style='padding:0px 30px 0px 30px'><img id="moneyimage" src="images/money.png" height=60 title="钱"> $<span id='Money'><script type="text/javascript">DisplayStuff('Money');</script></span>
 </td>
-<td style='padding:0px 30px 0px 30px'><img id="syrupimage" src="images/MapleSyrup.png" height=60 title="Syrup"><span id='Syrup'><script type="text/javascript">DisplayStuff('Syrup');</script></span></td>
-<td style='padding:0px 30px 0px 30px'><img id="flannelimage" src="images/flannel.png.jpeg" height=60 title="Flannel">   <span id='Flannel'><script type="text/javascript">DisplayStuff('Flannel');</script></span></td>
+<td style='padding:0px 30px 0px 30px'><img id="syrupimage" src="images/MapleSyrup.png" height=60 title="糖浆"><span id='Syrup'><script type="text/javascript">DisplayStuff('Syrup');</script></span></td>
+<td style='padding:0px 30px 0px 30px'><img id="flannelimage" src="images/flannel.png.jpeg" height=60 title="法兰绒">   <span id='Flannel'><script type="text/javascript">DisplayStuff('Flannel');</script></span></td>
 <td style='padding:0px 30px 0px 30px'><center><button valign="top" onClick="save()">保存游戏</button><br><span id='DidISave'>&nbsp</span></center></td>
 <td style='padding:0px 30px 0px 30px'><center><span id='PrestigeDisplay'></span></center></td>
 <td style='padding:0px 30px 0px 30px'><center><a href="https://www.amazon.com/dp/B06XWG4RFG/ref=as_li_ss_il?ie=UTF8&linkCode=li1&tag=canadaclickergame-20&linkId=f39b7f370fc6580ceede05dda7119ab2" target="_blank"><img border="0" src="images/41MqTL1uIiL._SL110_.jpg" ></a><img src="images/41MqTL1uIiL._SL110_.jpg" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /><br>Cool Shirt^^^</center></td>
@@ -164,6 +165,7 @@ checkAchievements();
 	<tr><!--beard box-->
 	<td width=300 ><center><font size=1>
 	<span id='LumberjackXPperClick'></span></font>
+	<br><br>胡子随机在下面图片上出现↓
 	</tr>
 	<tr><!--beard box-->
 	<td width=300 height=180 background='images/CanadianFlag2300.png'><center>
@@ -1920,8 +1922,8 @@ checkAchievements();
 <tr><!-- table headings -->
 <td><b>诱饵钩</td>
 <td><span id='BaitTextBox'><script type="text/javascript">BaitText();</script></span></td>
-<td><input type="button" onclick="StartFishing(document.getElementById('BaitHooks').value);" value="钓一次鱼"></td>
-<td><input type="button" onclick="fishMax();" value="钓鱼上限"></td>
+<td><input type="button" onclick="StartFishing(document.getElementById('BaitHooks').value);" value="钓鱼"></td>
+<td><input type="button" onclick="fishMax();" value="最大钓鱼次数"></td>
 </tr>
 </table>
 
