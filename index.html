@@ -208,7 +208,7 @@ checkAchievements();
 	<td><button id="tab5" class="tab" onmousedown="openTab(4, this)">伐木工人</button></td>
 	<td><button id="tab6" class="tab" onmousedown="openTab(5, this)">冰钓</button></td>
 	<td><button id="tab7" class="tab" onmousedown="openTab(6, this)">胡子</button></td>
-	<td><button id="tab8" class="tab" onmousedown="openTab(7, this)">善良</button></td>
+	<td><button id="tab8" class="tab" onmousedown="openTab(7, this)">善良<br /><br /></button></td>
 	<td><button id="tab9" class="tab" onmousedown="openTab(8, this)">曲棍球</button></td>
 	</tr>
 	</table><br><br>
@@ -1646,7 +1646,7 @@ checkAchievements();
 <button onClick=toggleTutorial('lumberjackTutorial')><span id="lumberjackTutorialButton"><script type="text/javascript">isTutorial('lumberjackTutorial');</script></span></button></div>
  -->
 
-	点击购买↓：
+	WPS指的是：木头每秒产量。点击购买↓
 	<table border=1 class="generalTable"><!-- table for lumberjack crew -->
 <tr><!-- table headings / purchase buttons-->
 <td><button onClick=BuyCrew('AxeBud')><b>芽斧<br><font size=1><span id="AxeBudWPS">+0.1 WPS<span></font></button></td>
@@ -1666,7 +1666,7 @@ checkAchievements();
 <td>$<span id='FellerFriendCost'><script type="text/javascript">CrewCost('FellerFriend');</script></span></td>
 <td>$<span id='TransportGuyCost'><script type="text/javascript">CrewCost('TransportGuy');</script></span></td>
 </tr>
-</table><span id='WoodPerSecond'><script type="text/javascript">DisplayWoodPerSecond();</script></span> 木头每秒  <span id="BonusWPS"></span><br>
+</table>每秒自动生产<span id='WoodPerSecond'> <script type="text/javascript">DisplayWoodPerSecond();</script></span> 木头  <span id="BonusWPS"></span><br>
 	<br>
 <table border=1 class="generalTable"><!-- table for lumberjack upgrades -->
 <tr><!-- table headings -->
@@ -2366,8 +2366,8 @@ checkAchievements();
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>成本</td>
-<td><b>XP</td>
-<td><b>等级</td>
+<td><b>经验</td>
+<td><b>需要等级</td>
 <td><b>冷却时间</td>
 <td><b>状态</td><!-- Status will show button or a countdown if the item is on cooldown -->
 </tr>
@@ -2675,8 +2675,8 @@ checkAchievements();
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>奖励</td>
-<td><b>XP</td>
-<td><b>等级</td>
+<td><b>经验</td>
+<td><b>需要等级</td>
 <td><b>冷却时间</td>
 <td><b>状态</td><!-- Status will show button or a countdown if the item is on cooldown -->
 </tr>
