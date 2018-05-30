@@ -5217,7 +5217,7 @@ function BeardClick(item){
 				BeardXPearned = parseFloat((BeardXPearned).toFixed(2));
 				TreeMultiplier = window[item+"Reward"+rand];
 				BeardRewardCountdown = 30;//sets the multiplier countdown
-				document.getElementById("BeardBoxReward").innerHTML = "Times "+TreeMultiplier+" 树每次点击，剩余 "+BeardRewardCountdown+" 秒";
+				document.getElementById("BeardBoxReward").innerHTML = "每次点击得到 "+TreeMultiplier+" 树，剩余 "+BeardRewardCountdown+" 秒";
 				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " 胡子经验";
 				break;
 			case (rand==4)://add bait
@@ -8725,10 +8725,10 @@ if (((RightNow.getTime()-LastBeard) >= (BeardCooldown*1000)) && (BeardOff==1)){
 
 if (BeardRewardCountdown){
 	if (TreeMultiplier > 1){
-	document.getElementById("BeardBoxReward").innerHTML = "Times "+TreeMultiplier+" 树 每次点击，剩余 "+(BeardRewardCountdown-1)+" 秒";
+	document.getElementById("BeardBoxReward").innerHTML = "每次点击得到 "+TreeMultiplier+" 树，剩余 "+(BeardRewardCountdown-1)+" 秒";
 	}
 	if (LumberjackXPMultiplier > 1){
-	document.getElementById("BeardBoxReward").innerHTML = "Times "+LumberjackXPMultiplier+" 伐木工人经验每次点击，剩余"+(BeardRewardCountdown-1)+" 秒";
+	document.getElementById("BeardBoxReward").innerHTML = "每次点击得到 "+LumberjackXPMultiplier+" 伐木工人经验，剩余"+(BeardRewardCountdown-1)+" 秒";
 	}
 	BeardRewardCountdown--;	
 	if (!BeardRewardCountdown){
