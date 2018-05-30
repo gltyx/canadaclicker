@@ -140,7 +140,7 @@ checkAchievements();
  --><div align="left">
 
  <span id="MakeItRain"><script type="text/javascript">Rain();</script></button></span>
- <button onClick="sellSelected(this.form)">出售已选择的库存</button>
+ <button onClick="sellSelected(this.form)" id="SellAll">出售已选择的库存</button>
  </div>
 <table class="mytable mytable-game"><!--Main game table-->
 <tr border=1><!--only one table row.  nested tables in the tds-->
@@ -1923,7 +1923,7 @@ checkAchievements();
 <td><b>诱饵钩</td>
 <td><span id='BaitTextBox'><script type="text/javascript">BaitText();</script></span></td>
 <td><input type="button" onclick="StartFishing(document.getElementById('BaitHooks').value);" value="钓鱼"></td>
-<td><input type="button" onclick="fishMax();" value="最大钓鱼次数"></td>
+<td><input type="button" onclick="fishMax();" value="最大钓鱼次数" id="MaxFish"></td>
 </tr>
 </table>
 
@@ -1941,7 +1941,7 @@ checkAchievements();
 </table>
 
 
-<table border=1 class="generalTable"><!-- table for ice fishing upgrades -->
+<table border=1 class="generalTable" id="diaoyu"><!-- table for ice fishing upgrades -->
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>成本</td>
@@ -2137,7 +2137,7 @@ checkAchievements();
 <button onClick=toggleTutorial('beardTutorial')><span id="beardTutorialButton"><script type="text/javascript">isTutorial('beardTutorial');</script></span></button></div>
  -->
 
-<table border=1 class="generalTable"><!-- table for beard upgrades -->
+<table border=1 class="generalTable" id="huzi"><!-- table for beard upgrades -->
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>成本</td>
@@ -2362,7 +2362,7 @@ checkAchievements();
 <button onClick=toggleTutorial('kindnessTutorial')><span id="kindnessTutorialButton"><script type="text/javascript">isTutorial('kindnessTutorial');</script></span></button></div>
  -->
 
-<table border=1 width=650 class="generalTable"><!-- table for kindness activities -->
+<table border=1 width=650 class="generalTable" id="shanliang"><!-- table for kindness activities -->
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>成本</td>
@@ -2517,7 +2517,7 @@ checkAchievements();
 </tr>
 </table>
 <br>
-<table border=1 class="generalTable"><!-- table for kindness upgrades -->
+<table border=1 class="generalTable" id="shanliangLvl"><!-- table for kindness upgrades -->
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>成本</td>
@@ -2671,7 +2671,7 @@ checkAchievements();
 <!-- <div align="left">
 <button onClick=toggleTutorial('hockeyTutorial')><span id="hockeyTutorialButton"><script type="text/javascript">isTutorial('hockeyTutorial');</script></span></button></div>
  -->
-<table border=1 class="generalTable"><!-- table for hockey activities -->
+<table border=1 class="generalTable" id="bingqiu"><!-- table for hockey activities -->
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>奖励</td>
@@ -2802,7 +2802,7 @@ checkAchievements();
 </tr>
 </table>
 <br>
-<table border=1 class="generalTable"><!-- table for hockey upgrades -->
+<table border=1 class="generalTable" id="bingqiuLvl"><!-- table for hockey upgrades -->
 <tr><!-- table headings -->
 <td><b>物品</td>
 <td><b>成本</td>
