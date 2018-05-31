@@ -6036,10 +6036,10 @@ function checkLevels(){//called in the game interval.  checks to see if you've l
 	LowestLevel = Math.min.apply(Math, skillLevels);
 	
 	if (LowestLevel == 1){
-		document.getElementById("LowestLevel").innerHTML = LowestLevel + ".  升级所有技能以获得奖金。!";
+		document.getElementById("LowestLevel").innerHTML = LowestLevel + "。  升级所有技能以获得奖金。!";
 	}else{
-	document.getElementById("LowestLevel").innerHTML = LowestLevel + ".  <b>Bonus of " + Math.round(Math.pow((LowestLevel-1),2)) + " WPS!</b>";
-	document.getElementById("BonusWPS").innerHTML = "+" + Math.round(Math.pow((LowestLevel-1),2)) + " WPS Bonus";
+	document.getElementById("LowestLevel").innerHTML = LowestLevel + "。  <b>奖励 " + Math.round(Math.pow((LowestLevel-1),2)) + " 木头产量每秒!</b>";
+	document.getElementById("BonusWPS").innerHTML = "+" + Math.round(Math.pow((LowestLevel-1),2)) + " 木头产量每秒的奖励";
 	}
 }
 
@@ -7745,8 +7745,8 @@ function KindnessProgress(){
 }
 function HockeyProgress(){
 	lvl = getLevel(HockeyXP);
-	document.getElementById("hockeyLvl").innerHTML = "冰球水平 "+lvl;
-	document.getElementById("hockeyLvlStats").innerHTML = "冰球水平 "+lvl;
+	document.getElementById("hockeyLvl").innerHTML = "曲棍球等级 "+lvl;
+	document.getElementById("hockeyLvlStats").innerHTML = "曲棍球等级 "+lvl;
 	
 	if (lvl == 20){
 		$('#hockeyProgress').attr('style', 'width:100%');
