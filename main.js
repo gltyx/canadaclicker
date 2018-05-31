@@ -5786,18 +5786,18 @@ function hockeyXP(item){//awards XP and hockey reward
 	doubleXP = 1;//xp multiplier
 	if (Math.max(0, H6*H6num, H7*H7num, H8*H8num, H9*H9num, H10*H10num, H24*H24num, H25*H25num)>Math.random()){
 		doubleXP = 2;
-		bonusText = " x2 XP!";
+		bonusText = " x2 经验!";
 	}
 	
 	doubleReward = 1;//xp multiplier
 	if (Math.max(0, H16*H16num, H17*H17num, H18*H18num, H19*H19num, H20*H20num, H26*H26num, H27*H27num)>Math.random()){
 		doubleReward = 2;
-		bonusText =bonusText+ " x2 reward!";
+		bonusText =bonusText+ " x2 奖励!";
 	}
 	
 	if (soHockey){
 		soHockey=0;
-		bonusText =bonusText+ " Instant Hockey!";
+		bonusText =bonusText+ " 即时曲棍球!";
 	}
 	
 	BuffXP=1;
