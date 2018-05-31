@@ -5206,7 +5206,7 @@ function BeardClick(item){
 				BeardXPearned = parseFloat((BeardXPearned).toFixed(2));
 				LumberjackXPMultiplier = window[item+"Reward"+rand];
 				document.getElementById("BeardBoxReward").innerHTML = LumberjackXPMultiplier;
-				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " Beard XP";
+				document.getElementById("BeardBoxXP").innerHTML = "+" + BeardXPearned + " 胡子经验";
 				BeardRewardCountdown = 30;//sets the multiplier countdown
 				document.getElementById("BeardBoxReward").innerHTML = "Times "+LumberjackXPMultiplier+" 伐木工人经验每次点击，剩余"+BeardRewardCountdown+" 秒";
 
