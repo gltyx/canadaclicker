@@ -5679,7 +5679,7 @@ function kindXP(item){
 	KindnessProgress();
 	bonusText="";
 	if (multiplier == 2){
-		bonusText=" x2 XP!";
+		bonusText=" x2 经验!";
 	}
 	if (soKind){
 		bonusText=bonusText+" 即时善良!";
