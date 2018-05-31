@@ -7500,9 +7500,9 @@ function ImportExport(){
 
 function isExport(){
 	if (fu1){
-		document.getElementById("ExportText").innerHTML = "<textarea id='ExportCode' placeholder='Click the export button!' cols=35 rows=15></textarea>";
+		document.getElementById("ExportText").innerHTML = "<textarea id='ExportCode' placeholder='点击导出按钮!' cols=35 rows=15></textarea>";
 	}else{
-		document.getElementById("ExportText").innerHTML = "<textarea id='ExportCode' placeholder='Export function currently disabled.  Unlock this feature by spending flannel in the store!' cols=35 rows=15></textarea>";
+		document.getElementById("ExportText").innerHTML = "<textarea id='ExportCode' placeholder='导出功能目前禁用。通过在商店中使用法兰绒来解锁这个功能!' cols=35 rows=15></textarea>";
 	}	
 }
 
