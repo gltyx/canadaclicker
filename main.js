@@ -847,7 +847,7 @@ var kind16inprogress = 0;//saved variable.  binary to see if item is active.  th
 var kind17text = "赞助加拿大奥运<br> 曲棍球队";
 var kind17req = 17;//kindness level required
 var kind17cost = 30;//Goals
-var kind17costtext = "30 进球";
+var kind17costtext = "30 球门";
 var kind17cooldown = 604800;//seconds until available again
 var kind17xp = 91250; //xp gained from activity
 var kind17time = 0;//saved variable.  placeholder for the time that item is clicked.
@@ -1191,7 +1191,7 @@ var hockey8inprogress = 0;//saved variable.  binary to see if item is active.  t
 var hockey9text = "罚球";
 var hockey9req = 9;//hockey level required
 var hockey9reward = 3;//Goals
-var hockey9rewardtext = "3 进球";
+var hockey9rewardtext = "3 球门";
 var hockey9cooldown = 14400;//seconds until available again
 var hockey9xp = 6800; //xp gained from activity
 var hockey9time = 0;//saved variable.  placeholder for the time that item is clicked.
@@ -6028,7 +6028,7 @@ function checkLevels(){//called in the game interval.  checks to see if you've l
 		window[skillz[i-1]+"Lvl1"] = getLevel(window[skillz[i-1]+"XP"]);
 		skillLevels[i-1] = getLevel(window[skillz[i-1]+"XP"]);
 		if (window[skillz[i-1]+"Lvl1"] > window[skillz[i-1]+"Lvl2"]){
-			$.notify(skillz[i-1]+" 升级!", {style:'level', className:'achievement', position: 'bottom center', autoHide: true});
+			$.notify(cnSkill(skillz[i-1])+" 升级!", {style:'level', className:'achievement', position: 'bottom center', autoHide: true});
 		}
 		window[skillz[i-1]+"Lvl2"] = eval(window[skillz[i-1]+"Lvl1"]);
 	}
@@ -8858,3 +8858,25 @@ BuffCosts();
 achievementProgress("canadaday");
 
 }, 1000);
+
+
+//汉化xx
+function cnSkill(text){
+    var cntext="";
+    var temp=text;
+    if(temp=="Lumberjack"){
+        cntext="伐木工人"
+    }else if(temp=="IceFishing"){
+        cntext="冰上钓鱼"
+    }else if(temp=="Beard"){
+        cntext="胡子"
+    }else if(temp=="Kindness"){
+        cntext="善良"
+    }else if(temp=="Hockey"){
+        cntext="曲棍球"
+    }else{
+        console.log("需汉化的英文："+text);
+        return text;
+    }
+    return cntext;
+}
