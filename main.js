@@ -6038,7 +6038,7 @@ function checkLevels(){//called in the game interval.  checks to see if you've l
 	if (LowestLevel == 1){
 		document.getElementById("LowestLevel").innerHTML = LowestLevel + "。  升级所有技能以获得奖金。!";
 	}else{
-	document.getElementById("LowestLevel").innerHTML = LowestLevel + "。  <b>奖励 " + Math.round(Math.pow((LowestLevel-1),2)) + " 木头产量每秒!</b>";
+	document.getElementById("LowestLevel").innerHTML = LowestLevel + "。  <b>奖励 " + Math.round(Math.pow((LowestLevel-1),2)) + " 木头生产每秒!</b>";
 	document.getElementById("BonusWPS").innerHTML = "+" + Math.round(Math.pow((LowestLevel-1),2)) + " 木头产量每秒的奖励";
 	}
 }
