@@ -5682,7 +5682,7 @@ function kindXP(item){
 		bonusText=" x2 XP!";
 	}
 	if (soKind){
-		bonusText=bonusText+" Instant kindness!";
+		bonusText=bonusText+" 即时善良!";
 		soKind=0;
 		
 		_gaq.push(['_trackEvent', 'Canada Clicker', 'InstantKindness']);
