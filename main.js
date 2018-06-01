@@ -5268,7 +5268,7 @@ function BuyStuff(quantity, item){
 		DisplayStuff(item);
 		//document.getElementById("invalidpurchase").innerHTML = "You bought some Bait!";
 	}else{
-	document.getElementById("invalidpurchase").innerHTML = "抱歉，兄弟，那个输入不准确。";
+	document.getElementById("invalidpurchase").innerHTML = "抱歉，兄弟，请输入正确的整数数字。";
 	}
 }
 
@@ -5282,7 +5282,7 @@ function SellStuff(quantity, item){
 		DisplayStuff(item);
 		//document.getElementById("invalidpurchase").innerHTML = "You bought some Bait!";
 	}else{
-	document.getElementById("invalidpurchase").innerHTML = "抱歉，兄弟，那个输入不准确。";
+	document.getElementById("invalidpurchase").innerHTML = "抱歉，兄弟，请输入正确的整数数字。";
 	}
 }
 
