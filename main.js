@@ -1778,8 +1778,8 @@ var HockeyNotifyToggle = 1;
 var Prestige = 0;
 var PrestigeXP = [1, 1.1, 1.2, 1.3, 1.4];//array position zero is a 1 multiplier:  no effect on XP
 var PrestigeWorkerBonus = [1, 1.5, 2, 2.5, 3];//array position zero is a 1 multiplier:  no effect on WPS
-var PrestigeNames = ["Red", "Bronze", "Silver", "Gold", "Flannel"];
-var PrestigeReq = ["Unlock Ash", "Click 500 beards", "Catch 2000 fish", "Purchase 101 upgrades",  "Total skill levels"];
+var PrestigeNames = ["红色", "青铜", "白银", "黄金", "法兰绒"];
+var PrestigeReq = ["解锁岑树", "点击 500 次胡子", "抓到 2000 条鱼", "购买 101 个升级",  "累计技能等级"];
 //PrestigeTotalLevelReq[Prestige]
 var PrestigeTotalLevelReq = [60, 70, 80, 90, 100];
 var PrestigeImage = ["mapleleaf", "PrestigeBronze", "PrestigeSilver", "PrestigeGold", "PrestigeFlannel"];
