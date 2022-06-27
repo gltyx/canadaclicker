@@ -1,0 +1,3052 @@
+
+
+<html>
+
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Canada Clicker">
+	<meta name="keywords" content="Canada, clicker, game, idle, incremental, javascript, click, lumberjack, hockey, kindness, ice, fishing, beard">
+	<meta property="og:title" content="Canada Clicker" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Play Canada Clicker!  Train your Canadian skills!  Lumberjacking, Ice Fishing, Kindness, Hockey, and of course, grow a beard!" />
+	<meta property="og:url" content="http://www.canadaclicker.com" />
+	<meta property="og:image" content="canadaclickerbanner.png" />
+
+
+<script src="jquery.min.js"></script><!-- jquery from the google host -->
+<script type="text/javascript" src="notify.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/my.css">
+
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+<!-- Thanks to http://cliparts.co/ for the art :) -->
+
+<title>
+加拿大点击
+</title>
+<!-- Google Analytics Script -->
+<!--
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53195432-9', 'auto');
+  ga('send', 'pageview');
+
+</script>
+-->
+
+
+
+<!-- Google Analytics Event Tracking Script -->
+<!-- <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-53195432-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> -->
+
+
+<script> <!-- function to create import cookie -->
+
+	function ImportButton()
+	{
+		var input = document.getElementById("ImportCode");
+		ImportGame(atob(input.value));
+	}
+	</script>
+
+</head>
+
+
+
+
+<body onload="allProgress();">
+
+<div id="fb-root"></div>
+<!--
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+-->
+
+
+<script type="text/javascript">
+load();
+checkAchievements();
+
+</script>
+
+
+<div class="notifications"></div>
+
+
+
+<table width=100%><!--menu table-->
+<tr>
+<td style='padding:0px 30px 0px 0px'>加拿大点击 版本号 v1.013</td>
+<td style='padding:0px 30px 0px 30px'><a id="abootLink" href="aboot.html" target="_blank">关于</a></td>
+<td style='padding:0px 30px 0px 30px'><a id="importerLink" href="importexport.html" target="_blank">导入/导出</a></td>
+<td style='padding:0px 30px 0px 30px'><div class="fb-like" data-href="http://www.canadaclicker.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div></td>
+<td style='padding:0px 0px 0px 30px'><a id="redditLink" href="https://www.reddit.com/r/canadaclicker" target="_blank">Reddit论坛</a></td>
+
+</tr>
+</table>
+
+
+
+<br>
+
+
+<br>
+<center>
+
+
+<table width=85%><!--currency table-->
+<tr>
+<td style='padding:0px 30px 0px 30px'><img id="moneyimage" src="images/money.png" height=60 title="钱"> $<span id='Money'><script type="text/javascript">DisplayStuff('Money');</script></span>
+</td>
+<td style='padding:0px 30px 0px 30px'><img id="syrupimage" src="images/MapleSyrup.png" height=60 title="糖浆"><span id='Syrup'><script type="text/javascript">DisplayStuff('Syrup');</script></span></td>
+<td style='padding:0px 30px 0px 30px'><img id="flannelimage" src="images/flannel.png.jpeg" height=60 title="法兰绒">   <span id='Flannel'><script type="text/javascript">DisplayStuff('Flannel');</script></span></td>
+<td style='padding:0px 30px 0px 30px'><center><button valign="top" onClick="save()">保存游戏</button><br><span id='DidISave'>&nbsp</span></center></td>
+<td style='padding:0px 30px 0px 30px'><center><span id='PrestigeDisplay'></span></center></td>
+<td style='padding:0px 30px 0px 30px'><center><a href="https://www.amazon.com/dp/B06XWG4RFG/ref=as_li_ss_il?ie=UTF8&linkCode=li1&tag=canadaclickergame-20&linkId=f39b7f370fc6580ceede05dda7119ab2" target="_blank" title="亚马逊购买链接"><img border="0" src="images/41MqTL1uIiL._SL110_.jpg" ></a><img src="images/41MqTL1uIiL._SL110_.jpg" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /><br>游戏周边商品^^^</center></td>
+</tr>
+</table>
+
+<br>
+<span class="tutorial" id="mainTutorial"><div align="left"><script type="text/javascript">Tutorial('mainTutorial');</script></div></span><br>
+
+<!-- <div align="left">
+<button onClick=toggleTutorial('mainTutorial')><span id="mainTutorialButton"><script type="text/javascript">isTutorial('mainTutorial');</script></span></button></div>
+ --><div align="left">
+
+ <span id="MakeItRain"><script type="text/javascript">Rain();</script></button></span>
+ <button onClick="sellSelected(this.form)" id="SellAll">出售已选择的库存</button>
+ </div>
+<table class="mytable mytable-game"><!--Main game table-->
+<tr border=1><!--only one table row.  nested tables in the tds-->
+<td valign="top" width=300 style='padding:0px 0px 0px 0px'>
+	<table><!--clicking tree and ad table (nested)-->
+	<tr><!--clicking tree-->	
+	<td id="lumberjackBackground" height=171 height=300>
+	<div id="clone"></div>
+	<center>
+	<!-- <script type="text/javascript">activateSkin('fu2');</script> -->
+	<img title = "" id="mapleleaf" src="images/mapleleaf.png" style="display:none" width="30" height="30">
+	<img title = "" id="PrestigeBronze" src="images/PrestigeBronze.png" style="display:none" width="30" height="30">
+	<img title = "" id="PrestigeSilver" src="images/PrestigeSilver.png" style="display:none" width="30" height="30">
+	<img title = "" id="PrestigeGold" src="images/PrestigeGold.png" style="display:none" width="30" height="30">
+	<img title = "" id="PrestigeFlannel" src="images/PrestigeFlannel.png" style="display:none" width="30" height="30">
+	<img id="coffeeButton" class="bigTree" height="132" onClick='TreeClick(event)'>
+	</td>
+	</center>
+	
+	
+	</tr>
+	<tr><!--beard box-->
+	<td width=300 ><center><font size=1>
+	<span id='LumberjackXPperClick'></span></font>
+	<br><br>胡子随机在下面图片上出现↓
+	</tr>
+	<tr><!--beard box-->
+	<td width=300 height=180 background='images/CanadianFlag2300.png'><center>
+	<span id='BeardBox'></span>
+	</tr>
+	<tr><!--beard box reward display-->
+	<td width=300 height=50 bgcolor=#C1F3CC><center>
+	<span id='BeardBoxReward'></span><br><font size=2>
+	<span id='BeardBoxXP'></span></font>
+	</td>
+	</tr>
+	<tr><!--swagbucks referral link-->
+<!--
+	<td width=300 height=50 border=1 cellpadding=2><center>
+	在胡子之间赚点钱吧!<br>
+	<a href="http://www.swagbucks.com/refer/dcross9999" onClick="SwagbucksClick();" target="_blank"><img border="0" src="images/swagbucks.jpg" width=200></a><br>
+	<a href="mailto:cross@canadaclicker.com" target="_top">联系我，了解如何赚更多!</a>
+	</td>
+-->
+	</tr>
+	</tr>
+	<tr><!--ad-->
+	<td width=300>
+	</td>
+	</tr>
+	<tr><!--ad-->
+	<td width=300>
+	
+	</td>
+	</tr>
+	</table>
+</td>
+<td valign="top" align="left" style='padding:0px 8px 0px 8px'>
+	<table align="left"><!--levels, inventory, store, etc.(nested)-->
+	<tr><!-- tabs here.  inventory, store, levels, hockey stuff, kindness  -->	
+	<td><button id="tab1" class="tabActive" onmousedown="openTab(0, this)">库存</button></td>
+	<td><button id="tab2" class="tab" onmousedown="openTab(1, this)">商店</button></td>
+	<td><button id="tab3" class="tab" onmousedown="openTab(2, this)">统计</button></td>
+	<td><button id="tab4" class="tab" onmousedown="openTab(3, this)">成就</button></td>
+	<td><button id="tab5" class="tab" onmousedown="openTab(4, this)">伐木工人</button></td>
+	<td><button id="tab6" class="tab" onmousedown="openTab(5, this)">冰钓</button></td>
+	<td><button id="tab7" class="tab" onmousedown="openTab(6, this)">胡子</button></td>
+	<td><button id="tab8" class="tab" onmousedown="openTab(7, this)">善良</button></td>
+	<td><button id="tab9" class="tab" onmousedown="openTab(8, this)">曲棍球</button></td>
+	</tr>
+	</table><br><br>
+	<table align="left"><!--GameView table(nested)-->
+	<tr>
+	<td><!-- output data  -->
+	<!--<span id="GameView"></span>-->
+
+	<div id="inventory-tab" style="display:block;"><!-- INVENTORY-TAB -->
+	
+<span class="tutorial" id="inventoryTutorial"><div align="left"><script type="text/javascript">Tutorial('inventoryTutorial');</script></div></span><br>
+
+<!-- <div align="left">
+<button onClick=toggleTutorial('inventoryTutorial')><span id="inventoryTutorialButton"><script type="text/javascript">isTutorial('inventoryTutorial');</script></span></button></div>
+ -->	
+
+ <form name="inventory">
+<table border=1 class="generalTable"><!-- table for inventory -->
+<tr><!-- table headings -->
+<td></td>
+<td><b>物品</td>
+<td><b>数量</td>
+<td><b>价格</td>
+<td><b>出售</td>
+<td><b><button type="button" onclick="sellSelected(this.form)">出售已选择的</button></td>
+</tr>
+<tr>
+<td rowspan="6"><div class="vertical-text"><div class="vertical-text__inner"><center><b>树</b></div></div></td>
+<td>松树</td>
+<td><span id='Pine'><script type="text/javascript">DisplayStuff('Pine');</script></span></td>
+<td>$<span id='PineValue'><script type="text/javascript">DisplayStuff('PineValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Pine')">全部出售</button></td>
+<td><center><span id="PineCheckbox"><script type="text/javascript">loadInventoryCheckbox('Pine');</script></span></td>
+</tr>
+<tr>
+<td>云杉</td>
+<td><span id='Spruce'><script type="text/javascript">DisplayStuff('Spruce');</script></span></td>
+<td>$<span id='SpruceValue'><script type="text/javascript">DisplayStuff('SpruceValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Spruce')">全部出售</button></td>
+<td><center><span id="SpruceCheckbox"><script type="text/javascript">loadInventoryCheckbox('Spruce');</script></span></td>
+</tr>
+<tr>
+<td>枫树</td>
+<td><span id='Maple'><script type="text/javascript">DisplayStuff('Maple');</script></span></td>
+<td>$<span id='MapleValue'><script type="text/javascript">DisplayStuff('MapleValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Maple')">全部出售</button></td>
+<td><center><span id="MapleCheckbox"><script type="text/javascript">loadInventoryCheckbox('Maple');</script></span></td>
+</tr>
+<tr>
+<td>橡树</td>
+<td><span id='Oak'><script type="text/javascript">DisplayStuff('Oak');</script></span></td>
+<td>$<span id='OakValue'><script type="text/javascript">DisplayStuff('OakValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Oak')">全部出售</button></td>
+<td><center><span id="OakCheckbox"><script type="text/javascript">loadInventoryCheckbox('Oak');</script></span></td>
+</tr>
+<tr>
+<td>桦树
+</td>
+<td><span id='Birch'><script type="text/javascript">DisplayStuff('Birch');</script></span></td>
+<td>$<span id='BirchValue'><script type="text/javascript">DisplayStuff('BirchValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Birch')">全部出售</button></td>
+<td><center><span id="BirchCheckbox"><script type="text/javascript">loadInventoryCheckbox('Birch');</script></span></td>
+</tr>
+<tr>
+<td>岑树
+</td>
+<td><span id='Ash'><script type="text/javascript">DisplayStuff('Ash');</script></span></td>
+<td>$<span id='AshValue'><script type="text/javascript">DisplayStuff('AshValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Ash')">全部出售</button></td>
+<td><center><span id="AshCheckbox"><script type="text/javascript">loadInventoryCheckbox('Ash');</script></span></td>
+</tr>
+<tr>
+<td rowspan=6><div class="vertical-text"><div class="vertical-text__inner"><center><b>鱼</b></div></div></td>
+<td>鳟鱼</td>
+<td><span id='Trout'><script type="text/javascript">DisplayStuff('Trout');</script></span></td>
+<td>$<span id='TroutValue'><script type="text/javascript">DisplayStuff('TroutValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Trout')">全部出售</button></td>
+<td><center><span id="TroutCheckbox"><script type="text/javascript">loadInventoryCheckbox('Trout');</script></span></td>
+</tr>
+<tr>
+<td>大马哈鱼</td>
+<td><span id='Salmon'><script type="text/javascript">DisplayStuff('Salmon');</script></span></td>
+<td>$<span id='SalmonValue'><script type="text/javascript">DisplayStuff('SalmonValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Salmon')">全部出售</button></td>
+<td><center><span id="SalmonCheckbox"><script type="text/javascript">loadInventoryCheckbox('Salmon');</script></span></td>
+</tr>
+<tr>
+<td>鳕鱼</td>
+<td><span id='Cod'><script type="text/javascript">DisplayStuff('Cod');</script></span></td>
+<td>$<span id='CodValue'><script type="text/javascript">DisplayStuff('CodValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Cod')">全部出售</button></td>
+<td><center><span id="CodCheckbox"><script type="text/javascript">loadInventoryCheckbox('Cod');</script></span></td>
+</tr>
+<tr>
+<td>螃蟹</td>
+<td><span id='Crab'><script type="text/javascript">DisplayStuff('Crab');</script></span></td>
+<td>$<span id='CrabValue'><script type="text/javascript">DisplayStuff('CrabValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Crab')">全部出售</button></td>
+<td><center><span id="CrabCheckbox"><script type="text/javascript">loadInventoryCheckbox('Crab');</script></span></td>
+</tr>
+<tr>
+<td>比目鱼</td>
+<td><span id='Halibut'><script type="text/javascript">DisplayStuff('Halibut');</script></span></td>
+<td>$<span id='HalibutValue'><script type="text/javascript">DisplayStuff('HalibutValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Halibut')">全部出售</button></td>
+<td><center><span id="HalibutCheckbox"><script type="text/javascript">loadInventoryCheckbox('Halibut');</script></span></td>
+</tr>
+<tr>
+<td>鲸鱼
+</td>
+<td><span id='Whale'><script type="text/javascript">DisplayStuff('Whale');</script></span></td>
+<td>$<span id='WhaleValue'><script type="text/javascript">DisplayStuff('WhaleValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Whale')">全部出售</button></td>
+<td><center><span id="WhaleCheckbox"><script type="text/javascript">loadInventoryCheckbox('Whale');</script></span></td>
+</tr>
+<tr>
+<td rowspan=6><div class="vertical-text"><div class="vertical-text__inner"><center><b>曲棍球</b></div></div></td>
+<td>冰球</td>
+<td><span id='Pucks'><script type="text/javascript">DisplayStuff('Pucks');</script></span></td>
+<td>$<span id='PucksValue'><script type="text/javascript">DisplayStuff('PucksValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Pucks')">全部出售</button></td>
+<td><center><span id="PucksCheckbox"><script type="text/javascript">loadInventoryCheckbox('Pucks');</script></span></td>
+</tr>
+<tr>
+<td>棍棒</td>
+<td><span id='Sticks'><script type="text/javascript">DisplayStuff('Sticks');</script></span></td>
+<td>$<span id='SticksValue'><script type="text/javascript">DisplayStuff('SticksValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Sticks')">全部出售</button></td>
+<td><center><span id="SticksCheckbox"><script type="text/javascript">loadInventoryCheckbox('Sticks');</script></span></td>
+</tr>
+<tr>
+<td>手套</td>
+<td><span id='Gloves'><script type="text/javascript">DisplayStuff('Gloves');</script></span></td>
+<td>$<span id='GlovesValue'><script type="text/javascript">DisplayStuff('GlovesValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Gloves')">全部出售</button></td>
+<td><center><span id="GlovesCheckbox"><script type="text/javascript">loadInventoryCheckbox('Gloves');</script></span></td>
+</tr>
+<tr>
+<td>冰鞋</td>
+<td><span id='Skates'><script type="text/javascript">DisplayStuff('Skates');</script></span></td>
+<td>$<span id='SkatesValue'><script type="text/javascript">DisplayStuff('SkatesValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Skates')">全部出售</button></td>
+<td><center><span id="SkatesCheckbox"><script type="text/javascript">loadInventoryCheckbox('Skates');</script></span></td>
+</tr>
+<tr>
+<td>球门
+</td>
+<td><span id='Goals'><script type="text/javascript">DisplayStuff('Goals');</script></span></td>
+<td>$<span id='GoalsValue'><script type="text/javascript">DisplayStuff('GoalsValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Goals')">全部出售</button></td>
+<td><center><span id="GoalsCheckbox"><script type="text/javascript">loadInventoryCheckbox('Goals');</script></span></td>
+</tr>
+<tr>
+<td>赞博尼磨冰机</td>
+<td><span id='Zambonies'><script type="text/javascript">DisplayStuff('Zambonies');</script></span></td>
+<td>$<span id='ZamboniesValue'><script type="text/javascript">DisplayStuff('ZamboniesValue');</script></span></td>
+<td><button type="button" onClick="sellAll('Zambonies')">全部出售</button></td>
+<td><center><span id="ZamboniesCheckbox"><script type="text/javascript">loadInventoryCheckbox('Zambonies');</script></span></td>
+</tr>
+</table>
+
+</form>
+
+
+<br>
+<!-- Bait: <span id='Bait1'><script type="text/javascript">DisplayStuff('Bait1');</script></span><br> -->
+
+
+</div><!-- END OF INVENTORY -->
+	
+	<div id="store-tab" style="display:block;"><!-- STORE-TAB -->
+	
+<span class="tutorial" id="storeTutorial"><div align="left"><script type="text/javascript">Tutorial('storeTutorial');</script></div></span><br>
+<!-- <div align="left">
+<button onClick=toggleTutorial('storeTutorial')><span id="storeTutorialButton"><script type="text/javascript">isTutorial('storeTutorial');</script></span></button></div>
+ -->
+
+	<table border=1 class="generalTable">
+	<tr><td colspan=3><center><b>糖浆商店</b></center></td></tr>
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>状态</td>
+</tr>
+<tr>
+<td><span id='su1text'><script type="text/javascript">DisplayStuff('su1text');</script></span></td>
+<td><span id='su1cost'><script type="text/javascript">DisplayStuff('su1cost');</script></span></td>
+<td><span id='su1'><script type="text/javascript">IsLockedUpgrade('su1');</script></span></td>
+</tr>
+<tr>
+<td><span id='su2text'><script type="text/javascript">DisplayStuff('su2text');</script></span></td>
+<td><span id='su2cost'><script type="text/javascript">DisplayStuff('su2cost');</script></span></td>
+<td><span id='su2'><script type="text/javascript">IsLockedUpgrade('su2');</script></span></td>
+</tr>
+<tr>
+<td><span id='su3text'><script type="text/javascript">DisplayStuff('su3text');</script></span></td>
+<td><span id='su3cost'><script type="text/javascript">DisplayStuff('su3cost');</script></span></td>
+<td><span id='su3'><script type="text/javascript">IsLockedUpgrade('su3');</script></span></td>
+</tr>
+<tr>
+<td><span id='su4text'><script type="text/javascript">DisplayStuff('su4text');</script></span></td>
+<td><span id='su4cost'><script type="text/javascript">DisplayStuff('su4cost');</script></span></td>
+<td><span id='su4'><script type="text/javascript">IsLockedUpgrade('su4');</script></span></td>
+</tr>
+<tr>
+<td><span id='su5text'><script type="text/javascript">DisplayStuff('su5text');</script></span></td>
+<td><span id='su5cost'><script type="text/javascript">DisplayStuff('su5cost');</script></span></td>
+<td><span id='su5'><script type="text/javascript">IsLockedUpgrade('su5');</script></span></td>
+</tr>
+<tr>
+<td><span id='su6text'><script type="text/javascript">DisplayStuff('su6text');</script></span></td>
+<td><span id='su6cost'><script type="text/javascript">DisplayStuff('su6cost');</script></span></td>
+<td><span id='su6'><script type="text/javascript">IsLockedUpgrade('su6');</script></span></td>
+</tr>
+<tr>
+<td><span id='su13text'><script type="text/javascript">DisplayStuff('su13text');</script></span></td>
+<td><span id='su13cost'><script type="text/javascript">DisplayStuff('su13cost');</script></span></td>
+<td><span id='su13'><script type="text/javascript">IsLockedUpgrade('su13');</script></span></td>
+</tr>
+<tr>
+<td><span id='su14text'><script type="text/javascript">DisplayStuff('su14text');</script></span></td>
+<td><span id='su14cost'><script type="text/javascript">DisplayStuff('su14cost');</script></span></td>
+<td><span id='su14'><script type="text/javascript">IsLockedUpgrade('su14');</script></span></td>
+</tr>
+<tr>
+<td><span id='su7text'><script type="text/javascript">DisplayStuff('su7text');</script></span></td>
+<td><span id='su7cost'><script type="text/javascript">DisplayStuff('su7cost');</script></span></td>
+<td><span id='su7'><script type="text/javascript">IsLockedUpgrade('su7');</script></span></td>
+</tr>
+<tr>
+<td><span id='su8text'><script type="text/javascript">DisplayStuff('su8text');</script></span></td>
+<td><span id='su8cost'><script type="text/javascript">DisplayStuff('su8cost');</script></span></td>
+<td><span id='su8'><script type="text/javascript">IsLockedUpgrade('su8');</script></span></td>
+</tr>
+<tr>
+<td><span id='su9text'><script type="text/javascript">DisplayStuff('su9text');</script></span></td>
+<td><span id='su9cost'><script type="text/javascript">DisplayStuff('su9cost');</script></span></td>
+<td><span id='su9'><script type="text/javascript">IsLockedUpgrade('su9');</script></span></td>
+</tr>
+<tr>
+<td><span id='su10text'><script type="text/javascript">DisplayStuff('su10text');</script></span></td>
+<td><span id='su10cost'><script type="text/javascript">DisplayStuff('su10cost');</script></span></td>
+<td><span id='su10'><script type="text/javascript">IsLockedUpgrade('su10');</script></span></td>
+</tr>
+<tr>
+<td><span id='su11text'><script type="text/javascript">DisplayStuff('su11text');</script></span></td>
+<td><span id='su11cost'><script type="text/javascript">DisplayStuff('su11cost');</script></span></td>
+<td><span id='su11'><script type="text/javascript">IsLockedUpgrade('su11');</script></span></td>
+</tr>
+<tr>
+<td><span id='su12text'><script type="text/javascript">DisplayStuff('su12text');</script></span></td>
+<td><span id='su12cost'><script type="text/javascript">DisplayStuff('su12cost');</script></span></td>
+<td><span id='su12'><script type="text/javascript">IsLockedUpgrade('su12');</script></span></td>
+</tr>
+<tr>
+<td><span id='su15text'><script type="text/javascript">DisplayStuff('su15text');</script></span></td>
+<td><span id='su15cost'><script type="text/javascript">DisplayStuff('su15cost');</script></span></td>
+<td><span id='su15'><script type="text/javascript">IsLockedUpgrade('su15');</script></span></td>
+</tr>
+<tr>
+<td><span id='su16text'><script type="text/javascript">DisplayStuff('su16text');</script></span></td>
+<td><span id='su16cost'><script type="text/javascript">DisplayStuff('su16cost');</script></span></td>
+<td><span id='su16'><script type="text/javascript">IsLockedUpgrade('su16');</script></span></td>
+</tr>
+</table><br><br>
+
+	<table border=1 class="generalTable">
+	<tr><td colspan=4><center><b>糖浆店第二部分</b></center></td></tr>
+<tr><!-- table headings -->
+<td><b>经验加成</td>
+<td><b>成本</td>
+<td><b>购买!</td>
+<td><b>剩余增益</td>
+</tr>
+<tr>
+<td><center><b>伐木工人加成</b><br>
+接下来的100次点击+25%的经验。
+</td>
+<td><center><span id="LumberjackBuffCost"></span></td>
+<td><button onClick="BuyBuff('Lumberjack');"> 购买它!</td>
+<td><center><span id="LumberjackBuffRemaining"><script type="text/javascript">BuffRemaining('Lumberjack');</script></span></td>
+</tr>
+<td><center><b>冰上钓鱼加成</b><br>
+接下来的20次钓鱼+25%的经验。
+</td>
+<td><center><span id="IceFishingBuffCost"></span></td>
+<td><button onClick="BuyBuff('IceFishing');"> 购买它!</td>
+<td><center><span id="IceFishingBuffRemaining"><script type="text/javascript">BuffRemaining('IceFishing');</script></span></td>
+</tr>
+<td><center><b>胡子加成</b><br>
+接下来的5个胡子+25%的经验。
+</td>
+<td><center><span id="BeardBuffCost"></span></td>
+<td><button onClick="BuyBuff('Beard');"> 购买它!</td>
+<td><center><span id="BeardBuffRemaining"><script type="text/javascript">BuffRemaining('Beard');</script></span></td>
+</tr>
+<td><center><b>善良加成</b><br>
+接下来的10个操作+25%的经验。
+</td>
+<td><center><span id="KindnessBuffCost"></span></td>
+<td><button onClick="BuyBuff('Kindness');"> 购买它!</td>
+<td><center><span id="KindnessBuffRemaining"><script type="text/javascript">BuffRemaining('Kindness');</script></span></td>
+</tr>
+<td><center><b>曲棍球加成</b><br>
+接下来的5个操作+25%的经验。
+</td>
+<td><center><span id="HockeyBuffCost"></span></td>
+<td><button onClick="BuyBuff('Hockey');"> 购买它!</td>
+<td><center><span id="HockeyBuffRemaining"><script type="text/javascript">BuffRemaining('Hockey');</script></span></td>
+</tr>
+</table><br><br>
+
+	<table border=1 class="generalTable"><!-- table for flannel store -->
+	<tr><td colspan=3><center><b>法兰绒商店</b></center></td></tr>
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>状态</td>
+</tr>
+<tr>
+<td><span id='fu1text'><script type="text/javascript">DisplayStuff('fu1text');</script></span></td>
+<td><span id='fu1cost'><script type="text/javascript">DisplayStuff('fu1cost');</script></span></td>
+<td><span id='fu1'><script type="text/javascript">IsLockedUpgrade('fu1');</script></span></td>
+</tr>
+<tr>
+<td colspan=3><b>伐木工人皮肤</b></td>
+</tr>
+<tr>
+<td>夏令时间(默认)</td>
+<td>免费</script></span></td>
+<td><span id='summer'><script type="text/javascript">skinActive('summer');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu2text'><script type="text/javascript">DisplayStuff('fu2text');</script></span></td>
+<td><span id='fu2cost'><script type="text/javascript">DisplayStuff('fu2cost');</script></span></td>
+<td><span id='fu2'><script type="text/javascript">IsLockedUpgrade('fu2');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu3text'><script type="text/javascript">DisplayStuff('fu3text');</script></span></td>
+<td><span id='fu3cost'><script type="text/javascript">DisplayStuff('fu3cost');</script></span></td>
+<td><span id='fu3'><script type="text/javascript">IsLockedUpgrade('fu3');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu4text'><script type="text/javascript">DisplayStuff('fu4text');</script></span></td>
+<td><span id='fu4cost'><script type="text/javascript">DisplayStuff('fu4cost');</script></span></td>
+<td><span id='fu4'><script type="text/javascript">IsLockedUpgrade('fu4');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu5text'><script type="text/javascript">DisplayStuff('fu5text');</script></span></td>
+<td><span id='fu5cost'><script type="text/javascript">DisplayStuff('fu5cost');</script></span></td>
+<td><span id='fu5'><script type="text/javascript">IsLockedUpgrade('fu5');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu6text'><script type="text/javascript">DisplayStuff('fu6text');</script></span></td>
+<td><span id='fu6cost'><script type="text/javascript">DisplayStuff('fu6cost');</script></span></td>
+<td><span id='fu6'><script type="text/javascript">IsLockedUpgrade('fu6');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu7text'><script type="text/javascript">DisplayStuff('fu7text');</script></span></td>
+<td><span id='fu7cost'><script type="text/javascript">DisplayStuff('fu7cost');</script></span></td>
+<td><span id='fu7'><script type="text/javascript">IsLockedUpgrade('fu7');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu8text'><script type="text/javascript">DisplayStuff('fu8text');</script></span></td>
+<td><span id='fu8cost'><script type="text/javascript">DisplayStuff('fu8cost');</script></span></td>
+<td><span id='fu8'><script type="text/javascript">IsLockedUpgrade('fu8');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu9text'><script type="text/javascript">DisplayStuff('fu9text');</script></span></td>
+<td><span id='fu9cost'><script type="text/javascript">DisplayStuff('fu9cost');</script></span></td>
+<td><span id='fu9'><script type="text/javascript">IsLockedUpgrade('fu9');</script></span></td>
+</tr>
+<tr>
+<td><span id='fu10text'><script type="text/javascript">DisplayStuff('fu10text');</script></span></td>
+<td><span id='fu10cost'><script type="text/javascript">DisplayStuff('fu10cost');</script></span></td>
+<td><span id='fu10'><script type="text/javascript">IsLockedUpgrade('fu10');</script></span></td>
+</tr>
+</table>
+<br><br>
+<table border=1 class="generalTable"><!-- table for flannel store -->
+	<tr><td colspan=2><center><b>声望商店</b></center></td></tr>
+<tr>
+<td><b>物品</b></td>
+<td><b><center>进度</b></td>
+</tr>
+<tr>
+<td><span id='PrestigeReq[0]'><script type="text/javascript">DisplayStuff('PrestigeReq[0]');</script></span></td>
+<td><center>
+<div class="achievementprogress">
+     <div id="PrestigeProgress0" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="PrestigeReq0">xp/xp</span></b>
+    </div> 
+  </div>
+
+
+</center></td>
+</tr>
+<td><span id='PrestigeReq[1]'><script type="text/javascript">DisplayStuff('PrestigeReq[1]');</script></span></td>
+<td><center>
+<div class="achievementprogress">
+     <div id="PrestigeProgress1" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="PrestigeReq1">xp/xp</span></b>
+    </div> 
+  </div>
+</center></td>
+</tr>
+<td><span id='PrestigeReq[2]'><script type="text/javascript">DisplayStuff('PrestigeReq[2]');</script></span></td>
+<td><center>
+<div class="achievementprogress">
+     <div id="PrestigeProgress2" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="PrestigeReq2">xp/xp</span></b>
+    </div> 
+  </div>
+</center></td>
+</tr>
+<td><span id='PrestigeReq[3]'><script type="text/javascript">DisplayStuff('PrestigeReq[3]');</script></span></td>
+<td><center>
+<div class="achievementprogress">
+     <div id="PrestigeProgress3" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="PrestigeReq3">xp/xp</span></b>
+    </div> 
+  </div>
+</center></td>
+</tr>
+<td><span id='PrestigeTotalLevelReq[Prestige]'><script type="text/javascript">DisplayStuff('PrestigeTotalLevelReq[Prestige]');</script></span> <span id='PrestigeReq[4]'><script type="text/javascript">DisplayStuff('PrestigeReq[4]');</script></span></td>
+<td><center>
+<div class="achievementprogress">
+     <div id="PrestigeProgress4" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="PrestigeReq4">xp/xp</span></b>
+    </div> 
+  </div>
+</center></td>
+</tr>
+	
+	<tr><td colspan=2><center><b><span id='PrestigeButton'><script type="text/javascript">PrestigeButton();</script></span></b></center></td></tr>
+	<tr><td colspan=2><center><span id='PrestigeButtonDescription'></span></center></td></tr>
+	
+</table>
+
+</div><!-- END OF STORE -->
+
+	<div id="levels-tab" style="display:block;"><!-- LEVELS-TAB -->
+	
+	<span class="tutorial" id="statsTutorial"><div align="left"><script type="text/javascript">Tutorial('statsTutorial');</script></div></span><br>
+<!-- <div align="left">
+<button onClick=toggleTutorial('statsTutorial')><span id="statsTutorialButton"><script type="text/javascript">isTutorial('statsTutorial');</script></span></button></div>
+ -->
+ 
+ 当前所有技能最低的等级 <span id="LowestLevel"></span>
+ <br><br>
+ 
+ <b><span id="lumberjackLvlStats"></span></b>
+<div class="progress">
+     <div id="lumberjackProgressStats" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="lumberjackProgressXPStats"></span></b>
+    </div> 
+  </div>
+   <b><span id="icefishingLvlStats"></span></b>
+<div class="progress">
+     <div id="icefishingProgressStats" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="icefishingProgressXPStats"></span></b>
+    </div> 
+  </div>
+   <b><span id="beardLvlStats"></span></b>
+<div class="progress">
+     <div id="beardProgressStats" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="beardProgressXPStats"></span></b>
+    </div> 
+  </div>
+   <b><span id="kindnessLvlStats"></span></b>
+<div class="progress">
+     <div id="kindnessProgressStats" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="kindnessProgressXPStats"></span></b>
+    </div> 
+  </div>
+   <b><span id="hockeyLvlStats"></span></b>
+<div class="progress">
+     <div id="hockeyProgressStats" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="hockeyProgressXPStats"></span></b>
+    </div> 
+  </div>
+
+<span id='MasterXP'><script type="text/javascript">DisplayMasterXP();</script></span>
+<span id='LumberjackXP'><script type="text/javascript">DisplayLumberjackXP();</script></span>
+<span id='IceFishingXP'><script type="text/javascript">DisplayIceFishingXP();</script></span>
+<span id='BeardXP'><script type="text/javascript">DisplayBeardXP();</script></span>
+<span id='KindnessXP'><script type="text/javascript">DisplayKindnessXP();</script></span>
+<span id='HockeyXP'><script type="text/javascript">DisplayHockeyXP();</script></span>
+
+<br>
+<b>综合</b>
+<table border=0 frame="box">
+<tr>
+<td align="right">赚到的钱数:&nbsp</td>
+<td>$<span id='totalMoney'><script type="text/javascript">DisplayStuff('totalMoney');</script></span></td>
+</tr>
+<tr>
+<td align="right">得到的糖浆数:&nbsp</td>
+<td><span id='totalSyrup'><script type="text/javascript">DisplayStuff('totalSyrup');</script></span></td>
+</tr>
+<tr>
+<td align="right">得到的法兰绒数:&nbsp</td>
+<td><span id='totalFlannel'><script type="text/javascript">DisplayStuff('totalFlannel');</script></span></td>
+</tr>
+<tr>
+<td align="right">玩了多少分钟:&nbsp</td>
+<td><span id='totalMinutes'><script type="text/javascript">DisplayStuff('totalMinutes');</script></span></td>
+</tr>
+<tr>
+<td align="right">玩了多少天:&nbsp</td>
+<td><span id='totalDaysPlayed'><script type="text/javascript">DisplayStuff('totalDaysPlayed');</script></td>
+</tr>
+<tr>
+<td align="right">连续几天连胜:&nbsp</td>
+<td><span id='daysStreak'><script type="text/javascript">DisplayStuff('daysStreak');</script></span></td>
+</tr>
+<tr>
+<td align="right">最长的连续天数连胜:&nbsp</td>
+<td><span id='bestdaysStreak'><script type="text/javascript">DisplayStuff('bestdaysStreak');</script></span></td>
+</tr>
+</table>
+<br>
+
+<b>伐木工人</b>
+<table border=0 frame="box">
+<tr>
+<td align="right">点击树的次数:&nbsp</td>
+<td><span id='TreeClicks'><script type="text/javascript">DisplayStuff('TreeClicks');</script></span></td>
+</tr>
+<tr>
+<td align="right">松树总量:&nbsp</td>
+<td><span id='totalPine'><script type="text/javascript">DisplayStuff('totalPine');</script></span></td>
+</tr>
+<tr>
+<td align="right">云杉总量:&nbsp</td>
+<td><span id='totalSpruce'><script type="text/javascript">DisplayStuff('totalSpruce');</script></span></td>
+</tr>
+<tr>
+<td align="right">枫树总量:&nbsp</td>
+<td><span id='totalMaple'><script type="text/javascript">DisplayStuff('totalMaple');</script></span></td>
+</tr>
+<tr>
+<td align="right">橡树总量:&nbsp</td>
+<td><span id='totalOak'><script type="text/javascript">DisplayStuff('totalOak');</script></span></td>
+</tr>
+<tr>
+<td align="right">桦树总量:&nbsp</td>
+<td><span id='totalBirch'><script type="text/javascript">DisplayStuff('totalBirch');</script></span></td>
+</tr>
+<tr>
+<td align="right">岑树总量:&nbsp</td>
+<td><span id='totalAsh'><script type="text/javascript">DisplayStuff('totalAsh');</script></span></td>
+</tr>
+<tr>
+<td align="right">树的总数量:&nbsp</td>
+<td><span id='totalTrees'><script type="text/javascript">DisplayStuff('totalTrees');</script></span></td>
+</tr>
+</table>
+<br>
+<b>冰上钓鱼</b>
+<table border=0 frame="box">
+<tr>
+<td align="right">诱饵钓鱼:&nbsp</td>
+<td><span id='BaitFished'><script type="text/javascript">DisplayStuff('BaitFished');</script></span></td>
+</tr>
+<tr>
+<td align="right">鳟鱼总数:&nbsp</td>
+<td><span id='totalTrout'><script type="text/javascript">DisplayStuff('totalTrout');</script></span></td>
+</tr>
+<tr>
+<td align="right">鲑鱼总数:&nbsp</td>
+<td><span id='totalSalmon'><script type="text/javascript">DisplayStuff('totalSalmon');</script></span></td>
+</tr>
+<tr>
+<td align="right">鳕鱼总数:&nbsp</td>
+<td><span id='totalCod'><script type="text/javascript">DisplayStuff('totalCod');</script></span></td>
+</tr>
+<tr>
+<td align="right">螃蟹总数:&nbsp</td>
+<td><span id='totalCrab'><script type="text/javascript">DisplayStuff('totalCrab');</script></span></td>
+</tr>
+<tr>
+<td align="right">比目鱼总数:&nbsp</td>
+<td><span id='totalHalibut'><script type="text/javascript">DisplayStuff('totalHalibut');</script></span></td>
+</tr>
+<tr>
+<td align="right">鲸鱼总数:&nbsp</td>
+<td><span id='totalWhale'><script type="text/javascript">DisplayStuff('totalWhale');</script></span></td>
+</tr>
+<tr>
+<td align="right">抓到的鱼总数:&nbsp</td>
+<td><span id='IceFishingClicks'><script type="text/javascript">DisplayStuff('IceFishingClicks');</script></span></td>
+</tr>
+</table>
+<br>
+<b>胡子</b>
+<table border=0 frame="box">
+<tr>
+<td align="right">胡子点击次数:&nbsp</td>
+<td><span id='BeardClicks'><script type="text/javascript">DisplayStuff('BeardClicks');</script></span></td>
+</tr>
+<tr>
+<td align="right">棕色胡子:&nbsp</td>
+<td><span id='totalBrownBeard'><script type="text/javascript">DisplayStuff('totalBrownBeard');</script></span></td>
+</tr>
+<tr>
+<td align="right">黑色胡子:&nbsp</td>
+<td><span id='totalBlackBeard'><script type="text/javascript">DisplayStuff('totalBlackBeard');</script></span></td>
+</tr>
+<tr>
+<td align="right">银色胡子:&nbsp</td>
+<td><span id='totalSilverBeard'><script type="text/javascript">DisplayStuff('totalSilverBeard');</script></span></td>
+</tr>
+<tr>
+<td align="right">金色胡子:&nbsp</td>
+<td><span id='totalGoldBeard'><script type="text/javascript">DisplayStuff('totalGoldBeard');</script></span></td>
+</tr>
+<tr>
+<td align="right">红色胡子:&nbsp</td>
+<td><span id='totalRedBeard'><script type="text/javascript">DisplayStuff('totalRedBeard');</script></span></td>
+</tr>
+<tr>
+<td align="right">灰熊胡子:&nbsp</td>
+<td><span id='totalGrizzlyBeard'><script type="text/javascript">DisplayStuff('totalGrizzlyBeard');</script></span></td>
+</tr>
+</table>
+<br>
+<b>善良</b>
+<table border=0 frame="box">
+<tr>
+<td align="right">善良活动:&nbsp</td>
+<td><span id='KindnessClicks'><script type="text/javascript">DisplayStuff('KindnessClicks');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind1text);</script></span>:&nbsp</td>
+<td><span id='totalkind1'><script type="text/javascript">DisplayStuff('totalkind1');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind2text);</script></span>:&nbsp</td>
+<td><span id='totalkind2'><script type="text/javascript">DisplayStuff('totalkind2');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind3text);</script></span>:&nbsp</td>
+<td><span id='totalkind3'><script type="text/javascript">DisplayStuff('totalkind3');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind4text);</script></span>:&nbsp</td>
+<td><span id='totalkind4'><script type="text/javascript">DisplayStuff('totalkind4');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind5text);</script></span>:&nbsp</td>
+<td><span id='totalkind5'><script type="text/javascript">DisplayStuff('totalkind5');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind6text);</script></span>:&nbsp</td>
+<td><span id='totalkind6'><script type="text/javascript">DisplayStuff('totalkind6');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind7text);</script></span>:&nbsp</td>
+<td><span id='totalkind7'><script type="text/javascript">DisplayStuff('totalkind7');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind8text);</script></span>:&nbsp</td>
+<td><span id='totalkind8'><script type="text/javascript">DisplayStuff('totalkind8');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind9text);</script></span>:&nbsp</td>
+<td><span id='totalkind9'><script type="text/javascript">DisplayStuff('totalkind9');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind10text);</script></span>:&nbsp</td>
+<td><span id='totalkind10'><script type="text/javascript">DisplayStuff('totalkind10');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind11text);</script></span>:&nbsp</td>
+<td><span id='totalkind11'><script type="text/javascript">DisplayStuff('totalkind11');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind12text);</script></span>:&nbsp</td>
+<td><span id='totalkind12'><script type="text/javascript">DisplayStuff('totalkind12');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind13text);</script></span>:&nbsp</td>
+<td><span id='totalkind13'><script type="text/javascript">DisplayStuff('totalkind13');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind14text);</script></span>:&nbsp</td>
+<td><span id='totalkind14'><script type="text/javascript">DisplayStuff('totalkind14');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind15text);</script></span>:&nbsp</td>
+<td><span id='totalkind15'><script type="text/javascript">DisplayStuff('totalkind15');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind16text);</script></span>:&nbsp</td>
+<td><span id='totalkind16'><script type="text/javascript">DisplayStuff('totalkind16');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind17text);</script></span>:&nbsp</td>
+<td><span id='totalkind17'><script type="text/javascript">DisplayStuff('totalkind17');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(kind18text);</script></span>:&nbsp</td>
+<td><span id='totalkind18'><script type="text/javascript">DisplayStuff('totalkind18');</script></span></td>
+</tr>
+<tr>
+<td align="right">即时友善总数:&nbsp</td>
+<td><span id='totalInstantKindness'><script type="text/javascript">DisplayStuff('totalInstantKindness');</script></span></td>
+</tr>
+</table>
+<br>
+<b>曲棍球</b>
+<table border=0 frame="box">
+<tr>
+<td align="right">冰球总数:&nbsp</td>
+<td><span id='totalPucks'><script type="text/javascript">DisplayStuff('totalPucks');</script></span></td>
+</tr>
+<tr>
+<td align="right">棍棒总数:&nbsp</td>
+<td><span id='totalSticks'><script type="text/javascript">DisplayStuff('totalSticks');</script></span></td>
+</tr>
+<tr>
+<td align="right">手套总数:&nbsp</td>
+<td><span id='totalGloves'><script type="text/javascript">DisplayStuff('totalGloves');</script></span></td>
+</tr>
+<tr>
+<td align="right">冰鞋总数:&nbsp</td>
+<td><span id='totalSkates'><script type="text/javascript">DisplayStuff('totalSkates');</script></span></td>
+</tr>
+<tr>
+<td align="right">球门总数:&nbsp</td>
+<td><span id='totalGoals'><script type="text/javascript">DisplayStuff('totalGoals');</script></span></td>
+</tr>
+<tr>
+<td align="right">赞博尼斯总数:&nbsp</td>
+<td><span id='totalZambonies'><script type="text/javascript">DisplayStuff('totalZambonies');</script></span></td>
+</tr>
+<tr>
+<td align="right">曲棍球的活动:&nbsp</td>
+<td><span id='HockeyClicks'><script type="text/javascript">DisplayStuff('HockeyClicks');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey1text);</script></span>:&nbsp</td>
+<td><span id='totalhockey1'><script type="text/javascript">DisplayStuff('totalhockey1');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey2text);</script></span>:&nbsp</td>
+<td><span id='totalhockey2'><script type="text/javascript">DisplayStuff('totalhockey2');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey3text);</script></span>:&nbsp</td>
+<td><span id='totalhockey3'><script type="text/javascript">DisplayStuff('totalhockey3');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey4text);</script></span>:&nbsp</td>
+<td><span id='totalhockey4'><script type="text/javascript">DisplayStuff('totalhockey4');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey5text);</script></span>:&nbsp</td>
+<td><span id='totalhockey5'><script type="text/javascript">DisplayStuff('totalhockey5');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey6text);</script></span>:&nbsp</td>
+<td><span id='totalhockey6'><script type="text/javascript">DisplayStuff('totalhockey6');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey7text);</script></span>:&nbsp</td>
+<td><span id='totalhockey7'><script type="text/javascript">DisplayStuff('totalhockey7');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey8text);</script></span>:&nbsp</td>
+<td><span id='totalhockey8'><script type="text/javascript">DisplayStuff('totalhockey8');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey9text);</script></span>:&nbsp</td>
+<td><span id='totalhockey9'><script type="text/javascript">DisplayStuff('totalhockey9');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey10text);</script></span>:&nbsp</td>
+<td><span id='totalhockey10'><script type="text/javascript">DisplayStuff('totalhockey10');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey11text);</script></span>:&nbsp</td>
+<td><span id='totalhockey11'><script type="text/javascript">DisplayStuff('totalhockey11');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey12text);</script></span>:&nbsp</td>
+<td><span id='totalhockey12'><script type="text/javascript">DisplayStuff('totalhockey12');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey13text);</script></span>:&nbsp</td>
+<td><span id='totalhockey13'><script type="text/javascript">DisplayStuff('totalhockey13');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey14text);</script></span>:&nbsp</td>
+<td><span id='totalhockey14'><script type="text/javascript">DisplayStuff('totalhockey14');</script></span></td>
+</tr>
+<tr>
+<td align="right"><script type="text/javascript">document.write(hockey15text);</script></span>:&nbsp</td>
+<td><span id='totalhockey15'><script type="text/javascript">DisplayStuff('totalhockey15');</script></span></td>
+</tr>
+<tr>
+<td align="right">瞬时曲棍球总数:&nbsp</td>
+<td><span id='totalInstantHockey'><script type="text/javascript">DisplayStuff('totalInstantHockey');</script></span></td>
+</tr>
+</table>
+
+
+<b>Buff加成</b>
+<table border=0 frame="box">
+<tr>
+<td align="right">伐木个人加成总数:&nbsp</td>
+<td><span id='TotalLumberjackBuff'><script type="text/javascript">DisplayStuff('TotalLumberjackBuff');</script></span></td>
+</tr>
+<tr>
+<td align="right">冰上钓鱼加成总数:&nbsp</td>
+<td><span id='TotalIceFishingBuff'><script type="text/javascript">DisplayStuff('TotalIceFishingBuff');</script></span></td>
+</tr>
+<tr>
+<td align="right">胡子加成总数:&nbsp</td>
+<td><span id='TotalBeardBuff'><script type="text/javascript">DisplayStuff('TotalBeardBuff');</script></span></td>
+</tr>
+<tr>
+<td align="right">友善加成总数:&nbsp</td>
+<td><span id='TotalKindnessBuff'><script type="text/javascript">DisplayStuff('TotalKindnessBuff');</script></span></td>
+</tr>
+<tr>
+<td align="right">曲棍球加成总数:&nbsp</td>
+<td><span id='TotalHockeyBuff'><script type="text/javascript">DisplayStuff('TotalHockeyBuff');</script></span></td>
+</tr>
+</table>
+
+
+</div><!-- END OF LEVELS -->
+
+	<div id="achievements-tab" style="display:block;"><!-- ACHEIVEMENTS-TAB -->
+
+<span class="tutorial" id="achievementsTutorial"><div align="left"><script type="text/javascript">Tutorial('achievementsTutorial');</script></div></span><br>
+<!-- <div align="left">
+<button onClick=toggleTutorial('achievementsTutorial')><span id="achievementsTutorialButton"><script type="text/javascript">isTutorial('achievementsTutorial');</script></span></button></div>
+ -->
+<table border=0><!--table for new achievement layout -->
+<tr><td colspan=2 style='padding:0px 10px 0px 10px'>
+<center><b><span id="achievementCount"></span></b></center>
+</td></tr>
+<tr><td style='padding:5px 5px 5px 5px'>
+
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>肖邦树的冠军</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>点击那棵树!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="clickingProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="clicking">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a1'><script type="text/javascript">achieved('a1');</script></span>
+<span id='a2'><script type="text/javascript">achieved('a2');</script></span>
+<span id='a3'><script type="text/javascript">achieved('a3');</script></span>
+<span id='a4'><script type="text/javascript">achieved('a4');</script></span>
+<span id='a5'><script type="text/javascript">achieved('a5');</script></span>
+<span id='a6'><script type="text/javascript">achieved('a6');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>非凡的钓鱼者</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>保持钓鱼!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="baitFishingProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="baitFishing">xp/xp</span></b>
+    </div> 
+  </div>
+  </td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a7'><script type="text/javascript">achieved('a7');</script></span>
+<span id='a8'><script type="text/javascript">achieved('a8');</script></span>
+<span id='a9'><script type="text/javascript">achieved('a9');</script></span>
+<span id='a10'><script type="text/javascript">achieved('a10');</script></span>
+<span id='a11'><script type="text/javascript">achieved('a11');</script></span>
+<span id='a12'><script type="text/javascript">achieved('a12');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+<tr><td style='padding:5px 5px 5px 5px'>
+
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>男子气概</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>在你的脸上种植一片森林!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="manlyProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="manly">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a13'><script type="text/javascript">achieved('a13');</script></span>
+<span id='a14'><script type="text/javascript">achieved('a14');</script></span>
+<span id='a15'><script type="text/javascript">achieved('a15');</script></span>
+<span id='a16'><script type="text/javascript">achieved('a16');</script></span>
+<span id='a17'><script type="text/javascript">achieved('a17');</script></span>
+<span id='a18'><script type="text/javascript">achieved('a18');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>分享就是关怀</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>善良可以是有益的!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="caringProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="caring">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a19'><script type="text/javascript">achieved('a19');</script></span>
+<span id='a20'><script type="text/javascript">achieved('a20');</script></span>
+<span id='a21'><script type="text/javascript">achieved('a21');</script></span>
+<span id='a22'><script type="text/javascript">achieved('a22');</script></span>
+<span id='a23'><script type="text/javascript">achieved('a23');</script></span>
+<span id='a24'><script type="text/javascript">achieved('a24');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'>
+
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>别胡闹了</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>这是一场冰球比赛，是吗?</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="hoserProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="hoser">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a25'><script type="text/javascript">achieved('a25');</script></span>
+<span id='a26'><script type="text/javascript">achieved('a26');</script></span>
+<span id='a27'><script type="text/javascript">achieved('a27');</script></span>
+<span id='a28'><script type="text/javascript">achieved('a28');</script></span>
+<span id='a29'><script type="text/javascript">achieved('a29');</script></span>
+<span id='a30'><script type="text/javascript">achieved('a30');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>乘风破浪</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>升级,兄弟。升级。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="upgradeProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="upgrade">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a31'><script type="text/javascript">achieved('a31');</script></span>
+<span id='a32'><script type="text/javascript">achieved('a32');</script></span>
+<span id='a33'><script type="text/javascript">achieved('a33');</script></span>
+<span id='a34'><script type="text/javascript">achieved('a34');</script></span>
+<span id='a35'><script type="text/javascript">achieved('a35');</script></span>
+<span id='a36'><script type="text/javascript">achieved('a36');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'>
+
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>时光飞逝</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>这么多分钟!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="minutesProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="minutes">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a37'><script type="text/javascript">achieved('a37');</script></span>
+<span id='a38'><script type="text/javascript">achieved('a38');</script></span>
+<span id='a39'><script type="text/javascript">achieved('a39');</script></span>
+<span id='a40'><script type="text/javascript">achieved('a40');</script></span>
+<span id='a41'><script type="text/javascript">achieved('a41');</script></span>
+<span id='a42'><script type="text/javascript">achieved('a42');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>木材!</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>让一些人、朋友、朋友的朋友来帮忙!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="treesProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="trees">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a43'><script type="text/javascript">achieved('a43');</script></span>
+<span id='a44'><script type="text/javascript">achieved('a44');</script></span>
+<span id='a45'><script type="text/javascript">achieved('a45');</script></span>
+<span id='a46'><script type="text/javascript">achieved('a46');</script></span>
+<span id='a47'><script type="text/javascript">achieved('a47');</script></span>
+<span id='a48'><script type="text/javascript">achieved('a48');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>让它下雨</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>钱少，问题少。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="moreMoneyProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="moreMoney">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a49'><script type="text/javascript">achieved('a49');</script></span>
+<span id='a50'><script type="text/javascript">achieved('a50');</script></span>
+<span id='a51'><script type="text/javascript">achieved('a51');</script></span>
+<span id='a52'><script type="text/javascript">achieved('a52');</script></span>
+<span id='a53'><script type="text/javascript">achieved('a53');</script></span>
+<span id='a54'><script type="text/javascript">achieved('a54');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>日常工作</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>一天一次的去做</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="daysProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="days">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a55'><script type="text/javascript">achieved('a55');</script></span>
+<span id='a56'><script type="text/javascript">achieved('a56');</script></span>
+<span id='a57'><script type="text/javascript">achieved('a57');</script></span>
+<span id='a58'><script type="text/javascript">achieved('a58');</script></span>
+<span id='a59'><script type="text/javascript">achieved('a59');</script></span>
+<span id='a60'><script type="text/javascript">achieved('a60');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>我们要裸奔了!</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>一连几天都在玩。请穿好衣服。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="streakingProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="streaking">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a61'><script type="text/javascript">achieved('a61');</script></span>
+<span id='a62'><script type="text/javascript">achieved('a62');</script></span>
+<span id='a63'><script type="text/javascript">achieved('a63');</script></span>
+<span id='a64'><script type="text/javascript">achieved('a64');</script></span>
+<span id='a65'><script type="text/javascript">achieved('a65');</script></span>
+<span id='a66'><script type="text/javascript">achieved('a66');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>所以你告诉我有机会!?</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>你可能只是随机地获得了这一成就。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="luckyProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="lucky">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a69'><script type="text/javascript">achieved('a69');</script></span>
+<span id='a70'><script type="text/javascript">achieved('a70');</script></span>
+<span id='a71'><script type="text/javascript">achieved('a71');</script></span>
+<span id='a72'><script type="text/javascript">achieved('a72');</script></span>
+<span id='a73'><script type="text/javascript">achieved('a73');</script></span>
+<span id='a74'><script type="text/javascript">achieved('a74');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>引导</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>看看这个游戏到底是什么。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="abootProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="aboot">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a67'><script type="text/javascript">achieved('a67');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>Reddit</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>你可以在Reddit上与开发者互动。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="redditProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="reddit">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a68'><script type="text/javascript">achieved('a68');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>导入/导出</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>看看吧,老兄。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="importerProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="importer">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a75'><script type="text/javascript">achieved('a75');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>不可靠的人</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>储备你的存货!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="packratProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="packrat">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a80'><script type="text/javascript">achieved('a80');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'> <center>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>混合起来</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>尝试新皮肤。!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="mixitupProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="mixitup">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a81'><script type="text/javascript">achieved('a81');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>仁爱之家</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>是否有多个友善的活动?</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="multitaskerProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="multitasker">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a82'><script type="text/javascript">achieved('a82');</script></span>
+<span id='a83'><script type="text/javascript">achieved('a83');</script></span>
+<span id='a84'><script type="text/javascript">achieved('a84');</script></span>
+<span id='a85'><script type="text/javascript">achieved('a85');</script></span>
+<span id='a86'><script type="text/javascript">achieved('a86');</script></span>
+<span id='a87'><script type="text/javascript">achieved('a87');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'> <center>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>变灰!</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>点击一个灰胡子</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="getgrizzlyProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="getgrizzly">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a94'><script type="text/javascript">achieved('a94');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>这里有糖浆。!</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>如此多的糖浆!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="somuchsyrupProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="somuchsyrup">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a88'><script type="text/javascript">achieved('a88');</script></span>
+<span id='a89'><script type="text/javascript">achieved('a89');</script></span>
+<span id='a90'><script type="text/javascript">achieved('a90');</script></span>
+<span id='a91'><script type="text/javascript">achieved('a91');</script></span>
+<span id='a92'><script type="text/javascript">achieved('a92');</script></span>
+<span id='a93'><script type="text/javascript">achieved('a93');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td style='padding:5px 5px 5px 5px'> <center>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>玩得很开心。!</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>把大的卷起来!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="catchawhaleProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="catchawhale">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a95'><script type="text/javascript">achieved('a95');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>曲棍球职业</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>完成所有的曲棍球运动。</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="hockeyproProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="hockeypro">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a96'><script type="text/javascript">achieved('a96');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+
+<tr><td style='padding:5px 5px 5px 5px'> <center>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>有声望的</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>加拿大的声望很高!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="prestigeryProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="prestigery">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a76'><script type="text/javascript">achieved('a76');</script></span>
+<span id='a77'><script type="text/javascript">achieved('a77');</script></span>
+<span id='a78'><script type="text/javascript">achieved('a78');</script></span>
+<span id='a79'><script type="text/javascript">achieved('a79');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td style='padding:5px 5px 5px 5px'>
+<table frame="box" width=300><!--individual achievement table -->
+<tr><center><td><center><b>加拿大日快乐!</b></td></tr><!--achievement series name-->
+<tr><center><td><center><font size=2>朋友们，兄弟们，小伙伴们，大家都在庆祝。!</font></td></tr><!--achievement series description-->
+<tr><td><center>
+<div class="achievementprogress">
+     <div id="canadadayProgress" class="achievementprogress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      <b><span id="canadaday">xp/xp</span></b>
+    </div> 
+  </div>
+</td></tr><!--achievement progress-->
+<tr>
+<td style='padding:0px 0px 2px 0px'>
+<center>
+<span id='a97'><script type="text/javascript">achieved('a97');</script></span>
+</center>
+</td>
+</tr>
+</table>
+</td></tr>
+
+</table><!-- end table for new achievement layout -->
+
+	
+	
+	
+</div><!-- END OF ACHEIVEMENTS -->
+
+	<div id="lumberjack-tab" style="display:block;"><!-- LUMBERJACK-TAB -->
+
+<span class="tutorial" id="lumberjackTutorial"><div align="left"><script type="text/javascript">Tutorial('lumberjackTutorial');</script></div></span><br>
+
+<b><span id="lumberjackLvl"></span></b>
+<div class="progress">
+     <div id="lumberjackProgress" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="lumberjackProgressXP"></span></b>
+    </div> 
+  </div>
+
+
+<!-- <div align="left">
+<button onClick=toggleTutorial('lumberjackTutorial')><span id="lumberjackTutorialButton"><script type="text/javascript">isTutorial('lumberjackTutorial');</script></span></button></div>
+ -->
+
+	WPS指的是：木头每秒产量。点击购买↓
+	<table border=1 class="generalTable"><!-- table for lumberjack crew -->
+<tr><!-- table headings / purchase buttons-->
+<td><button onClick=BuyCrew('AxeBud')><b>芽斧<br><font size=1><span id="AxeBudWPS">+0.1 WPS<span></font></button></td>
+<td><button onClick=BuyCrew('ChainsawPal')><b>电锯帕尔<br><font size=1><span id="ChainsawPalWPS">+0.1 WPS<span></font></button></td>
+<td><button onClick=BuyCrew('FellerFriend')><b>樵夫的朋友<br><font size=1><span id="FellerFriendWPS">+0.1 WPS<span></font></button></td>
+<td><button onClick=BuyCrew('TransportGuy')><b>运输人员<br><font size=1><span id="TransportGuyWPS">+0.1 WPS<span></font></button></td>
+</tr>
+<tr><!-- lumberjack crew quantities -->
+<td><span id='AxeBud'><script type="text/javascript">DisplayStuff('AxeBud');</script></span></td>
+<td><span id='ChainsawPal'><script type="text/javascript">DisplayStuff('ChainsawPal');</script></span></td>
+<td><span id='FellerFriend'><script type="text/javascript">DisplayStuff('FellerFriend');</script></span></td>
+<td><span id='TransportGuy'><script type="text/javascript">DisplayStuff('TransportGuy');</script></span></td>
+</tr>
+<tr><!-- lumberjack crew cost -->
+<td>$<span id='AxeBudCost'><script type="text/javascript">CrewCost('AxeBud');</script></span></td>
+<td>$<span id='ChainsawPalCost'><script type="text/javascript">CrewCost('ChainsawPal');</script></span></td>
+<td>$<span id='FellerFriendCost'><script type="text/javascript">CrewCost('FellerFriend');</script></span></td>
+<td>$<span id='TransportGuyCost'><script type="text/javascript">CrewCost('TransportGuy');</script></span></td>
+</tr>
+</table>每秒自动生产<span id='WoodPerSecond'> <script type="text/javascript">DisplayWoodPerSecond();</script></span> 木头  <span id="BonusWPS"></span><br>
+	<br>
+<table border=1 class="generalTable"><!-- table for lumberjack upgrades -->
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>等级</td>
+<td><b>状态</td>
+</tr>
+
+<tr>
+<td>松木</td>
+<td>免费的!</td>
+<td>暂无!</td>
+<td>已解锁!</td>
+</tr>
+
+<tr>
+<td>云杉</td>
+<td>$<span id='SpruceUnlockCost'><script type="text/javascript">DisplayStuff('SpruceUnlockCost');</script></span></td>
+<td><span id='SpruceUnlockLevel'><script type="text/javascript">DisplayStuff('SpruceUnlockLevel');</script></span></td>
+<td><span id='UnlockSpruce'><script type="text/javascript">IsLocked('Spruce');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu1text'><script type="text/javascript">DisplayStuff('Lu1text');</script></span></td>
+<td>$<span id='Lu1cost'><script type="text/javascript">DisplayStuff('Lu1cost');</script></span></td>
+<td><span id='Lu1req'><script type="text/javascript">DisplayStuff('Lu1req');</script></span></td>
+<td><span id='Lu1'><script type="text/javascript">IsLockedUpgrade('Lu1');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu6text'><script type="text/javascript">DisplayStuff('Lu6text');</script></span></td>
+<td>$<span id='Lu6cost'><script type="text/javascript">DisplayStuff('Lu6cost');</script></span></td>
+<td><span id='Lu6req'><script type="text/javascript">DisplayStuff('Lu6req');</script></span></td>
+<td><span id='Lu6'><script type="text/javascript">IsLockedUpgrade('Lu6');</script></span></td>
+</tr>
+<tr>
+<td>枫木</td>
+<td>$<span id='MapleUnlockCost'><script type="text/javascript">DisplayStuff('MapleUnlockCost');</script></span></td>
+<td><span id='MapleUnlockLevel'><script type="text/javascript">DisplayStuff('MapleUnlockLevel');</script></span></td>
+<td><span id='UnlockMaple'><script type="text/javascript">IsLocked('Maple');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu2text'><script type="text/javascript">DisplayStuff('Lu2text');</script></span></td>
+<td>$<span id='Lu2cost'><script type="text/javascript">DisplayStuff('Lu2cost');</script></span></td>
+<td><span id='Lu2req'><script type="text/javascript">DisplayStuff('Lu2req');</script></span></td>
+<td><span id='Lu2'><script type="text/javascript">IsLockedUpgrade('Lu2');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu7text'><script type="text/javascript">DisplayStuff('Lu7text');</script></span></td>
+<td>$<span id='Lu7cost'><script type="text/javascript">DisplayStuff('Lu7cost');</script></span></td>
+<td><span id='Lu7req'><script type="text/javascript">DisplayStuff('Lu7req');</script></span></td>
+<td><span id='Lu7'><script type="text/javascript">IsLockedUpgrade('Lu7');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu11text'><script type="text/javascript">DisplayStuff('Lu11text');</script></span></td>
+<td>$<span id='Lu11cost'><script type="text/javascript">DisplayStuff('Lu11cost');</script></span></td>
+<td><span id='Lu11req'><script type="text/javascript">DisplayStuff('Lu11req');</script></span></td>
+<td><span id='Lu11'><script type="text/javascript">IsLockedUpgrade('Lu11');</script></span></td>
+</tr>
+<tr>
+<td>橡木</td>
+<td>$<span id='OakUnlockCost'><script type="text/javascript">DisplayStuff('OakUnlockCost');</script></span></td>
+<td><span id='OakUnlockLevel'><script type="text/javascript">DisplayStuff('OakUnlockLevel');</script></span></td>
+<td><span id='UnlockOak'><script type="text/javascript">IsLocked('Oak');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu13text'><script type="text/javascript">DisplayStuff('Lu13text');</script></span></td>
+<td>$<span id='Lu13cost'><script type="text/javascript">DisplayStuff('Lu13cost');</script></span></td>
+<td><span id='Lu13req'><script type="text/javascript">DisplayStuff('Lu13req');</script></span></td>
+<td><span id='Lu13'><script type="text/javascript">IsLockedUpgrade('Lu13');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu3text'><script type="text/javascript">DisplayStuff('Lu3text');</script></span></td>
+<td>$<span id='Lu3cost'><script type="text/javascript">DisplayStuff('Lu3cost');</script></span></td>
+<td><span id='Lu3req'><script type="text/javascript">DisplayStuff('Lu3req');</script></span></td>
+<td><span id='Lu3'><script type="text/javascript">IsLockedUpgrade('Lu3');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu8text'><script type="text/javascript">DisplayStuff('Lu8text');</script></span></td>
+<td>$<span id='Lu8cost'><script type="text/javascript">DisplayStuff('Lu8cost');</script></span></td>
+<td><span id='Lu8req'><script type="text/javascript">DisplayStuff('Lu8req');</script></span></td>
+<td><span id='Lu8'><script type="text/javascript">IsLockedUpgrade('Lu8');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu15text'><script type="text/javascript">DisplayStuff('Lu15text');</script></span></td>
+<td>$<span id='Lu15cost'><script type="text/javascript">DisplayStuff('Lu15cost');</script></span></td>
+<td><span id='Lu15req'><script type="text/javascript">DisplayStuff('Lu15req');</script></span></td>
+<td><span id='Lu15'><script type="text/javascript">IsLockedUpgrade('Lu15');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu4text'><script type="text/javascript">DisplayStuff('Lu4text');</script></span></td>
+<td>$<span id='Lu4cost'><script type="text/javascript">DisplayStuff('Lu4cost');</script></span></td>
+<td><span id='Lu4req'><script type="text/javascript">DisplayStuff('Lu4req');</script></span></td>
+<td><span id='Lu4'><script type="text/javascript">IsLockedUpgrade('Lu4');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu17text'><script type="text/javascript">DisplayStuff('Lu17text');</script></span></td>
+<td>$<span id='Lu17cost'><script type="text/javascript">DisplayStuff('Lu17cost');</script></span></td>
+<td><span id='Lu17req'><script type="text/javascript">DisplayStuff('Lu17req');</script></span></td>
+<td><span id='Lu17'><script type="text/javascript">IsLockedUpgrade('Lu17');</script></span></td>
+</tr>
+<tr>
+<td>桦木</td>
+<td>$<span id='BirchUnlockCost'><script type="text/javascript">DisplayStuff('BirchUnlockCost');</script></span></td>
+<td><span id='BirchUnlockLevel'><script type="text/javascript">DisplayStuff('BirchUnlockLevel');</script></span></td>
+<td><span id='UnlockBirch'><script type="text/javascript">IsLocked('Birch');</script></span></td>
+</tr>
+
+<tr>
+<td><span id='Lu12text'><script type="text/javascript">DisplayStuff('Lu12text');</script></span></td>
+<td>$<span id='Lu12cost'><script type="text/javascript">DisplayStuff('Lu12cost');</script></span></td>
+<td><span id='Lu12req'><script type="text/javascript">DisplayStuff('Lu12req');</script></span></td>
+<td><span id='Lu12'><script type="text/javascript">IsLockedUpgrade('Lu12');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu9text'><script type="text/javascript">DisplayStuff('Lu9text');</script></span></td>
+<td>$<span id='Lu9cost'><script type="text/javascript">DisplayStuff('Lu9cost');</script></span></td>
+<td><span id='Lu9req'><script type="text/javascript">DisplayStuff('Lu9req');</script></span></td>
+<td><span id='Lu9'><script type="text/javascript">IsLockedUpgrade('Lu9');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu5text'><script type="text/javascript">DisplayStuff('Lu5text');</script></span></td>
+<td>$<span id='Lu5cost'><script type="text/javascript">DisplayStuff('Lu5cost');</script></span></td>
+<td><span id='Lu5req'><script type="text/javascript">DisplayStuff('Lu5req');</script></span></td>
+<td><span id='Lu5'><script type="text/javascript">IsLockedUpgrade('Lu5');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu14text'><script type="text/javascript">DisplayStuff('Lu14text');</script></span></td>
+<td>$<span id='Lu14cost'><script type="text/javascript">DisplayStuff('Lu14cost');</script></span></td>
+<td><span id='Lu14req'><script type="text/javascript">DisplayStuff('Lu14req');</script></span></td>
+<td><span id='Lu14'><script type="text/javascript">IsLockedUpgrade('Lu14');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu10text'><script type="text/javascript">DisplayStuff('Lu10text');</script></span></td>
+<td>$<span id='Lu10cost'><script type="text/javascript">DisplayStuff('Lu10cost');</script></span></td>
+<td><span id='Lu10req'><script type="text/javascript">DisplayStuff('Lu10req');</script></span></td>
+<td><span id='Lu10'><script type="text/javascript">IsLockedUpgrade('Lu10');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu16text'><script type="text/javascript">DisplayStuff('Lu16text');</script></span></td>
+<td>$<span id='Lu16cost'><script type="text/javascript">DisplayStuff('Lu16cost');</script></span></td>
+<td><span id='Lu16req'><script type="text/javascript">DisplayStuff('Lu16req');</script></span></td>
+<td><span id='Lu16'><script type="text/javascript">IsLockedUpgrade('Lu16');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu18text'><script type="text/javascript">DisplayStuff('Lu18text');</script></span></td>
+<td>$<span id='Lu18cost'><script type="text/javascript">DisplayStuff('Lu18cost');</script></span></td>
+<td><span id='Lu18req'><script type="text/javascript">DisplayStuff('Lu18req');</script></span></td>
+<td><span id='Lu18'><script type="text/javascript">IsLockedUpgrade('Lu18');</script></span></td>
+</tr>
+<tr>
+<td>岑树</td>
+<td>$<span id='AshUnlockCost'><script type="text/javascript">DisplayStuff('AshUnlockCost');</script></span></td>
+<td><span id='AshUnlockLevel'><script type="text/javascript">DisplayStuff('AshUnlockLevel');</script></span></td>
+<td><span id='UnlockAsh'><script type="text/javascript">IsLocked('Ash');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu19text'><script type="text/javascript">DisplayStuff('Lu19text');</script></span></td>
+<td>$<span id='Lu19cost'><script type="text/javascript">DisplayStuff('Lu19cost');</script></span></td>
+<td><span id='Lu19req'><script type="text/javascript">DisplayStuff('Lu19req');</script></span></td>
+<td><span id='Lu19'><script type="text/javascript">IsLockedUpgrade('Lu19');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu20text'><script type="text/javascript">DisplayStuff('Lu20text');</script></span></td>
+<td>$<span id='Lu20cost'><script type="text/javascript">DisplayStuff('Lu20cost');</script></span></td>
+<td><span id='Lu20req'><script type="text/javascript">DisplayStuff('Lu20req');</script></span></td>
+<td><span id='Lu20'><script type="text/javascript">IsLockedUpgrade('Lu20');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu21text'><script type="text/javascript">DisplayStuff('Lu21text');</script></span></td>
+<td>$<span id='Lu21cost'><script type="text/javascript">DisplayStuff('Lu21cost');</script></span></td>
+<td><span id='Lu21req'><script type="text/javascript">DisplayStuff('Lu21req');</script></span></td>
+<td><span id='Lu21'><script type="text/javascript">IsLockedUpgrade('Lu21');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu22text'><script type="text/javascript">DisplayStuff('Lu22text');</script></span></td>
+<td>$<span id='Lu22cost'><script type="text/javascript">DisplayStuff('Lu22cost');</script></span></td>
+<td><span id='Lu22req'><script type="text/javascript">DisplayStuff('Lu22req');</script></span></td>
+<td><span id='Lu22'><script type="text/javascript">IsLockedUpgrade('Lu22');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu23text'><script type="text/javascript">DisplayStuff('Lu23text');</script></span></td>
+<td>$<span id='Lu23cost'><script type="text/javascript">DisplayStuff('Lu23cost');</script></span></td>
+<td><span id='Lu23req'><script type="text/javascript">DisplayStuff('Lu23req');</script></span></td>
+<td><span id='Lu23'><script type="text/javascript">IsLockedUpgrade('Lu23');</script></span></td>
+</tr>
+<tr>
+<td><span id='Lu24text'><script type="text/javascript">DisplayStuff('Lu24text');</script></span></td>
+<td>$<span id='Lu24cost'><script type="text/javascript">DisplayStuff('Lu24cost');</script></span></td>
+<td><span id='Lu24req'><script type="text/javascript">DisplayStuff('Lu24req');</script></span></td>
+<td><span id='Lu24'><script type="text/javascript">IsLockedUpgrade('Lu24');</script></span></td>
+</tr>
+</table>
+
+</div><!-- END OF LUMBERJACK -->
+
+<div id="icefishing-tab" style="display:block;"><!-- ICE FISHING-TAB -->
+
+<span class="tutorial" id="icefishingTutorial"><div align="left"><script type="text/javascript">Tutorial('icefishingTutorial');</script></div></span><br>
+
+<b><span id="icefishingLvl"></span></b>
+<div class="progress">
+     <div id="icefishingProgress" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="icefishingProgressXP"></span></b>
+    </div> 
+  </div>
+
+<!-- <div align="left">
+<button onClick=toggleTutorial('icefishingTutorial')><span id="icefishingTutorialButton"><script type="text/javascript">isTutorial('icefishingTutorial');</script></span></button></div>
+ -->
+ <table border=0>
+ <tr>
+ <td>
+ 
+<table border=0><!-- table for buying bait -->
+<!-- <tr>
+<td><b>Item</td>
+<td><b>Cost</td>
+<td><b>Quantity</td>
+<td></td>
+</tr> -->
+<tr><!-- table headings -->
+<td>
+<table border=1>
+<tr>
+<td><b>饵</td>
+<td>$<span id='Bait1Cost'><script type="text/javascript">DisplayStuff('Bait1Cost');</script></span></td>
+<td><input type="text" id="Bait1Quantity" placeholder="请输入数量" style="width: 100px;"></td>
+<td><input type="button" onclick="BuyStuff(document.getElementById('Bait1Quantity').value, 'Bait1');" value="购买"></td>
+</tr>
+</table>
+</td>
+<td>
+<table border=0>
+<tr>
+<td style='padding:0px 0px 0px 30px'></td>
+</tr>
+</table>
+</td>
+<td>
+<table border=1>
+<tr>
+<td><b>卖诱饵</td>
+<td>$<span id='Bait1Sell'><script type="text/javascript">DisplayStuff('Bait1Sell');</script></span></td>
+<td><input type="text" id="Bait1Selling" placeholder="请输入数量?" style="width: 100px;"></td>
+<td><input type="button" onclick="SellStuff(document.getElementById('Bait1Selling').value, 'Bait1');" value="出售"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+<table border=1><!-- table for ice fishing -->
+<tr><!-- table headings -->
+<td><b>诱饵钩</td>
+<td><span id='BaitTextBox'><script type="text/javascript">BaitText();</script></span></td>
+<td><input type="button" onclick="StartFishing(document.getElementById('BaitHooks').value);" value="钓鱼"></td>
+<td><input type="button" onclick="fishMax();" value="最大钓鱼次数" id="MaxFish"></td>
+</tr>
+</table>
+
+<span id='FishingDisplay'></span><br>
+
+
+<span id='baitupdate'><script type="text/javascript">DisplayBait1();</script></span><br>
+<span id='invalidpurchase'></span><br>
+
+</td>
+<td valign="center">
+<font size=2>&nbsp&nbsp&nbsp&nbsp&nbsp通知: <span id="IceFishingNotifyToggle"><script type="text/javascript">DisplayNotify("IceFishingNotifyToggle");</script></span>
+</td>
+</tr>
+</table>
+
+
+<table border=1 class="generalTable" id="diaoyu"><!-- table for ice fishing upgrades -->
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>等级</td>
+<td><b>状态</td>
+</tr>
+
+<tr>
+<td>鳟鱼</td>
+<td>免费!</td>
+<td>无!</td>
+<td>已解锁!</td>
+</tr>
+
+<tr>
+<td>大马哈鱼</td>
+<td>$<span id='SalmonUnlockCost'><script type="text/javascript">DisplayStuff('SalmonUnlockCost');</script></span></td>
+<td><span id='SalmonUnlockLevel'><script type="text/javascript">DisplayStuff('SalmonUnlockLevel');</script></span></td>
+<td><span id='UnlockSalmon'><script type="text/javascript">IsLocked('Salmon');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic1text'><script type="text/javascript">DisplayStuff('Ic1text');</script></span></td>
+<td>$<span id='Ic1cost'><script type="text/javascript">DisplayStuff('Ic1cost');</script></span></td>
+<td><span id='Ic1req'><script type="text/javascript">DisplayStuff('Ic1req');</script></span></td>
+<td><span id='Ic1'><script type="text/javascript">IsLockedUpgrade('Ic1');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic6text'><script type="text/javascript">DisplayStuff('Ic6text');</script></span></td>
+<td>树纤维<!-- <span id='Ic6cost'><script type="text/javascript">DisplayStuff('Ic6cost');</script></span> --></td>
+<td><span id='Ic6req'><script type="text/javascript">DisplayStuff('Ic6req');</script></span></td>
+<td><span id='Ic6'><script type="text/javascript">IsLockedUpgrade('Ic6');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic7text'><script type="text/javascript">DisplayStuff('Ic7text');</script></span></td>
+<td>$<span id='Ic7cost'><script type="text/javascript">DisplayStuff('Ic7cost');</script></span></td>
+<td><span id='Ic7req'><script type="text/javascript">DisplayStuff('Ic7req');</script></span></td>
+<td><span id='Ic7'><script type="text/javascript">IsLockedUpgrade('Ic7');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic11text'><script type="text/javascript">DisplayStuff('Ic11text');</script></span></td>
+<td>$<span id='Ic11cost'><script type="text/javascript">DisplayStuff('Ic11cost');</script></span></td>
+<td><span id='Ic11req'><script type="text/javascript">DisplayStuff('Ic11req');</script></span></td>
+<td><span id='Ic11'><script type="text/javascript">IsLockedUpgrade('Ic11');</script></span></td>
+</tr>
+<tr>
+<td>鳕鱼</td>
+<td>$<span id='CodUnlockCost'><script type="text/javascript">DisplayStuff('CodUnlockCost');</script></span></td>
+<td><span id='CodUnlockLevel'><script type="text/javascript">DisplayStuff('CodUnlockLevel');</script></span></td>
+<td><span id='UnlockCod'><script type="text/javascript">IsLocked('Cod');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic2text'><script type="text/javascript">DisplayStuff('Ic2text');</script></span></td>
+<td>$<span id='Ic2cost'><script type="text/javascript">DisplayStuff('Ic2cost');</script></span></td>
+<td><span id='Ic2req'><script type="text/javascript">DisplayStuff('Ic2req');</script></span></td>
+<td><span id='Ic2'><script type="text/javascript">IsLockedUpgrade('Ic2');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic12text'><script type="text/javascript">DisplayStuff('Ic12text');</script></span></td>
+<td>$<span id='Ic12cost'><script type="text/javascript">DisplayStuff('Ic12cost');</script></span></td>
+<td><span id='Ic12req'><script type="text/javascript">DisplayStuff('Ic12req');</script></span></td>
+<td><span id='Ic12'><script type="text/javascript">IsLockedUpgrade('Ic12');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic8text'><script type="text/javascript">DisplayStuff('Ic8text');</script></span></td>
+<td>$<span id='Ic8cost'><script type="text/javascript">DisplayStuff('Ic8cost');</script></span></td>
+<td><span id='Ic8req'><script type="text/javascript">DisplayStuff('Ic8req');</script></span></td>
+<td><span id='Ic8'><script type="text/javascript">IsLockedUpgrade('Ic8');</script></span></td>
+</tr>
+<tr>
+<td>螃蟹</td>
+<td>$<span id='CrabUnlockCost'><script type="text/javascript">DisplayStuff('CrabUnlockCost');</script></span></td>
+<td><span id='CrabUnlockLevel'><script type="text/javascript">DisplayStuff('CrabUnlockLevel');</script></span></td>
+<td><span id='UnlockCrab'><script type="text/javascript">IsLocked('Crab');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic3text'><script type="text/javascript">DisplayStuff('Ic3text');</script></span></td>
+<td>$<span id='Ic3cost'><script type="text/javascript">DisplayStuff('Ic3cost');</script></span></td>
+<td><span id='Ic3req'><script type="text/javascript">DisplayStuff('Ic3req');</script></span></td>
+<td><span id='Ic3'><script type="text/javascript">IsLockedUpgrade('Ic3');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic13text'><script type="text/javascript">DisplayStuff('Ic13text');</script></span></td>
+<td>$<span id='Ic13cost'><script type="text/javascript">DisplayStuff('Ic13cost');</script></span></td>
+<td><span id='Ic13req'><script type="text/javascript">DisplayStuff('Ic13req');</script></span></td>
+<td><span id='Ic13'><script type="text/javascript">IsLockedUpgrade('Ic13');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic9text'><script type="text/javascript">DisplayStuff('Ic9text');</script></span></td>
+<td>$<span id='Ic9cost'><script type="text/javascript">DisplayStuff('Ic9cost');</script></span></td>
+<td><span id='Ic9req'><script type="text/javascript">DisplayStuff('Ic9req');</script></span></td>
+<td><span id='Ic9'><script type="text/javascript">IsLockedUpgrade('Ic9');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic4text'><script type="text/javascript">DisplayStuff('Ic4text');</script></span></td>
+<td>$<span id='Ic4cost'><script type="text/javascript">DisplayStuff('Ic4cost');</script></span></td>
+<td><span id='Ic4req'><script type="text/javascript">DisplayStuff('Ic4req');</script></span></td>
+<td><span id='Ic4'><script type="text/javascript">IsLockedUpgrade('Ic4');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic14text'><script type="text/javascript">DisplayStuff('Ic14text');</script></span></td>
+<td>$<span id='Ic14cost'><script type="text/javascript">DisplayStuff('Ic14cost');</script></span></td>
+<td><span id='Ic14req'><script type="text/javascript">DisplayStuff('Ic14req');</script></span></td>
+<td><span id='Ic14'><script type="text/javascript">IsLockedUpgrade('Ic14');</script></span></td>
+</tr>
+<tr>
+<td>大比目鱼</td>
+<td>$<span id='HalibutUnlockCost'><script type="text/javascript">DisplayStuff('HalibutUnlockCost');</script></span></td>
+<td><span id='HalibutUnlockLevel'><script type="text/javascript">DisplayStuff('HalibutUnlockLevel');</script></span></td>
+<td><span id='UnlockHalibut'><script type="text/javascript">IsLocked('Halibut');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic10text'><script type="text/javascript">DisplayStuff('Ic10text');</script></span></td>
+<td>$<span id='Ic10cost'><script type="text/javascript">DisplayStuff('Ic10cost');</script></span></td>
+<td><span id='Ic10req'><script type="text/javascript">DisplayStuff('Ic10req');</script></span></td>
+<td><span id='Ic10'><script type="text/javascript">IsLockedUpgrade('Ic10');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic5text'><script type="text/javascript">DisplayStuff('Ic5text');</script></span></td>
+<td>$<span id='Ic5cost'><script type="text/javascript">DisplayStuff('Ic5cost');</script></span></td>
+<td><span id='Ic5req'><script type="text/javascript">DisplayStuff('Ic5req');</script></span></td>
+<td><span id='Ic5'><script type="text/javascript">IsLockedUpgrade('Ic5');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic15text'><script type="text/javascript">DisplayStuff('Ic15text');</script></span></td>
+<td>$<span id='Ic15cost'><script type="text/javascript">DisplayStuff('Ic15cost');</script></span></td>
+<td><span id='Ic15req'><script type="text/javascript">DisplayStuff('Ic15req');</script></span></td>
+<td><span id='Ic15'><script type="text/javascript">IsLockedUpgrade('Ic15');</script></span></td>
+</tr>
+<tr>
+<td>鲸鱼</td>
+<td>$<span id='WhaleUnlockCost'><script type="text/javascript">DisplayStuff('WhaleUnlockCost');</script></span></td>
+<td><span id='WhaleUnlockLevel'><script type="text/javascript">DisplayStuff('WhaleUnlockLevel');</script></span></td>
+<td><span id='UnlockWhale'><script type="text/javascript">IsLocked('Whale');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic20text'><script type="text/javascript">DisplayStuff('Ic20text');</script></span></td>
+<td>$<span id='Ic20cost'><script type="text/javascript">DisplayStuff('Ic20cost');</script></span></td>
+<td><span id='Ic20req'><script type="text/javascript">DisplayStuff('Ic20req');</script></span></td>
+<td><span id='Ic20'><script type="text/javascript">IsLockedUpgrade('Ic20');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic16text'><script type="text/javascript">DisplayStuff('Ic16text');</script></span></td>
+<td>$<span id='Ic16cost'><script type="text/javascript">DisplayStuff('Ic16cost');</script></span></td>
+<td><span id='Ic16req'><script type="text/javascript">DisplayStuff('Ic16req');</script></span></td>
+<td><span id='Ic16'><script type="text/javascript">IsLockedUpgrade('Ic16');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic21text'><script type="text/javascript">DisplayStuff('Ic21text');</script></span></td>
+<td>$<span id='Ic21cost'><script type="text/javascript">DisplayStuff('Ic21cost');</script></span></td>
+<td><span id='Ic21req'><script type="text/javascript">DisplayStuff('Ic21req');</script></span></td>
+<td><span id='Ic21'><script type="text/javascript">IsLockedUpgrade('Ic21');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic18text'><script type="text/javascript">DisplayStuff('Ic18text');</script></span></td>
+<td>$<span id='Ic18cost'><script type="text/javascript">DisplayStuff('Ic18cost');</script></span></td>
+<td><span id='Ic18req'><script type="text/javascript">DisplayStuff('Ic18req');</script></span></td>
+<td><span id='Ic18'><script type="text/javascript">IsLockedUpgrade('Ic18');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic17text'><script type="text/javascript">DisplayStuff('Ic17text');</script></span></td>
+<td>$<span id='Ic17cost'><script type="text/javascript">DisplayStuff('Ic17cost');</script></span></td>
+<td><span id='Ic17req'><script type="text/javascript">DisplayStuff('Ic17req');</script></span></td>
+<td><span id='Ic17'><script type="text/javascript">IsLockedUpgrade('Ic17');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic19text'><script type="text/javascript">DisplayStuff('Ic19text');</script></span></td>
+<td>$<span id='Ic19cost'><script type="text/javascript">DisplayStuff('Ic19cost');</script></span></td>
+<td><span id='Ic19req'><script type="text/javascript">DisplayStuff('Ic19req');</script></span></td>
+<td><span id='Ic19'><script type="text/javascript">IsLockedUpgrade('Ic19');</script></span></td>
+</tr>
+<tr>
+<td><span id='Ic22text'><script type="text/javascript">DisplayStuff('Ic22text');</script></span></td>
+<td>$<span id='Ic22cost'><script type="text/javascript">DisplayStuff('Ic22cost');</script></span></td>
+<td><span id='Ic22req'><script type="text/javascript">DisplayStuff('Ic22req');</script></span></td>
+<td><span id='Ic22'><script type="text/javascript">IsLockedUpgrade('Ic22');</script></span></td>
+</tr>
+</table>
+
+</div><!-- END OF ICE FISHING -->
+	
+<div id="beard-tab" style="display:block;"><!-- BEARD-TAB -->
+
+<span class="tutorial" id="beardTutorial"><div align="left"><script type="text/javascript">Tutorial('beardTutorial');</script></div></span><br>
+
+<b><span id="beardLvl"></span></b>
+<div class="progress">
+     <div id="beardProgress" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="beardProgressXP"></span></b>
+    </div> 
+  </div>
+
+<!-- <div align="left">
+<button onClick=toggleTutorial('beardTutorial')><span id="beardTutorialButton"><script type="text/javascript">isTutorial('beardTutorial');</script></span></button></div>
+ -->
+
+<table border=1 class="generalTable" id="huzi"><!-- table for beard upgrades -->
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>等级</td>
+<td><b>状态</td>
+</tr>
+<tr>
+<td><span id='BrownBeardText'><script type="text/javascript">DisplayStuff('BrownBeardText');</script></span></td>
+<td>$<span id='BrownBeardCost'><script type="text/javascript">DisplayStuff('BrownBeardCost');</script></span></td>
+<td><span id='BrownBeardLevel'><script type="text/javascript">DisplayStuff('BrownBeardLevel');</script></span></td>
+<td><span id='BrownBeard'><script type="text/javascript">IsLockedUpgrade('BrownBeard');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be1text'><script type="text/javascript">DisplayStuff('Be1text');</script></span></td>
+<td>$<span id='Be1cost'><script type="text/javascript">DisplayStuff('Be1cost');</script></span></td>
+<td><span id='Be1req'><script type="text/javascript">DisplayStuff('Be1req');</script></span></td>
+<td><span id='Be1'><script type="text/javascript">IsLockedUpgrade('Be1');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be6text'><script type="text/javascript">DisplayStuff('Be6text');</script></span></td>
+<td>$<span id='Be6cost'><script type="text/javascript">DisplayStuff('Be6cost');</script></span></td>
+<td><span id='Be6req'><script type="text/javascript">DisplayStuff('Be6req');</script></span></td>
+<td><span id='Be6'><script type="text/javascript">IsLockedUpgrade('Be6');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be11text'><script type="text/javascript">DisplayStuff('Be11text');</script></span></td>
+<td>$<span id='Be11cost'><script type="text/javascript">DisplayStuff('Be11cost');</script></span></td>
+<td><span id='Be11req'><script type="text/javascript">DisplayStuff('Be11req');</script></span></td>
+<td><span id='Be11'><script type="text/javascript">IsLockedUpgrade('Be11');</script></span></td>
+</tr>
+<tr>
+<td><span id='BlackBeardText'><script type="text/javascript">DisplayStuff('BlackBeardText');</script></span></td>
+<td>$<span id='BlackBeardCost'><script type="text/javascript">DisplayStuff('BlackBeardCost');</script></span></td>
+<td><span id='BlackBeardLevel'><script type="text/javascript">DisplayStuff('BlackBeardLevel');</script></span></td>
+<td><span id='BlackBeard'><script type="text/javascript">IsLockedUpgrade('BlackBeard');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be2text'><script type="text/javascript">DisplayStuff('Be2text');</script></span></td>
+<td>$<span id='Be2cost'><script type="text/javascript">DisplayStuff('Be2cost');</script></span></td>
+<td><span id='Be2req'><script type="text/javascript">DisplayStuff('Be2req');</script></span></td>
+<td><span id='Be2'><script type="text/javascript">IsLockedUpgrade('Be2');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be12text'><script type="text/javascript">DisplayStuff('Be12text');</script></span></td>
+<td>$<span id='Be12cost'><script type="text/javascript">DisplayStuff('Be12cost');</script></span></td>
+<td><span id='Be12req'><script type="text/javascript">DisplayStuff('Be12req');</script></span></td>
+<td><span id='Be12'><script type="text/javascript">IsLockedUpgrade('Be12');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be7text'><script type="text/javascript">DisplayStuff('Be7text');</script></span></td>
+<td>$<span id='Be7cost'><script type="text/javascript">DisplayStuff('Be7cost');</script></span></td>
+<td><span id='Be7req'><script type="text/javascript">DisplayStuff('Be7req');</script></span></td>
+<td><span id='Be7'><script type="text/javascript">IsLockedUpgrade('Be7');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be22text'><script type="text/javascript">DisplayStuff('Be22text');</script></span></td>
+<td>$<span id='Be22cost'><script type="text/javascript">DisplayStuff('Be22cost');</script></span></td>
+<td><span id='Be22req'><script type="text/javascript">DisplayStuff('Be22req');</script></span></td>
+<td><span id='Be22'><script type="text/javascript">IsLockedUpgrade('Be22');</script></span></td>
+</tr>
+<tr>
+<td><span id='SilverBeardText'><script type="text/javascript">DisplayStuff('SilverBeardText');</script></span></td>
+<td>$<span id='SilverBeardCost'><script type="text/javascript">DisplayStuff('SilverBeardCost');</script></span></td>
+<td><span id='SilverBeardLevel'><script type="text/javascript">DisplayStuff('SilverBeardLevel');</script></span></td>
+<td><span id='SilverBeard'><script type="text/javascript">IsLockedUpgrade('SilverBeard');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be8text'><script type="text/javascript">DisplayStuff('Be8text');</script></span></td>
+<td>$<span id='Be8cost'><script type="text/javascript">DisplayStuff('Be8cost');</script></span></td>
+<td><span id='Be8req'><script type="text/javascript">DisplayStuff('Be8req');</script></span></td>
+<td><span id='Be8'><script type="text/javascript">IsLockedUpgrade('Be8');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be13text'><script type="text/javascript">DisplayStuff('Be13text');</script></span></td>
+<td>$<span id='Be13cost'><script type="text/javascript">DisplayStuff('Be13cost');</script></span></td>
+<td><span id='Be13req'><script type="text/javascript">DisplayStuff('Be13req');</script></span></td>
+<td><span id='Be13'><script type="text/javascript">IsLockedUpgrade('Be13');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be3text'><script type="text/javascript">DisplayStuff('Be3text');</script></span></td>
+<td>$<span id='Be3cost'><script type="text/javascript">DisplayStuff('Be3cost');</script></span></td>
+<td><span id='Be3req'><script type="text/javascript">DisplayStuff('Be3req');</script></span></td>
+<td><span id='Be3'><script type="text/javascript">IsLockedUpgrade('Be3');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be23text'><script type="text/javascript">DisplayStuff('Be23text');</script></span></td>
+<td>$<span id='Be23cost'><script type="text/javascript">DisplayStuff('Be23cost');</script></span></td>
+<td><span id='Be23req'><script type="text/javascript">DisplayStuff('Be23req');</script></span></td>
+<td><span id='Be23'><script type="text/javascript">IsLockedUpgrade('Be23');</script></span></td>
+</tr>
+<tr>
+<td><span id='GoldBeardText'><script type="text/javascript">DisplayStuff('GoldBeardText');</script></span></td>
+<td>$<span id='GoldBeardCost'><script type="text/javascript">DisplayStuff('GoldBeardCost');</script></span></td>
+<td><span id='GoldBeardLevel'><script type="text/javascript">DisplayStuff('GoldBeardLevel');</script></span></td>
+<td><span id='GoldBeard'><script type="text/javascript">IsLockedUpgrade('GoldBeard');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be9text'><script type="text/javascript">DisplayStuff('Be9text');</script></span></td>
+<td>$<span id='Be9cost'><script type="text/javascript">DisplayStuff('Be9cost');</script></span></td>
+<td><span id='Be9req'><script type="text/javascript">DisplayStuff('Be9req');</script></span></td>
+<td><span id='Be9'><script type="text/javascript">IsLockedUpgrade('Be9');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be14text'><script type="text/javascript">DisplayStuff('Be14text');</script></span></td>
+<td>$<span id='Be14cost'><script type="text/javascript">DisplayStuff('Be14cost');</script></span></td>
+<td><span id='Be14req'><script type="text/javascript">DisplayStuff('Be14req');</script></span></td>
+<td><span id='Be14'><script type="text/javascript">IsLockedUpgrade('Be14');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be4text'><script type="text/javascript">DisplayStuff('Be4text');</script></span></td>
+<td>$<span id='Be4cost'><script type="text/javascript">DisplayStuff('Be4cost');</script></span></td>
+<td><span id='Be4req'><script type="text/javascript">DisplayStuff('Be4req');</script></span></td>
+<td><span id='Be4'><script type="text/javascript">IsLockedUpgrade('Be4');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be24text'><script type="text/javascript">DisplayStuff('Be24text');</script></span></td>
+<td>$<span id='Be24cost'><script type="text/javascript">DisplayStuff('Be24cost');</script></span></td>
+<td><span id='Be24req'><script type="text/javascript">DisplayStuff('Be24req');</script></span></td>
+<td><span id='Be24'><script type="text/javascript">IsLockedUpgrade('Be24');</script></span></td>
+</tr>
+<tr>
+<td><span id='RedBeardText'><script type="text/javascript">DisplayStuff('RedBeardText');</script></span></td>
+<td>$<span id='RedBeardCost'><script type="text/javascript">DisplayStuff('RedBeardCost');</script></span></td>
+<td><span id='RedBeardLevel'><script type="text/javascript">DisplayStuff('RedBeardLevel');</script></span></td>
+<td><span id='RedBeard'><script type="text/javascript">IsLockedUpgrade('RedBeard');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be10text'><script type="text/javascript">DisplayStuff('Be10text');</script></span></td>
+<td>$<span id='Be10cost'><script type="text/javascript">DisplayStuff('Be10cost');</script></span></td>
+<td><span id='Be10req'><script type="text/javascript">DisplayStuff('Be10req');</script></span></td>
+<td><span id='Be10'><script type="text/javascript">IsLockedUpgrade('Be10');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be15text'><script type="text/javascript">DisplayStuff('Be15text');</script></span></td>
+<td>$<span id='Be15cost'><script type="text/javascript">DisplayStuff('Be15cost');</script></span></td>
+<td><span id='Be15req'><script type="text/javascript">DisplayStuff('Be15req');</script></span></td>
+<td><span id='Be15'><script type="text/javascript">IsLockedUpgrade('Be15');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be5text'><script type="text/javascript">DisplayStuff('Be5text');</script></span></td>
+<td>$<span id='Be5cost'><script type="text/javascript">DisplayStuff('Be5cost');</script></span></td>
+<td><span id='Be5req'><script type="text/javascript">DisplayStuff('Be5req');</script></span></td>
+<td><span id='Be5'><script type="text/javascript">IsLockedUpgrade('Be5');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be25text'><script type="text/javascript">DisplayStuff('Be25text');</script></span></td>
+<td>$<span id='Be25cost'><script type="text/javascript">DisplayStuff('Be25cost');</script></span></td>
+<td><span id='Be25req'><script type="text/javascript">DisplayStuff('Be25req');</script></span></td>
+<td><span id='Be25'><script type="text/javascript">IsLockedUpgrade('Be25');</script></span></td>
+</tr>
+<tr>
+<td><span id='GrizzlyBeardText'><script type="text/javascript">DisplayStuff('GrizzlyBeardText');</script></span></td>
+<td>$<span id='GrizzlyBeardCost'><script type="text/javascript">DisplayStuff('GrizzlyBeardCost');</script></span></td>
+<td><span id='GrizzlyBeardLevel'><script type="text/javascript">DisplayStuff('GrizzlyBeardLevel');</script></span></td>
+<td><span id='GrizzlyBeard'><script type="text/javascript">IsLockedUpgrade('GrizzlyBeard');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be16text'><script type="text/javascript">DisplayStuff('Be16text');</script></span></td>
+<td>$<span id='Be16cost'><script type="text/javascript">DisplayStuff('Be16cost');</script></span></td>
+<td><span id='Be16req'><script type="text/javascript">DisplayStuff('Be16req');</script></span></td>
+<td><span id='Be16'><script type="text/javascript">IsLockedUpgrade('Be16');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be20text'><script type="text/javascript">DisplayStuff('Be20text');</script></span></td>
+<td>$<span id='Be20cost'><script type="text/javascript">DisplayStuff('Be20cost');</script></span></td>
+<td><span id='Be20req'><script type="text/javascript">DisplayStuff('Be20req');</script></span></td>
+<td><span id='Be20'><script type="text/javascript">IsLockedUpgrade('Be20');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be18text'><script type="text/javascript">DisplayStuff('Be18text');</script></span></td>
+<td>$<span id='Be18cost'><script type="text/javascript">DisplayStuff('Be18cost');</script></span></td>
+<td><span id='Be18req'><script type="text/javascript">DisplayStuff('Be18req');</script></span></td>
+<td><span id='Be18'><script type="text/javascript">IsLockedUpgrade('Be18');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be26text'><script type="text/javascript">DisplayStuff('Be26text');</script></span></td>
+<td>$<span id='Be26cost'><script type="text/javascript">DisplayStuff('Be26cost');</script></span></td>
+<td><span id='Be26req'><script type="text/javascript">DisplayStuff('Be26req');</script></span></td>
+<td><span id='Be26'><script type="text/javascript">IsLockedUpgrade('Be26');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be21text'><script type="text/javascript">DisplayStuff('Be21text');</script></span></td>
+<td>$<span id='Be21cost'><script type="text/javascript">DisplayStuff('Be21cost');</script></span></td>
+<td><span id='Be21req'><script type="text/javascript">DisplayStuff('Be21req');</script></span></td>
+<td><span id='Be21'><script type="text/javascript">IsLockedUpgrade('Be21');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be17text'><script type="text/javascript">DisplayStuff('Be17text');</script></span></td>
+<td>$<span id='Be17cost'><script type="text/javascript">DisplayStuff('Be17cost');</script></span></td>
+<td><span id='Be17req'><script type="text/javascript">DisplayStuff('Be17req');</script></span></td>
+<td><span id='Be17'><script type="text/javascript">IsLockedUpgrade('Be17');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be27text'><script type="text/javascript">DisplayStuff('Be27text');</script></span></td>
+<td>$<span id='Be27cost'><script type="text/javascript">DisplayStuff('Be27cost');</script></span></td>
+<td><span id='Be27req'><script type="text/javascript">DisplayStuff('Be27req');</script></span></td>
+<td><span id='Be27'><script type="text/javascript">IsLockedUpgrade('Be27');</script></span></td>
+</tr>
+<tr>
+<td><span id='Be19text'><script type="text/javascript">DisplayStuff('Be19text');</script></span></td>
+<td>$<span id='Be19cost'><script type="text/javascript">DisplayStuff('Be19cost');</script></span></td>
+<td><span id='Be19req'><script type="text/javascript">DisplayStuff('Be19req');</script></span></td>
+<td><span id='Be19'><script type="text/javascript">IsLockedUpgrade('Be19');</script></span></td>
+</tr>
+</table>
+</div><!-- END OF BEARD -->
+
+<div id="kindness-tab" style="display:block;"><!-- KINDNESS-TAB -->
+
+<span class="tutorial" id="kindnessTutorial"><div align="left"><script type="text/javascript">Tutorial('kindnessTutorial');</script></div></span><br>
+
+<b><span id="kindnessLvl"></span></b>
+<div class="progress">
+     <div id="kindnessProgress" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="kindnessProgressXP"></span></b>
+    </div> 
+  </div>
+  
+  <font size=2>&nbsp&nbsp&nbsp&nbsp&nbsp通知: <span id="KindnessNotifyToggle"><script type="text/javascript">DisplayNotify("KindnessNotifyToggle");</script></span>
+<br>
+<!-- <div align="left">
+<button onClick=toggleTutorial('kindnessTutorial')><span id="kindnessTutorialButton"><script type="text/javascript">isTutorial('kindnessTutorial');</script></span></button></div>
+ -->
+
+<table border=1 width=650 class="generalTable" id="shanliang"><!-- table for kindness activities -->
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>经验</td>
+<td><b>需要等级</td>
+<td><b>冷却时间</td>
+<td><b>状态</td><!-- Status will show button or a countdown if the item is on cooldown -->
+</tr>
+<tr>
+<td><span id='kind1text'><script type="text/javascript">DisplayStuff('kind1text');</script></span></td>
+<td><span id='kind1costtext'><script type="text/javascript">DisplayStuff('kind1costtext');</script></span></td>
+<td><span id='kind1xp'><script type="text/javascript">DisplayStuff('kind1xp');</script></span></td>
+<td><span id='kind1req'><script type="text/javascript">DisplayStuff('kind1req');</script></span></td>
+<td><span id='kind1cooldown'><script type="text/javascript">DisplayStuff('kind1cooldown');</script></span></td>
+<td><span id='kind1'><script type="text/javascript">KindnessButton('kind1');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind2text'><script type="text/javascript">DisplayStuff('kind2text');</script></span></td>
+<td><span id='kind2costtext'><script type="text/javascript">DisplayStuff('kind2costtext');</script></span></td>
+<td><span id='kind2xp'><script type="text/javascript">DisplayStuff('kind2xp');</script></span></td>
+<td><span id='kind2req'><script type="text/javascript">DisplayStuff('kind2req');</script></span></td>
+<td><span id='kind2cooldown'><script type="text/javascript">DisplayStuff('kind2cooldown');</script></span></td>
+<td><span id='kind2'><script type="text/javascript">KindnessButton('kind2');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind3text'><script type="text/javascript">DisplayStuff('kind3text');</script></span></td>
+<td><span id='kind3costtext'><script type="text/javascript">DisplayStuff('kind3costtext');</script></span></td>
+<td><span id='kind3xp'><script type="text/javascript">DisplayStuff('kind3xp');</script></span></td>
+<td><span id='kind3req'><script type="text/javascript">DisplayStuff('kind3req');</script></span></td>
+<td><span id='kind3cooldown'><script type="text/javascript">DisplayStuff('kind3cooldown');</script></span></td>
+<td><span id='kind3'><script type="text/javascript">KindnessButton('kind3');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind4text'><script type="text/javascript">DisplayStuff('kind4text');</script></span></td>
+<td><span id='kind4costtext'><script type="text/javascript">DisplayStuff('kind4costtext');</script></span></td>
+<td><span id='kind4xp'><script type="text/javascript">DisplayStuff('kind4xp');</script></span></td>
+<td><span id='kind4req'><script type="text/javascript">DisplayStuff('kind4req');</script></span></td>
+<td><span id='kind4cooldown'><script type="text/javascript">DisplayStuff('kind4cooldown');</script></span></td>
+<td><span id='kind4'><script type="text/javascript">KindnessButton('kind4');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind5text'><script type="text/javascript">DisplayStuff('kind5text');</script></span></td>
+<td><span id='kind5costtext'><script type="text/javascript">DisplayStuff('kind5costtext');</script></span></td>
+<td><span id='kind5xp'><script type="text/javascript">DisplayStuff('kind5xp');</script></span></td>
+<td><span id='kind5req'><script type="text/javascript">DisplayStuff('kind5req');</script></span></td>
+<td><span id='kind5cooldown'><script type="text/javascript">DisplayStuff('kind5cooldown');</script></span></td>
+<td><span id='kind5'><script type="text/javascript">KindnessButton('kind5');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind6text'><script type="text/javascript">DisplayStuff('kind6text');</script></span></td>
+<td><span id='kind6costtext'><script type="text/javascript">DisplayStuff('kind6costtext');</script></span></td>
+<td><span id='kind6xp'><script type="text/javascript">DisplayStuff('kind6xp');</script></span></td>
+<td><span id='kind6req'><script type="text/javascript">DisplayStuff('kind6req');</script></span></td>
+<td><span id='kind6cooldown'><script type="text/javascript">DisplayStuff('kind6cooldown');</script></span></td>
+<td><span id='kind6'><script type="text/javascript">KindnessButton('kind6');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind7text'><script type="text/javascript">DisplayStuff('kind7text');</script></span></td>
+<td><span id='kind7costtext'><script type="text/javascript">DisplayStuff('kind7costtext');</script></span></td>
+<td><span id='kind7xp'><script type="text/javascript">DisplayStuff('kind7xp');</script></span></td>
+<td><span id='kind7req'><script type="text/javascript">DisplayStuff('kind7req');</script></span></td>
+<td><span id='kind7cooldown'><script type="text/javascript">DisplayStuff('kind7cooldown');</script></span></td>
+<td><span id='kind7'><script type="text/javascript">KindnessButton('kind7');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind8text'><script type="text/javascript">DisplayStuff('kind8text');</script></span></td>
+<td><span id='kind8costtext'><script type="text/javascript">DisplayStuff('kind8costtext');</script></span></td>
+<td><span id='kind8xp'><script type="text/javascript">DisplayStuff('kind8xp');</script></span></td>
+<td><span id='kind8req'><script type="text/javascript">DisplayStuff('kind8req');</script></span></td>
+<td><span id='kind8cooldown'><script type="text/javascript">DisplayStuff('kind8cooldown');</script></span></td>
+<td><span id='kind8'><script type="text/javascript">KindnessButton('kind8');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind9text'><script type="text/javascript">DisplayStuff('kind9text');</script></span></td>
+<td><span id='kind9costtext'><script type="text/javascript">DisplayStuff('kind9costtext');</script></span></td>
+<td><span id='kind9xp'><script type="text/javascript">DisplayStuff('kind9xp');</script></span></td>
+<td><span id='kind9req'><script type="text/javascript">DisplayStuff('kind9req');</script></span></td>
+<td><span id='kind9cooldown'><script type="text/javascript">DisplayStuff('kind9cooldown');</script></span></td>
+<td><span id='kind9'><script type="text/javascript">KindnessButton('kind9');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind10text'><script type="text/javascript">DisplayStuff('kind10text');</script></span></td>
+<td><span id='kind10costtext'><script type="text/javascript">DisplayStuff('kind10costtext');</script></span></td>
+<td><span id='kind10xp'><script type="text/javascript"></script></span></td>
+<td><span id='kind10req'><script type="text/javascript">DisplayStuff('kind10req');</script></span></td>
+<td><span id='kind10cooldown'><script type="text/javascript">DisplayStuff('kind10cooldown');</script></span></td>
+<td><span id='kind10'><script type="text/javascript">KindnessButton('kind10');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind11text'><script type="text/javascript">DisplayStuff('kind11text');</script></span></td>
+<td><span id='kind11costtext'><script type="text/javascript">DisplayStuff('kind11costtext');</script></span></td>
+<td><span id='kind11xp'><script type="text/javascript">DisplayStuff('kind11xp');</script></span></td>
+<td><span id='kind11req'><script type="text/javascript">DisplayStuff('kind11req');</script></span></td>
+<td><span id='kind11cooldown'><script type="text/javascript">DisplayStuff('kind11cooldown');</script></span></td>
+<td><span id='kind11'><script type="text/javascript">KindnessButton('kind11');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind12text'><script type="text/javascript">DisplayStuff('kind12text');</script></span></td>
+<td><span id='kind12costtext'><script type="text/javascript">DisplayStuff('kind12costtext');</script></span></td>
+<td><span id='kind12xp'><script type="text/javascript">DisplayStuff('kind12xp');</script></span></td>
+<td><span id='kind12req'><script type="text/javascript">DisplayStuff('kind12req');</script></span></td>
+<td><span id='kind12cooldown'><script type="text/javascript">DisplayStuff('kind12cooldown');</script></span></td>
+<td><span id='kind12'><script type="text/javascript">KindnessButton('kind12');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind13text'><script type="text/javascript">DisplayStuff('kind13text');</script></span></td>
+<td><span id='kind13costtext'><script type="text/javascript">DisplayStuff('kind13costtext');</script></span></td>
+<td><span id='kind13xp'><script type="text/javascript">DisplayStuff('kind13xp');</script></span></td>
+<td><span id='kind13req'><script type="text/javascript">DisplayStuff('kind13req');</script></span></td>
+<td><span id='kind13cooldown'><script type="text/javascript">DisplayStuff('kind13cooldown');</script></span></td>
+<td><span id='kind13'><script type="text/javascript">KindnessButton('kind13');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind14text'><script type="text/javascript">DisplayStuff('kind14text');</script></span></td>
+<td><span id='kind14costtext'><script type="text/javascript">DisplayStuff('kind14costtext');</script></span></td>
+<td><span id='kind14xp'><script type="text/javascript">DisplayStuff('kind14xp');</script></span></td>
+<td><span id='kind14req'><script type="text/javascript">DisplayStuff('kind14req');</script></span></td>
+<td><span id='kind14cooldown'><script type="text/javascript">DisplayStuff('kind14cooldown');</script></span></td>
+<td><span id='kind14'><script type="text/javascript">KindnessButton('kind14');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind15text'><script type="text/javascript">DisplayStuff('kind15text');</script></span></td>
+<td><span id='kind15costtext'><script type="text/javascript">DisplayStuff('kind15costtext');</script></span></td>
+<td><span id='kind15xp'><script type="text/javascript">DisplayStuff('kind15xp');</script></span></td>
+<td><span id='kind15req'><script type="text/javascript">DisplayStuff('kind15req');</script></span></td>
+<td><span id='kind15cooldown'><script type="text/javascript">DisplayStuff('kind15cooldown');</script></span></td>
+<td><span id='kind15'><script type="text/javascript">KindnessButton('kind15');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind16text'><script type="text/javascript">DisplayStuff('kind16text');</script></span></td>
+<td><span id='kind16costtext'><script type="text/javascript">DisplayStuff('kind16costtext');</script></span></td>
+<td><span id='kind16xp'><script type="text/javascript">DisplayStuff('kind16xp');</script></span></td>
+<td><span id='kind16req'><script type="text/javascript">DisplayStuff('kind16req');</script></span></td>
+<td><span id='kind16cooldown'><script type="text/javascript">DisplayStuff('kind16cooldown');</script></span></td>
+<td><span id='kind16'><script type="text/javascript">KindnessButton('kind16');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind17text'><script type="text/javascript">DisplayStuff('kind17text');</script></span></td>
+<td><span id='kind17costtext'><script type="text/javascript">DisplayStuff('kind17costtext');</script></span></td>
+<td><span id='kind17xp'><script type="text/javascript">DisplayStuff('kind17xp');</script></span></td>
+<td><span id='kind17req'><script type="text/javascript">DisplayStuff('kind17req');</script></span></td>
+<td><span id='kind17cooldown'><script type="text/javascript">DisplayStuff('kind17cooldown');</script></span></td>
+<td><span id='kind17'><script type="text/javascript">KindnessButton('kind17');</script></span></td>
+</tr>
+<tr>
+<td><span id='kind18text'><script type="text/javascript">DisplayStuff('kind18text');</script></span></td>
+<td><span id='kind18costtext'><script type="text/javascript">DisplayStuff('kind18costtext');</script></span></td>
+<td><span id='kind18xp'><script type="text/javascript">updateKindnessXP();</script></span></td>
+<td><span id='kind18req'><script type="text/javascript">DisplayStuff('kind18req');</script></span></td>
+<td><span id='kind18cooldown'><script type="text/javascript">DisplayStuff('kind18cooldown');</script></span></td>
+<td><span id='kind18'><script type="text/javascript">KindnessButton('kind18');</script></span></td>
+</tr>
+</table>
+<br>
+<table border=1 class="generalTable" id="shanliangLvl"><!-- table for kindness upgrades -->
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>等级</td>
+<td><b>状态</td>
+</tr>
+<tr>
+<td><span id='K1text'><script type="text/javascript">DisplayStuff('K1text');</script></span></td>
+<td>$<span id='K1cost'><script type="text/javascript">DisplayStuff('K1cost');</script></span></td>
+<td><span id='K1req'><script type="text/javascript">DisplayStuff('K1req');</script></span></td>
+<td><span id='K1'><script type="text/javascript">IsLockedUpgrade('K1');</script></span></td>
+</tr>
+<tr>
+<td><span id='K11text'><script type="text/javascript">DisplayStuff('K11text');</script></span></td>
+<td>$<span id='K11cost'><script type="text/javascript">DisplayStuff('K11cost');</script></span></td>
+<td><span id='K11req'><script type="text/javascript">DisplayStuff('K11req');</script></span></td>
+<td><span id='K11'><script type="text/javascript">IsLockedUpgrade('K11');</script></span></td>
+</tr>
+<tr>
+<td><span id='K6text'><script type="text/javascript">DisplayStuff('K6text');</script></span></td>
+<td>$<span id='K6cost'><script type="text/javascript">DisplayStuff('K6cost');</script></span></td>
+<td><span id='K6req'><script type="text/javascript">DisplayStuff('K6req');</script></span></td>
+<td><span id='K6'><script type="text/javascript">IsLockedUpgrade('K6');</script></span></td>
+</tr>
+<tr>
+<td><span id='K2text'><script type="text/javascript">DisplayStuff('K2text');</script></span></td>
+<td>$<span id='K2cost'><script type="text/javascript">DisplayStuff('K2cost');</script></span></td>
+<td><span id='K2req'><script type="text/javascript">DisplayStuff('K2req');</script></span></td>
+<td><span id='K2'><script type="text/javascript">IsLockedUpgrade('K2');</script></span></td>
+</tr>
+<tr>
+<td><span id='K12text'><script type="text/javascript">DisplayStuff('K12text');</script></span></td>
+<td>$<span id='K12cost'><script type="text/javascript">DisplayStuff('K12cost');</script></span></td>
+<td><span id='K12req'><script type="text/javascript">DisplayStuff('K12req');</script></span></td>
+<td><span id='K12'><script type="text/javascript">IsLockedUpgrade('K12');</script></span></td>
+</tr>
+<tr>
+<td><span id='K7text'><script type="text/javascript">DisplayStuff('K7text');</script></span></td>
+<td>$<span id='K7cost'><script type="text/javascript">DisplayStuff('K7cost');</script></span></td>
+<td><span id='K7req'><script type="text/javascript">DisplayStuff('K7req');</script></span></td>
+<td><span id='K7'><script type="text/javascript">IsLockedUpgrade('K7');</script></span></td>
+</tr>
+<tr>
+<td><span id='K3text'><script type="text/javascript">DisplayStuff('K3text');</script></span></td>
+<td>$<span id='K3cost'><script type="text/javascript">DisplayStuff('K3cost');</script></span></td>
+<td><span id='K3req'><script type="text/javascript">DisplayStuff('K3req');</script></span></td>
+<td><span id='K3'><script type="text/javascript">IsLockedUpgrade('K3');</script></span></td>
+</tr>
+<tr>
+<td><span id='K13text'><script type="text/javascript">DisplayStuff('K13text');</script></span></td>
+<td>$<span id='K13cost'><script type="text/javascript">DisplayStuff('K13cost');</script></span></td>
+<td><span id='K13req'><script type="text/javascript">DisplayStuff('K13req');</script></span></td>
+<td><span id='K13'><script type="text/javascript">IsLockedUpgrade('K13');</script></span></td>
+</tr>
+<tr>
+<td><span id='K8text'><script type="text/javascript">DisplayStuff('K8text');</script></span></td>
+<td>$<span id='K8cost'><script type="text/javascript">DisplayStuff('K8cost');</script></span></td>
+<td><span id='K8req'><script type="text/javascript">DisplayStuff('K8req');</script></span></td>
+<td><span id='K8'><script type="text/javascript">IsLockedUpgrade('K8');</script></span></td>
+</tr>
+<tr>
+<td><span id='K4text'><script type="text/javascript">DisplayStuff('K4text');</script></span></td>
+<td>$<span id='K4cost'><script type="text/javascript">DisplayStuff('K4cost');</script></span></td>
+<td><span id='K4req'><script type="text/javascript">DisplayStuff('K4req');</script></span></td>
+<td><span id='K4'><script type="text/javascript">IsLockedUpgrade('K4');</script></span></td>
+</tr>
+<tr>
+<td><span id='K14text'><script type="text/javascript">DisplayStuff('K14text');</script></span></td>
+<td>$<span id='K14cost'><script type="text/javascript">DisplayStuff('K14cost');</script></span></td>
+<td><span id='K14req'><script type="text/javascript">DisplayStuff('K14req');</script></span></td>
+<td><span id='K14'><script type="text/javascript">IsLockedUpgrade('K14');</script></span></td>
+</tr>
+<tr>
+<td><span id='K9text'><script type="text/javascript">DisplayStuff('K9text');</script></span></td>
+<td>$<span id='K9cost'><script type="text/javascript">DisplayStuff('K9cost');</script></span></td>
+<td><span id='K9req'><script type="text/javascript">DisplayStuff('K9req');</script></span></td>
+<td><span id='K9'><script type="text/javascript">IsLockedUpgrade('K9');</script></span></td>
+</tr>
+<tr>
+<td><span id='K5text'><script type="text/javascript">DisplayStuff('K5text');</script></span></td>
+<td>$<span id='K5cost'><script type="text/javascript">DisplayStuff('K5cost');</script></span></td>
+<td><span id='K5req'><script type="text/javascript">DisplayStuff('K5req');</script></span></td>
+<td><span id='K5'><script type="text/javascript">IsLockedUpgrade('K5');</script></span></td>
+</tr>
+<tr>
+<td><span id='K15text'><script type="text/javascript">DisplayStuff('K15text');</script></span></td>
+<td>$<span id='K15cost'><script type="text/javascript">DisplayStuff('K15cost');</script></span></td>
+<td><span id='K15req'><script type="text/javascript">DisplayStuff('K15req');</script></span></td>
+<td><span id='K15'><script type="text/javascript">IsLockedUpgrade('K15');</script></span></td>
+</tr>
+<tr>
+<td><span id='K10text'><script type="text/javascript">DisplayStuff('K10text');</script></span></td>
+<td>$<span id='K10cost'><script type="text/javascript">DisplayStuff('K10cost');</script></span></td>
+<td><span id='K10req'><script type="text/javascript">DisplayStuff('K10req');</script></span></td>
+<td><span id='K10'><script type="text/javascript">IsLockedUpgrade('K10');</script></span></td>
+</tr>
+<tr>
+<td><span id='K16text'><script type="text/javascript">DisplayStuff('K16text');</script></span></td>
+<td>$<span id='K16cost'><script type="text/javascript">DisplayStuff('K16cost');</script></span></td>
+<td><span id='K16req'><script type="text/javascript">DisplayStuff('K16req');</script></span></td>
+<td><span id='K16'><script type="text/javascript">IsLockedUpgrade('K16');</script></span></td>
+</tr>
+<tr>
+<td><span id='K19text'><script type="text/javascript">DisplayStuff('K19text');</script></span></td>
+<td>$<span id='K19cost'><script type="text/javascript">DisplayStuff('K19cost');</script></span></td>
+<td><span id='K19req'><script type="text/javascript">DisplayStuff('K19req');</script></span></td>
+<td><span id='K19'><script type="text/javascript">IsLockedUpgrade('K19');</script></span></td>
+</tr>
+<tr>
+<td><span id='K17text'><script type="text/javascript">DisplayStuff('K17text');</script></span></td>
+<td>$<span id='K17cost'><script type="text/javascript">DisplayStuff('K17cost');</script></span></td>
+<td><span id='K17req'><script type="text/javascript">DisplayStuff('K17req');</script></span></td>
+<td><span id='K17'><script type="text/javascript">IsLockedUpgrade('K17');</script></span></td>
+</tr>
+<tr>
+<td><span id='K20text'><script type="text/javascript">DisplayStuff('K20text');</script></span></td>
+<td>$<span id='K20cost'><script type="text/javascript">DisplayStuff('K20cost');</script></span></td>
+<td><span id='K20req'><script type="text/javascript">DisplayStuff('K20req');</script></span></td>
+<td><span id='K20'><script type="text/javascript">IsLockedUpgrade('K20');</script></span></td>
+</tr>
+<tr>
+<td><span id='K18text'><script type="text/javascript">DisplayStuff('K18text');</script></span></td>
+<td>$<span id='K18cost'><script type="text/javascript">DisplayStuff('K18cost');</script></span></td>
+<td><span id='K18req'><script type="text/javascript">DisplayStuff('K18req');</script></span></td>
+<td><span id='K18'><script type="text/javascript">IsLockedUpgrade('K18');</script></span></td>
+</tr>
+<tr>
+<td><span id='K21text'><script type="text/javascript">DisplayStuff('K21text');</script></span></td>
+<td>$<span id='K21cost'><script type="text/javascript">DisplayStuff('K21cost');</script></span></td>
+<td><span id='K21req'><script type="text/javascript">DisplayStuff('K21req');</script></span></td>
+<td><span id='K21'><script type="text/javascript">IsLockedUpgrade('K21');</script></span></td>
+</tr>
+</table>
+
+</div><!-- END OF KINDNESS -->
+
+<div id="hockey-tab" style="display:block;"><!-- HOCKEY-TAB -->
+
+<span class="tutorial" id="hockeyTutorial"><div align="left"><script type="text/javascript">Tutorial('hockeyTutorial');</script></div></span><br>
+
+<b><font size=3><span id="hockeyLvl"></span></font></b>
+<div class="progress">
+     <div id="hockeyProgress" class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      <b><span id="hockeyProgressXP"></span></b>
+    </div> 
+  </div>
+  
+  <font size=2>&nbsp&nbsp&nbsp&nbsp&nbsp通知: <span id="HockeyNotifyToggle"><script type="text/javascript">DisplayNotify("HockeyNotifyToggle");</script></span>
+<br>
+
+<!-- <div align="left">
+<button onClick=toggleTutorial('hockeyTutorial')><span id="hockeyTutorialButton"><script type="text/javascript">isTutorial('hockeyTutorial');</script></span></button></div>
+ -->
+<table border=1 class="generalTable" id="bingqiu"><!-- table for hockey activities -->
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>奖励</td>
+<td><b>经验</td>
+<td><b>需要等级</td>
+<td><b>冷却时间</td>
+<td><b>状态</td><!-- Status will show button or a countdown if the item is on cooldown -->
+</tr>
+<tr>
+<td><span id='hockey1text'><script type="text/javascript">DisplayStuff('hockey1text');</script></span></td>
+<td><span id='hockey1rewardtext'><script type="text/javascript">DisplayStuff('hockey1rewardtext');</script></span></td>
+<td><span id='hockey1xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey1req'><script type="text/javascript">DisplayStuff('hockey1req');</script></span></td>
+<td><span id='hockey1cooldown'><script type="text/javascript">DisplayStuff('hockey1cooldown');</script></span></td>
+<td><span id='hockey1'><script type="text/javascript">HockeyButton('hockey1');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey2text'><script type="text/javascript">DisplayStuff('hockey2text');</script></span></td>
+<td><span id='hockey2rewardtext'><script type="text/javascript">DisplayStuff('hockey2rewardtext');</script></span></td>
+<td><span id='hockey2xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey2req'><script type="text/javascript">DisplayStuff('hockey2req');</script></span></td>
+<td><span id='hockey2cooldown'><script type="text/javascript">DisplayStuff('hockey2cooldown');</script></span></td>
+<td><span id='hockey2'><script type="text/javascript">HockeyButton('hockey2');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey3text'><script type="text/javascript">DisplayStuff('hockey3text');</script></span></td>
+<td><span id='hockey3rewardtext'><script type="text/javascript">DisplayStuff('hockey3rewardtext');</script></span></td>
+<td><span id='hockey3xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey3req'><script type="text/javascript">DisplayStuff('hockey3req');</script></span></td>
+<td><span id='hockey3cooldown'><script type="text/javascript">DisplayStuff('hockey3cooldown');</script></span></td>
+<td><span id='hockey3'><script type="text/javascript">HockeyButton('hockey3');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey4text'><script type="text/javascript">DisplayStuff('hockey4text');</script></span></td>
+<td><span id='hockey4rewardtext'><script type="text/javascript">DisplayStuff('hockey4rewardtext');</script></span></td>
+<td><span id='hockey4xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey4req'><script type="text/javascript">DisplayStuff('hockey4req');</script></span></td>
+<td><span id='hockey4cooldown'><script type="text/javascript">DisplayStuff('hockey4cooldown');</script></span></td>
+<td><span id='hockey4'><script type="text/javascript">HockeyButton('hockey4');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey5text'><script type="text/javascript">DisplayStuff('hockey5text');</script></span></td>
+<td><span id='hockey5rewardtext'><script type="text/javascript">DisplayStuff('hockey5rewardtext');</script></span></td>
+<td><span id='hockey5xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey5req'><script type="text/javascript">DisplayStuff('hockey5req');</script></span></td>
+<td><span id='hockey5cooldown'><script type="text/javascript">DisplayStuff('hockey5cooldown');</script></span></td>
+<td><span id='hockey5'><script type="text/javascript">HockeyButton('hockey5');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey6text'><script type="text/javascript">DisplayStuff('hockey6text');</script></span></td>
+<td><span id='hockey6rewardtext'><script type="text/javascript">DisplayStuff('hockey6rewardtext');</script></span></td>
+<td><span id='hockey6xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey6req'><script type="text/javascript">DisplayStuff('hockey6req');</script></span></td>
+<td><span id='hockey6cooldown'><script type="text/javascript">DisplayStuff('hockey6cooldown');</script></span></td>
+<td><span id='hockey6'><script type="text/javascript">HockeyButton('hockey6');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey7text'><script type="text/javascript">DisplayStuff('hockey7text');</script></span></td>
+<td><span id='hockey7rewardtext'><script type="text/javascript">DisplayStuff('hockey7rewardtext');</script></span></td>
+<td><span id='hockey7xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey7req'><script type="text/javascript">DisplayStuff('hockey7req');</script></span></td>
+<td><span id='hockey7cooldown'><script type="text/javascript">DisplayStuff('hockey7cooldown');</script></span></td>
+<td><span id='hockey7'><script type="text/javascript">HockeyButton('hockey7');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey8text'><script type="text/javascript">DisplayStuff('hockey8text');</script></span></td>
+<td><span id='hockey8rewardtext'><script type="text/javascript">DisplayStuff('hockey8rewardtext');</script></span></td>
+<td><span id='hockey8xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey8req'><script type="text/javascript">DisplayStuff('hockey8req');</script></span></td>
+<td><span id='hockey8cooldown'><script type="text/javascript">DisplayStuff('hockey8cooldown');</script></span></td>
+<td><span id='hockey8'><script type="text/javascript">HockeyButton('hockey8');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey9text'><script type="text/javascript">DisplayStuff('hockey9text');</script></span></td>
+<td><span id='hockey9rewardtext'><script type="text/javascript">DisplayStuff('hockey9rewardtext');</script></span></td>
+<td><span id='hockey9xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey9req'><script type="text/javascript">DisplayStuff('hockey9req');</script></span></td>
+<td><span id='hockey9cooldown'><script type="text/javascript">DisplayStuff('hockey9cooldown');</script></span></td>
+<td><span id='hockey9'><script type="text/javascript">HockeyButton('hockey9');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey10text'><script type="text/javascript">DisplayStuff('hockey10text');</script></span></td>
+<td><span id='hockey10rewardtext'><script type="text/javascript">DisplayStuff('hockey10rewardtext');</script></span></td>
+<td><span id='hockey10xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey10req'><script type="text/javascript">DisplayStuff('hockey10req');</script></span></td>
+<td><span id='hockey10cooldown'><script type="text/javascript">DisplayStuff('hockey10cooldown');</script></span></td>
+<td><span id='hockey10'><script type="text/javascript">HockeyButton('hockey10');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey11text'><script type="text/javascript">DisplayStuff('hockey11text');</script></span></td>
+<td><span id='hockey11rewardtext'><script type="text/javascript">DisplayStuff('hockey11rewardtext');</script></span></td>
+<td><span id='hockey11xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey11req'><script type="text/javascript">DisplayStuff('hockey11req');</script></span></td>
+<td><span id='hockey11cooldown'><script type="text/javascript">DisplayStuff('hockey11cooldown');</script></span></td>
+<td><span id='hockey11'><script type="text/javascript">HockeyButton('hockey11');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey12text'><script type="text/javascript">DisplayStuff('hockey12text');</script></span></td>
+<td><span id='hockey12rewardtext'><script type="text/javascript">DisplayStuff('hockey12rewardtext');</script></span></td>
+<td><span id='hockey12xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey12req'><script type="text/javascript">DisplayStuff('hockey12req');</script></span></td>
+<td><span id='hockey12cooldown'><script type="text/javascript">DisplayStuff('hockey12cooldown');</script></span></td>
+<td><span id='hockey12'><script type="text/javascript">HockeyButton('hockey12');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey13text'><script type="text/javascript">DisplayStuff('hockey13text');</script></span></td>
+<td><span id='hockey13rewardtext'><script type="text/javascript">DisplayStuff('hockey13rewardtext');</script></span></td>
+<td><span id='hockey13xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey13req'><script type="text/javascript">DisplayStuff('hockey13req');</script></span></td>
+<td><span id='hockey13cooldown'><script type="text/javascript">DisplayStuff('hockey13cooldown');</script></span></td>
+<td><span id='hockey13'><script type="text/javascript">HockeyButton('hockey13');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey14text'><script type="text/javascript">DisplayStuff('hockey14text');</script></span></td>
+<td><span id='hockey14rewardtext'><script type="text/javascript">DisplayStuff('hockey14rewardtext');</script></span></td>
+<td><span id='hockey14xp'><script type="text/javascript"></script></span></td>
+<td><span id='hockey14req'><script type="text/javascript">DisplayStuff('hockey14req');</script></span></td>
+<td><span id='hockey14cooldown'><script type="text/javascript">DisplayStuff('hockey14cooldown');</script></span></td>
+<td><span id='hockey14'><script type="text/javascript">HockeyButton('hockey14');</script></span></td>
+</tr>
+<tr>
+<td><span id='hockey15text'><script type="text/javascript">DisplayStuff('hockey15text');</script></span></td>
+<td><span id='hockey15rewardtext'><script type="text/javascript">DisplayStuff('hockey15rewardtext');</script></span></td>
+<td><span id='hockey15xp'><script type="text/javascript">updateHockeyXP();</script></span></td>
+<td><span id='hockey15req'><script type="text/javascript">DisplayStuff('hockey15req');</script></span></td>
+<td><span id='hockey15cooldown'><script type="text/javascript">DisplayStuff('hockey15cooldown');</script></span></td>
+<td><span id='hockey15'><script type="text/javascript">HockeyButton('hockey15');</script></span></td>
+</tr>
+</table>
+<br>
+<table border=1 class="generalTable" id="bingqiuLvl"><!-- table for hockey upgrades -->
+<tr><!-- table headings -->
+<td><b>物品</td>
+<td><b>成本</td>
+<td><b>等级</td>
+<td><b>状态</td>
+</tr>
+<tr>
+<td><span id='H1text'><script type="text/javascript">DisplayStuff('H1text');</script></span></td>
+<td>$<span id='H1cost'><script type="text/javascript">DisplayStuff('H1cost');</script></span></td>
+<td><span id='H1req'><script type="text/javascript">DisplayStuff('H1req');</script></span></td>
+<td><span id='H1'><script type="text/javascript">IsLockedUpgrade('H1');</script></span></td>
+</tr>
+<tr>
+<td><span id='H11text'><script type="text/javascript">DisplayStuff('H11text');</script></span></td>
+<td>$<span id='H11cost'><script type="text/javascript">DisplayStuff('H11cost');</script></span></td>
+<td><span id='H11req'><script type="text/javascript">DisplayStuff('H11req');</script></span></td>
+<td><span id='H11'><script type="text/javascript">IsLockedUpgrade('H11');</script></span></td>
+</tr>
+<tr>
+<td><span id='H16text'><script type="text/javascript">DisplayStuff('H16text');</script></span></td>
+<td>$<span id='H16cost'><script type="text/javascript">DisplayStuff('H16cost');</script></span></td>
+<td><span id='H16req'><script type="text/javascript">DisplayStuff('H16req');</script></span></td>
+<td><span id='H16'><script type="text/javascript">IsLockedUpgrade('H16');</script></span></td>
+</tr>
+<tr>
+<td><span id='H6text'><script type="text/javascript">DisplayStuff('H6text');</script></span></td>
+<td>$<span id='H6cost'><script type="text/javascript">DisplayStuff('H6cost');</script></span></td>
+<td><span id='H6req'><script type="text/javascript">DisplayStuff('H6req');</script></span></td>
+<td><span id='H6'><script type="text/javascript">IsLockedUpgrade('H6');</script></span></td>
+</tr>
+<tr>
+<td><span id='H2text'><script type="text/javascript">DisplayStuff('H2text');</script></span></td>
+<td>$<span id='H2cost'><script type="text/javascript">DisplayStuff('H2cost');</script></span></td>
+<td><span id='H2req'><script type="text/javascript">DisplayStuff('H2req');</script></span></td>
+<td><span id='H2'><script type="text/javascript">IsLockedUpgrade('H2');</script></span></td>
+</tr>
+<tr>
+<td><span id='H12text'><script type="text/javascript">DisplayStuff('H12text');</script></span></td>
+<td>$<span id='H12cost'><script type="text/javascript">DisplayStuff('H12cost');</script></span></td>
+<td><span id='H12req'><script type="text/javascript">DisplayStuff('H12req');</script></span></td>
+<td><span id='H12'><script type="text/javascript">IsLockedUpgrade('H12');</script></span></td>
+</tr>
+<tr>
+<td><span id='H17text'><script type="text/javascript">DisplayStuff('H17text');</script></span></td>
+<td>$<span id='H17cost'><script type="text/javascript">DisplayStuff('H17cost');</script></span></td>
+<td><span id='H17req'><script type="text/javascript">DisplayStuff('H17req');</script></span></td>
+<td><span id='H17'><script type="text/javascript">IsLockedUpgrade('H17');</script></span></td>
+</tr>
+<tr>
+<td><span id='H7text'><script type="text/javascript">DisplayStuff('H7text');</script></span></td>
+<td>$<span id='H7cost'><script type="text/javascript">DisplayStuff('H7cost');</script></span></td>
+<td><span id='H7req'><script type="text/javascript">DisplayStuff('H7req');</script></span></td>
+<td><span id='H7'><script type="text/javascript">IsLockedUpgrade('H7');</script></span></td>
+</tr>
+<tr>
+<td><span id='H28text'><script type="text/javascript">DisplayStuff('H28text');</script></span></td>
+<td>$<span id='H28cost'><script type="text/javascript">DisplayStuff('H28cost');</script></span></td>
+<td><span id='H28req'><script type="text/javascript">DisplayStuff('H28req');</script></span></td>
+<td><span id='H28'><script type="text/javascript">IsLockedUpgrade('H28');</script></span></td>
+</tr>
+<tr>
+<td><span id='H3text'><script type="text/javascript">DisplayStuff('H3text');</script></span></td>
+<td>$<span id='H3cost'><script type="text/javascript">DisplayStuff('H3cost');</script></span></td>
+<td><span id='H3req'><script type="text/javascript">DisplayStuff('H3req');</script></span></td>
+<td><span id='H3'><script type="text/javascript">IsLockedUpgrade('H3');</script></span></td>
+</tr>
+<tr>
+<td><span id='H13text'><script type="text/javascript">DisplayStuff('H13text');</script></span></td>
+<td>$<span id='H13cost'><script type="text/javascript">DisplayStuff('H13cost');</script></span></td>
+<td><span id='H13req'><script type="text/javascript">DisplayStuff('H13req');</script></span></td>
+<td><span id='H13'><script type="text/javascript">IsLockedUpgrade('H13');</script></span></td>
+</tr>
+<tr>
+<td><span id='H18text'><script type="text/javascript">DisplayStuff('H18text');</script></span></td>
+<td>$<span id='H18cost'><script type="text/javascript">DisplayStuff('H18cost');</script></span></td>
+<td><span id='H18req'><script type="text/javascript">DisplayStuff('H18req');</script></span></td>
+<td><span id='H18'><script type="text/javascript">IsLockedUpgrade('H18');</script></span></td>
+</tr>
+<tr>
+<td><span id='H8text'><script type="text/javascript">DisplayStuff('H8text');</script></span></td>
+<td>$<span id='H8cost'><script type="text/javascript">DisplayStuff('H8cost');</script></span></td>
+<td><span id='H8req'><script type="text/javascript">DisplayStuff('H8req');</script></span></td>
+<td><span id='H8'><script type="text/javascript">IsLockedUpgrade('H8');</script></span></td>
+</tr>
+<tr>
+<td><span id='H4text'><script type="text/javascript">DisplayStuff('H4text');</script></span></td>
+<td>$<span id='H4cost'><script type="text/javascript">DisplayStuff('H4cost');</script></span></td>
+<td><span id='H4req'><script type="text/javascript">DisplayStuff('H4req');</script></span></td>
+<td><span id='H4'><script type="text/javascript">IsLockedUpgrade('H4');</script></span></td>
+</tr>
+<tr>
+<td><span id='H14text'><script type="text/javascript">DisplayStuff('H14text');</script></span></td>
+<td>$<span id='H14cost'><script type="text/javascript">DisplayStuff('H14cost');</script></span></td>
+<td><span id='H14req'><script type="text/javascript">DisplayStuff('H14req');</script></span></td>
+<td><span id='H14'><script type="text/javascript">IsLockedUpgrade('H14');</script></span></td>
+</tr>
+<tr>
+<td><span id='H19text'><script type="text/javascript">DisplayStuff('H19text');</script></span></td>
+<td>$<span id='H19cost'><script type="text/javascript">DisplayStuff('H19cost');</script></span></td>
+<td><span id='H19req'><script type="text/javascript">DisplayStuff('H19req');</script></span></td>
+<td><span id='H19'><script type="text/javascript">IsLockedUpgrade('H19');</script></span></td>
+</tr>
+<tr>
+<td><span id='H9text'><script type="text/javascript">DisplayStuff('H9text');</script></span></td>
+<td>$<span id='H9cost'><script type="text/javascript">DisplayStuff('H9cost');</script></span></td>
+<td><span id='H9req'><script type="text/javascript">DisplayStuff('H9req');</script></span></td>
+<td><span id='H9'><script type="text/javascript">IsLockedUpgrade('H9');</script></span></td>
+</tr>
+<tr>
+<td><span id='H29text'><script type="text/javascript">DisplayStuff('H29text');</script></span></td>
+<td>$<span id='H29cost'><script type="text/javascript">DisplayStuff('H29cost');</script></span></td>
+<td><span id='H29req'><script type="text/javascript">DisplayStuff('H29req');</script></span></td>
+<td><span id='H29'><script type="text/javascript">IsLockedUpgrade('H29');</script></span></td>
+</tr>
+<tr>
+<td><span id='H5text'><script type="text/javascript">DisplayStuff('H5text');</script></span></td>
+<td>$<span id='H5cost'><script type="text/javascript">DisplayStuff('H5cost');</script></span></td>
+<td><span id='H5req'><script type="text/javascript">DisplayStuff('H5req');</script></span></td>
+<td><span id='H5'><script type="text/javascript">IsLockedUpgrade('H5');</script></span></td>
+</tr>
+<tr>
+<td><span id='H15text'><script type="text/javascript">DisplayStuff('H15text');</script></span></td>
+<td>$<span id='H15cost'><script type="text/javascript">DisplayStuff('H15cost');</script></span></td>
+<td><span id='H15req'><script type="text/javascript">DisplayStuff('H15req');</script></span></td>
+<td><span id='H15'><script type="text/javascript">IsLockedUpgrade('H15');</script></span></td>
+</tr>
+<tr>
+<td><span id='H20text'><script type="text/javascript">DisplayStuff('H20text');</script></span></td>
+<td>$<span id='H20cost'><script type="text/javascript">DisplayStuff('H20cost');</script></span></td>
+<td><span id='H20req'><script type="text/javascript">DisplayStuff('H20req');</script></span></td>
+<td><span id='H20'><script type="text/javascript">IsLockedUpgrade('H20');</script></span></td>
+</tr>
+<tr>
+<td><span id='H10text'><script type="text/javascript">DisplayStuff('H10text');</script></span></td>
+<td>$<span id='H10cost'><script type="text/javascript">DisplayStuff('H10cost');</script></span></td>
+<td><span id='H10req'><script type="text/javascript">DisplayStuff('H10req');</script></span></td>
+<td><span id='H10'><script type="text/javascript">IsLockedUpgrade('H10');</script></span></td>
+</tr>
+<tr>
+<td><span id='H21text'><script type="text/javascript">DisplayStuff('H21text');</script></span></td>
+<td>$<span id='H21cost'><script type="text/javascript">DisplayStuff('H21cost');</script></span></td>
+<td><span id='H21req'><script type="text/javascript">DisplayStuff('H21req');</script></span></td>
+<td><span id='H21'><script type="text/javascript">IsLockedUpgrade('H21');</script></span></td>
+</tr>
+<tr>
+<td><span id='H26text'><script type="text/javascript">DisplayStuff('H26text');</script></span></td>
+<td>$<span id='H26cost'><script type="text/javascript">DisplayStuff('H26cost');</script></span></td>
+<td><span id='H26req'><script type="text/javascript">DisplayStuff('H26req');</script></span></td>
+<td><span id='H26'><script type="text/javascript">IsLockedUpgrade('H26');</script></span></td>
+</tr>
+<tr>
+<td><span id='H24text'><script type="text/javascript">DisplayStuff('H24text');</script></span></td>
+<td>$<span id='H24cost'><script type="text/javascript">DisplayStuff('H24cost');</script></span></td>
+<td><span id='H24req'><script type="text/javascript">DisplayStuff('H24req');</script></span></td>
+<td><span id='H24'><script type="text/javascript">IsLockedUpgrade('H24');</script></span></td>
+</tr>
+<tr>
+<td><span id='H22text'><script type="text/javascript">DisplayStuff('H22text');</script></span></td>
+<td>$<span id='H22cost'><script type="text/javascript">DisplayStuff('H22cost');</script></span></td>
+<td><span id='H22req'><script type="text/javascript">DisplayStuff('H22req');</script></span></td>
+<td><span id='H22'><script type="text/javascript">IsLockedUpgrade('H22');</script></span></td>
+</tr>
+<tr>
+<td><span id='H27text'><script type="text/javascript">DisplayStuff('H27text');</script></span></td>
+<td>$<span id='H27cost'><script type="text/javascript">DisplayStuff('H27cost');</script></span></td>
+<td><span id='H27req'><script type="text/javascript">DisplayStuff('H27req');</script></span></td>
+<td><span id='H27'><script type="text/javascript">IsLockedUpgrade('H27');</script></span></td>
+</tr>
+<tr>
+<td><span id='H25text'><script type="text/javascript">DisplayStuff('H25text');</script></span></td>
+<td>$<span id='H25cost'><script type="text/javascript">DisplayStuff('H25cost');</script></span></td>
+<td><span id='H25req'><script type="text/javascript">DisplayStuff('H25req');</script></span></td>
+<td><span id='H25'><script type="text/javascript">IsLockedUpgrade('H25');</script></span></td>
+</tr>
+<tr>
+<td><span id='H23text'><script type="text/javascript">DisplayStuff('H23text');</script></span></td>
+<td>$<span id='H23cost'><script type="text/javascript">DisplayStuff('H23cost');</script></span></td>
+<td><span id='H23req'><script type="text/javascript">DisplayStuff('H23req');</script></span></td>
+<td><span id='H23'><script type="text/javascript">IsLockedUpgrade('H23');</script></span></td>
+</tr>
+</table>
+</div><!-- END OF HOCKEY -->
+	
+	</td>
+	</tr>
+	</table><!-- end of nested game view table -->
+</td>
+<td valign="top"><!-- right column w/ ads -->
+<table>
+
+
+</table>
+
+
+</tr>
+</table><!-- end of full game view table (tree + tabs)-->
+
+
+<br>
+
+
+
+
+<div align="left">
+<button onClick="clickDelete()">重玩游戏</button><br>
+你为什么要这么做?
+</div>
+<br>
+<div id="footer"><div class="container">
+<center>
+Copyright &#169; 2015 <a href="http://www.lonecross.com" target="_blank">Lone Cross, LLC.</a> All rights reserved (I'm sorry).  Contact admin@canadaclicker.com for all inquiries.      
+<br>
+Canada Clicker is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.
+</center></font> 
+</div></div>
+
+
+<script type="text/javascript"><!-- loads the default GameView to show Inventory tab -->
+hideAllTabs();
+openTab(0, this);
+showMeSkin();
+</script>
+
+</b>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+<!--客服 开始-->
+<link rel="stylesheet" href="//g8hh.com/static/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="//g8hh.com/static/js/kf.js"></script>
+<!-- 客服 结束 -->
+<!--站长统计-->
+    <div style="display: none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6581389daf4dd6fe7dbb4d20fdcb52a6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    </div>
+</body>
+</html>
